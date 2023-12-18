@@ -14,7 +14,7 @@ AUTHOR='D-Tacq'
 PROJECT='acq400_hapi'
 RELEASE='2.10.0'
 LANG='en'
-REPO='https://github.com/D-TACQ/acq400_hapi'
+#REPO='https://github.com/D-TACQ/acq400_hapi'
 
 REPO='https://github.com/D-TACQ/acq400_hapi -b doc' #until big merge
 

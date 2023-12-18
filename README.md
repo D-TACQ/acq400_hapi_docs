@@ -2,7 +2,7 @@
 
 D-Tacq [acq400_hapi](https://github.com/D-TACQ/acq400_hapi) documentation
 
-[online docs](https://sambelltacq.github.io/acq400_hapi_docs/)
+[online docs](https://D-TACQ.github.io/acq400_hapi_docs/)
 
 ### Dependencies:
 
@@ -20,16 +20,23 @@ Install dependencies:
     pip3 install sphinx-argparse
     pip3 install sphinx-design
     pip3 install sphinx-rtd-theme
+    pip3 install pykeystore pyepics
+
+    sudo apt install python3-matplotlib
+    sudo apt install python3-flask
+    sudo apt install python3-psutil
+    sudo apt install python3-xlsxwriter
+    sudo apt install python3-future
 ```
 
 Clone and Run:
 ```
-    git clone https://github.com/sambelltacq/acq400_hapi_docs
+    git clone https://github.com/D-TACQ/acq400_hapi_docs
     cd acq400_hapi_docs
     ./make_docs.sh
 ```
 
-Push updated docs to master branch
+Push updated docs to master branch:
 
 ```
     git add docs/
