@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.utils.bigplot4 &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.utils.bigplot4 &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -85,15 +87,20 @@
 <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/ACQ400DATA/</span><span class="si">%d</span><span class="s2">/</span><span class="si">%s</span><span class="s2">/</span><span class="si">%06d</span><span class="s2">/</span><span class="si">%d</span><span class="s2">.</span><span class="si">%02d</span><span class="s2">&quot;</span>
 <span class="c1">#&quot;/data/ACQ400DATA/%d/acq2106_070/000001/0.02&quot;</span>
 
-<div class="viewcode-block" id="get_uut"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.get_uut">[docs]</a><span class="k">def</span> <span class="nf">get_uut</span><span class="p">():</span>
+<div class="viewcode-block" id="get_uut">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.get_uut">[docs]</a>
+<span class="k">def</span> <span class="nf">get_uut</span><span class="p">():</span>
     <span class="n">p1</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;get-ident&#39;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p1</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span></div>
+
     
 
 <span class="n">uut</span> <span class="o">=</span> <span class="s2">&quot;acq2106_000&quot;</span>
 <span class="c1">#(host, uut) = get_uut()</span>
 
-<div class="viewcode-block" id="load3"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.load3">[docs]</a><span class="k">def</span> <span class="nf">load3</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="s2">&quot;/data&quot;</span><span class="p">,</span> <span class="n">lun</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">uut</span><span class="o">=</span><span class="n">uut</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">buf0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="mi">48</span><span class="p">):</span>
+<div class="viewcode-block" id="load3">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.load3">[docs]</a>
+<span class="k">def</span> <span class="nf">load3</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="s2">&quot;/data&quot;</span><span class="p">,</span> <span class="n">lun</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">uut</span><span class="o">=</span><span class="n">uut</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">buf0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="mi">48</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">buf0</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR, buf </span><span class="si">%d</span><span class="s2"> not modulo 3&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">buf0</span><span class="p">))</span>
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -102,7 +109,10 @@
     <span class="n">chx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="n">nchan</span><span class="p">,</span> <span class="n">nchan</span><span class="p">))</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">chx</span><span class="p">,</span> <span class="n">lun</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">nchan</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="plot16"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.plot16">[docs]</a><span class="k">def</span> <span class="nf">plot16</span><span class="p">(</span><span class="n">l3</span><span class="p">,</span> <span class="n">ic</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot16">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.plot16">[docs]</a>
+<span class="k">def</span> <span class="nf">plot16</span><span class="p">(</span><span class="n">l3</span><span class="p">,</span> <span class="n">ic</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
     <span class="p">(</span><span class="n">chx</span><span class="p">,</span> <span class="n">lun</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">nchan</span><span class="p">)</span> <span class="o">=</span> <span class="n">l3</span>
     <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span><span class="n">ic</span><span class="o">+</span><span class="n">nc</span><span class="p">):</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">chx</span><span class="p">[:,</span><span class="n">ch</span><span class="p">])</span>
@@ -110,22 +120,35 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;uut: </span><span class="si">{}</span><span class="s2"> lun:</span><span class="si">{}</span><span class="s2"> ch </span><span class="si">{}</span><span class="s2">..</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">lun</span><span class="p">,</span> <span class="n">ic</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">ic</span><span class="o">+</span><span class="n">nc</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;cycle </span><span class="si">{:06}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cycle</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
     
 
-<div class="viewcode-block" id="LoadsHost"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost">[docs]</a><span class="k">class</span> <span class="nc">LoadsHost</span><span class="p">:</span>
-<div class="viewcode-block" id="LoadsHost.__init__"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost.__init__">[docs]</a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">lun</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="LoadsHost">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost">[docs]</a>
+<span class="k">class</span> <span class="nc">LoadsHost</span><span class="p">:</span>
+<div class="viewcode-block" id="LoadsHost.__init__">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost.__init__">[docs]</a>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">lun</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">uut</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">lun</span> <span class="o">=</span> <span class="n">lun</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cycle</span> <span class="o">=</span> <span class="n">cycle</span></div>
+
             
-<div class="viewcode-block" id="LoadsHost.load3"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost.load3">[docs]</a>        <span class="k">def</span> <span class="nf">load3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="mi">48</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">load3</span><span class="p">(</span><span class="s2">&quot;/data/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">lun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cycle</span><span class="p">,</span> <span class="n">buf0</span><span class="p">,</span> <span class="n">nchan</span><span class="p">)</span></div></div>
+<div class="viewcode-block" id="LoadsHost.load3">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.LoadsHost.load3">[docs]</a>
+        <span class="k">def</span> <span class="nf">load3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="mi">48</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">load3</span><span class="p">(</span><span class="s2">&quot;/data/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">lun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cycle</span><span class="p">,</span> <span class="n">buf0</span><span class="p">,</span> <span class="n">nchan</span><span class="p">)</span></div>
+</div>
+
         
-<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
+<div class="viewcode-block" id="run_main">
+<a class="viewcode-back" href="../../../user_apps.utils.bigplot4.html#user_apps.utils.bigplot4.run_main">[docs]</a>
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
     <span class="n">loaders</span> <span class="o">=</span> <span class="p">[</span> <span class="n">LoadsHost</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;Bolby&quot;</span><span class="p">,</span> <span class="s2">&quot;acq2106_070&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Betso&quot;</span><span class="p">,</span> <span class="s2">&quot;acq2106_071&quot;</span><span class="p">),</span>
                                        <span class="p">(</span><span class="s2">&quot;Ladna&quot;</span><span class="p">,</span> <span class="s2">&quot;acq2106_072&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Vindo&quot;</span><span class="p">,</span> <span class="s2">&quot;acq2106_073&quot;</span><span class="p">))]</span>
     <span class="n">chx</span> <span class="o">=</span> <span class="p">[</span> <span class="n">l</span><span class="o">.</span><span class="n">load3</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">loaders</span><span class="p">]</span></div>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_main</span><span class="p">()</span>

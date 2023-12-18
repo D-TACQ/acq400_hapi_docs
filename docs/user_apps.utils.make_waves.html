@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>make_waves &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="_static/custom_style.css" type="text/css" />
+  <title>make_waves &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/design-tabs.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/design-tabs.js?v=36754332"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="rawplot" href="user_apps.utils.rawplot.html" />
@@ -77,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="make-waves">
-<h1>make_waves<a class="headerlink" href="#make-waves" title="Permalink to this heading"></a></h1>
+<h1>make_waves<a class="headerlink" href="#make-waves" title="Link to this heading"></a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Usage<div class="sd-summary-down docutils">
@@ -85,15 +87,13 @@ Usage<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">make_waves</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">len</span> <span class="n">LEN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pulse</span> <span class="n">PULSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stagger</span> <span class="n">STAGGER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">amp</span> <span class="n">AMP</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">ncycles</span> <span class="n">NCYCLES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">offset_per_channel</span> <span class="n">OFFSET_PER_CHANNEL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">res</span> <span class="n">RES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">vmax</span> <span class="n">VMAX</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">fxn</span> <span class="n">FXN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">root</span> <span class="n">ROOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">merge</span> <span class="n">MERGE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">expand_to</span> <span class="n">EXPAND_TO</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">soft_trigger</span> <span class="n">SOFT_TRIGGER</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">make_waves</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">len</span> <span class="n">LEN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pulse</span> <span class="n">PULSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stagger</span> <span class="n">STAGGER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">amp</span> <span class="n">AMP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">ncycles</span> <span class="n">NCYCLES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">offset_per_channel</span> <span class="n">OFFSET_PER_CHANNEL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">res</span> <span class="n">RES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">vmax</span> <span class="n">VMAX</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">fxn</span> <span class="n">FXN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">root</span> <span class="n">ROOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">merge</span> <span class="n">MERGE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">expand_to</span> <span class="n">EXPAND_TO</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">soft_trigger</span> <span class="n">SOFT_TRIGGER</span><span class="p">]</span>
                      <span class="n">ops</span> <span class="p">[</span><span class="n">ops</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading"></a></h2>
+<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>ops</kbd></dt>
 <dd><p class="sd-card-text">operations: one or more of generate store_files load_files store_raw load_raw scale_raw plot1 load_uut UUT continuous autorearm # for UUT, substitute UUT name</p>
@@ -101,7 +101,7 @@ Usage<div class="sd-summary-down docutils">
 </dl>
 </section>
 <section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>--nchan</kbd></dt>
 <dd><p class="sd-card-text">number of channels in set</p>
@@ -163,90 +163,90 @@ Usage<div class="sd-summary-down docutils">
 </section>
 </div>
 </details><section id="module-user_apps.utils.make_waves">
-<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.utils.make_waves" title="Permalink to this heading"></a></h2>
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.utils.make_waves" title="Link to this heading"></a></h2>
 <p>make_waves …</p>
 <p>make a related set of waveforms, store as raw binary, one file per channel
 Created on 8 Jun 2021</p>
 <p>&#64;author: pgm</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.ramp_wave">
-<span class="sig-name descname"><span class="pre">ramp_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#ramp_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.ramp_wave" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ramp_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#ramp_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.ramp_wave" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.sine_wave">
-<span class="sig-name descname"><span class="pre">sine_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#sine_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.sine_wave" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">sine_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#sine_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.sine_wave" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.sinc_wave">
-<span class="sig-name descname"><span class="pre">sinc_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#sinc_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.sinc_wave" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">sinc_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#sinc_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.sinc_wave" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.np_type">
-<span class="sig-name descname"><span class="pre">np_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#np_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.np_type" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">np_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#np_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.np_type" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.make_waves">
-<span class="sig-name descname"><span class="pre">make_waves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#make_waves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.make_waves" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">make_waves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#make_waves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.make_waves" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.store_files">
-<span class="sig-name descname"><span class="pre">store_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#store_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.store_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">store_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#store_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.store_files" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.scale_raw">
-<span class="sig-name descname"><span class="pre">scale_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#scale_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.scale_raw" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">scale_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#scale_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.scale_raw" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.store_raw">
-<span class="sig-name descname"><span class="pre">store_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#store_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.store_raw" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">store_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#store_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.store_raw" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.load_files">
-<span class="sig-name descname"><span class="pre">load_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_files" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.load_raw">
-<span class="sig-name descname"><span class="pre">load_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_raw" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_raw" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.plot1">
-<span class="sig-name descname"><span class="pre">plot1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#plot1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.plot1" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#plot1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.plot1" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.ExitException">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExitException</span></span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#ExitException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.ExitException" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExitException</span></span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#ExitException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.ExitException" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseException</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.load_uut">
-<span class="sig-name descname"><span class="pre">load_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_uut" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#load_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.load_uut" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.is_param">
-<span class="sig-name descname"><span class="pre">is_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#is_param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.is_param" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#is_param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.is_param" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.get_parser">
-<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.get_parser" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.get_parser" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.utils.make_waves.run_main">
-<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.run_main" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/utils/make_waves.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.utils.make_waves.run_main" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>

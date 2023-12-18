@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.acq2106.hts_multistream &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.acq2106.hts_multistream &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -147,7 +149,9 @@
 <span class="kn">import</span> <span class="nn">threading</span>
 <span class="kn">import</span> <span class="nn">traceback</span>
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;High Throughput Stream using AFHBA for up to 16 UUTS&#39;</span><span class="p">)</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">transient</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--spad&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;scratchpad, eg 1,16,0&quot;</span><span class="p">)</span>
@@ -169,6 +173,7 @@
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uutnames&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uuts&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
 
 <span class="sd">&quot;&quot;&quot; what is in the streams object?.</span>
 <span class="sd">[dt100@roger740 acq400_hapi]$ HAPI_COLOUR=0 ./user_apps/acq2106/hts_multistream.py --dry_run=1 --verbose=2  acq2206_002 acq2206_003</span>
@@ -198,10 +203,14 @@
 <span class="sd">[1] (&#39;1&#39;, {&#39;rport&#39;: &#39;B&#39;, &#39;sites&#39;: {&#39;1&#39;: &#39;8&#39;, &#39;2&#39;: &#39;8&#39;, &#39;3&#39;: &#39;8&#39;, &#39;4&#39;: &#39;8&#39;, &#39;5&#39;: &#39;8&#39;, &#39;6&#39;: &#39;8&#39;}, &#39;all_sites&#39;: &#39;1,2,3,4,5,6&#39;})</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="UutWrapper"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper">[docs]</a><span class="k">class</span> <span class="nc">UutWrapper</span><span class="p">:</span>
+<div class="viewcode-block" id="UutWrapper">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper">[docs]</a>
+<span class="k">class</span> <span class="nc">UutWrapper</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Encapsulates all information about one UUT &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="UutWrapper.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">streams</span><span class="p">):</span>
+<div class="viewcode-block" id="UutWrapper.__init__">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">streams</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">spad</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">spad</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
@@ -220,15 +229,24 @@
 
 
 
-<div class="viewcode-block" id="UutWrapper.get_state"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.get_state">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span>  <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">CONTINUOUS_STATE</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="UutWrapper.get_state_forever"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_state_forever">[docs]</a>    <span class="k">def</span> <span class="nf">get_state_forever</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.get_state_forever">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_state_forever">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_state_forever</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="UutWrapper.start"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.start">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.start">[docs]</a>
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s1">&#39;IDLE&#39;</span><span class="p">:</span>
             <span class="c1">#self.api.s0.CONTINUOUS = &#39;0&#39;</span>
@@ -237,7 +255,10 @@
         <span class="c1">#self.api.s0.CONTINUOUS = &#39;1&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">streamtonowhered</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span></div>
 
-<div class="viewcode-block" id="UutWrapper.stop"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.stop">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.stop">[docs]</a>
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1">#self.api.s0.CONTINUOUS = 0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">streamtonowhered</span> <span class="o">=</span> <span class="s2">&quot;stop&quot;</span>
         <span class="n">wc</span> <span class="o">=</span> <span class="mi">0</span>
@@ -251,7 +272,10 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has stopped&#39;</span><span class="p">)</span>
         <span class="k">return</span></div>
 
-<div class="viewcode-block" id="UutWrapper.initialize"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.initialize">[docs]</a>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.initialize">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.initialize">[docs]</a>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">streams</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">check_lane_status</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">streams</span><span class="p">[</span><span class="n">stream</span><span class="p">][</span><span class="s2">&quot;rport&quot;</span><span class="p">])</span>
             <span class="n">args</span> <span class="o">=</span> <span class="p">{}</span>
@@ -289,7 +313,10 @@
                 <span class="n">pid</span> <span class="o">=</span> <span class="n">afhba404</span><span class="o">.</span><span class="n">get_stream_pid</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="UutWrapper.check_lane_status"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.check_lane_status">[docs]</a>    <span class="k">def</span> <span class="nf">check_lane_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">,</span> <span class="n">rport</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.check_lane_status">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.check_lane_status">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_lane_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">,</span> <span class="n">rport</span><span class="p">):</span>
         <span class="n">link_state</span> <span class="o">=</span> <span class="n">afhba404</span><span class="o">.</span><span class="n">get_link_state</span><span class="p">(</span><span class="n">lport</span><span class="p">)</span>
         <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> Link State LANE_UP=</span><span class="si">{</span><span class="n">link_state</span><span class="o">.</span><span class="n">LANE_UP</span><span class="si">}</span><span class="s1"> RPCIE_INIT=</span><span class="si">{</span><span class="n">link_state</span><span class="o">.</span><span class="n">RPCIE_INIT</span><span class="si">}</span><span class="s1">&#39;</span>
 
@@ -315,7 +342,10 @@
 
         <span class="n">exit</span><span class="p">(</span><span class="n">PR</span><span class="o">.</span><span class="n">Red</span><span class="p">(</span><span class="s1">&#39;Link down: could not fix&#39;</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="UutWrapper.configure"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.configure">[docs]</a>    <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.configure">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.configure">[docs]</a>
+    <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">spad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spad</span>
         <span class="k">else</span><span class="p">:</span>
@@ -342,6 +372,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__setup_comms_aggregators</span><span class="p">()</span>
         <span class="n">PR</span><span class="o">.</span><span class="n">Yellow</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Configuring </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">: rtm_translen </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">RTM_TRANSLEN</span><span class="si">}</span><span class="s1"> ssb </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">ssb</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">buffer_len</span><span class="si">}</span><span class="s1">MB buffers&#39;</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">__setup_comms_aggregators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">method</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;c</span><span class="si">{</span><span class="n">stream</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;rport&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
@@ -355,10 +386,15 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">decimate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">comm_site</span><span class="o">.</span><span class="n">decimate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">decimate</span>
 
-<div class="viewcode-block" id="UutWrapper.get_stream_state"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_stream_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_stream_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">):</span>
+<div class="viewcode-block" id="UutWrapper.get_stream_state">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_stream_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_stream_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">afhba404</span><span class="o">.</span><span class="n">get_stream_state</span><span class="p">(</span><span class="n">lport</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="UutWrapper.get_results"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_results">[docs]</a>    <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UutWrapper.get_results">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.UutWrapper.get_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">):</span>
             <span class="n">tests</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;Simulate&#39;</span><span class="p">,</span>
                 <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;Spad Checker&#39;</span>
@@ -368,6 +404,7 @@
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">tests</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">check</span><span class="p">],</span> <span class="n">data</span></div>
+
 
     <span class="k">def</span> <span class="nf">__attach_api</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
@@ -436,7 +473,10 @@
             <span class="n">sites</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span> <span class="o">=</span> <span class="n">site_conn</span><span class="o">.</span><span class="n">NCHAN</span>               <span class="c1"># not strictly correct. Should be active_chan</span>
         <span class="k">return</span> <span class="n">sites</span></div>
 
-<div class="viewcode-block" id="stop_uuts"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.stop_uuts">[docs]</a><span class="k">def</span> <span class="nf">stop_uuts</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="stop_uuts">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.stop_uuts">[docs]</a>
+<span class="k">def</span> <span class="nf">stop_uuts</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
     <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">uut_item</span> <span class="ow">in</span> <span class="n">uut_collection</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">uut_item</span><span class="o">.</span><span class="n">ended</span><span class="p">:</span>
@@ -450,7 +490,10 @@
         <span class="n">uut_item</span><span class="o">.</span><span class="n">ended</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;all </span><span class="si">{</span><span class="n">nt</span><span class="si">}</span><span class="s1"> threads joined&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="object_builder"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.object_builder">[docs]</a><span class="k">def</span> <span class="nf">object_builder</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="object_builder">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.object_builder">[docs]</a>
+<span class="k">def</span> <span class="nf">object_builder</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">stream_config</span> <span class="o">=</span> <span class="n">get_stream_conns</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="n">get_parsed_map</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
     <span class="n">uut_collection</span> <span class="o">=</span> <span class="p">[]</span>
@@ -459,7 +502,10 @@
         <span class="n">uut_collection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_uut</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">uut_collection</span></div>
 
-<div class="viewcode-block" id="get_stream_conns"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_stream_conns">[docs]</a><span class="k">def</span> <span class="nf">get_stream_conns</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="get_stream_conns">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_stream_conns">[docs]</a>
+<span class="k">def</span> <span class="nf">get_stream_conns</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">afhba404</span><span class="o">.</span><span class="n">get_connections</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
@@ -475,27 +521,39 @@
 
     <span class="k">return</span> <span class="n">config</span></div>
 
+
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   the stream_config structure is a little hard to navigate. may be simpler as a class like this</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="Stream"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream">[docs]</a><span class="k">class</span> <span class="nc">Stream</span><span class="p">:</span>
-<div class="viewcode-block" id="Stream.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">,</span> <span class="n">rport</span><span class="p">,</span> <span class="n">rhost</span><span class="p">):</span>
+<div class="viewcode-block" id="Stream">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream">[docs]</a>
+<span class="k">class</span> <span class="nc">Stream</span><span class="p">:</span>
+<div class="viewcode-block" id="Stream.__init__">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lport</span><span class="p">,</span> <span class="n">rport</span><span class="p">,</span> <span class="n">rhost</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lport</span> <span class="o">=</span> <span class="n">lport</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rport</span> <span class="o">=</span> <span class="n">rport</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rhost</span> <span class="o">=</span> <span class="n">rhost</span>
         <span class="n">kill_stream_if_active</span><span class="p">(</span><span class="n">lport</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Stream.get_stream_conns"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream.get_stream_conns">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="Stream.get_stream_conns">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.Stream.get_stream_conns">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_stream_conns</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
         <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="n">afhba404</span><span class="o">.</span><span class="n">get_connections</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">stream</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">dev</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">cx</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">uut</span><span class="p">)</span>
             <span class="n">config</span><span class="p">[</span><span class="n">stream</span><span class="o">.</span><span class="n">rhost</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream</span>
-        <span class="k">return</span> <span class="n">config</span></div></div>
+        <span class="k">return</span> <span class="n">config</span></div>
+</div>
 
 
 
-<div class="viewcode-block" id="get_parsed_map"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_parsed_map">[docs]</a><span class="k">def</span> <span class="nf">get_parsed_map</span><span class="p">(</span><span class="n">maps</span><span class="p">):</span>
+
+<div class="viewcode-block" id="get_parsed_map">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.get_parsed_map">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parsed_map</span><span class="p">(</span><span class="n">maps</span><span class="p">):</span>
     <span class="n">valid_ports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;BOTH&#39;</span><span class="p">]</span>
     <span class="n">maps</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
     <span class="n">port_map</span> <span class="o">=</span> <span class="p">{}</span>
@@ -514,7 +572,10 @@
         <span class="n">port_map</span><span class="p">[</span><span class="n">uutname</span><span class="p">][</span><span class="n">port</span><span class="p">]</span> <span class="o">=</span> <span class="n">sites</span>
     <span class="k">return</span> <span class="n">port_map</span></div>
 
-<div class="viewcode-block" id="kill_stream_if_active"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.kill_stream_if_active">[docs]</a><span class="k">def</span> <span class="nf">kill_stream_if_active</span><span class="p">(</span><span class="n">lport</span><span class="p">):</span>
+
+<div class="viewcode-block" id="kill_stream_if_active">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.kill_stream_if_active">[docs]</a>
+<span class="k">def</span> <span class="nf">kill_stream_if_active</span><span class="p">(</span><span class="n">lport</span><span class="p">):</span>
     <span class="n">pid</span> <span class="o">=</span> <span class="n">afhba404</span><span class="o">.</span><span class="n">get_stream_pid</span><span class="p">(</span><span class="n">lport</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span>
@@ -533,11 +594,17 @@
 
     <span class="n">exit</span><span class="p">(</span><span class="n">PR</span><span class="o">.</span><span class="n">Red</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fatal Error: Stream failed to die </span><span class="si">{</span><span class="n">lport</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="read_knob"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.read_knob">[docs]</a><span class="k">def</span> <span class="nf">read_knob</span><span class="p">(</span><span class="n">knob</span><span class="p">):</span>
+
+<div class="viewcode-block" id="read_knob">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.read_knob">[docs]</a>
+<span class="k">def</span> <span class="nf">read_knob</span><span class="p">(</span><span class="n">knob</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">knob</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="configure_host"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.configure_host">[docs]</a><span class="k">def</span> <span class="nf">configure_host</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="configure_host">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.configure_host">[docs]</a>
+<span class="k">def</span> <span class="nf">configure_host</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">ismount</span><span class="p">(</span><span class="s2">&quot;/mnt&quot;</span><span class="p">):</span>
         <span class="n">exit</span><span class="p">(</span><span class="n">PR</span><span class="o">.</span><span class="n">Red</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error: /mnt is not a ramdisk&#39;</span><span class="p">))</span>
 
@@ -570,12 +637,20 @@
 
 
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady">[docs]</a><span class="k">class</span> <span class="nc">ReleasesTriggerWhenReady</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady">[docs]</a>
+<span class="k">class</span> <span class="nc">ReleasesTriggerWhenReady</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; handles all trigger types from UI, enables them at the right time &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.null_trg_action"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.null_trg_action">[docs]</a>    <span class="k">def</span> <span class="nf">null_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.null_trg_action">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.null_trg_action">[docs]</a>
+    <span class="k">def</span> <span class="nf">null_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.sig_gen_trg_action"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.sig_gen_trg_action">[docs]</a>    <span class="k">def</span> <span class="nf">sig_gen_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.sig_gen_trg_action">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.sig_gen_trg_action">[docs]</a>
+    <span class="k">def</span> <span class="nf">sig_gen_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
         <span class="n">rc</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="n">all_armed</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -587,25 +662,37 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="n">rc</span></div>
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.wrtd_txi_trg_action"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.wrtd_txi_trg_action">[docs]</a>    <span class="k">def</span> <span class="nf">wrtd_txi_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.wrtd_txi_trg_action">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.wrtd_txi_trg_action">[docs]</a>
+    <span class="k">def</span> <span class="nf">wrtd_txi_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">all_armed</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trg_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Triggered wrtd_txi&#39;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">top_uut</span><span class="o">.</span><span class="n">cC</span><span class="o">.</span><span class="n">sr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">wrtd_txi</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.mtrg_trg_action"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.mtrg_trg_action">[docs]</a>    <span class="k">def</span> <span class="nf">mtrg_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.mtrg_trg_action">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.mtrg_trg_action">[docs]</a>
+    <span class="k">def</span> <span class="nf">mtrg_trg_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">all_armed</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trg_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Trigger mtrg </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">mtrg</span><span class="si">}</span><span class="s1">&#39;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">top_uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">mtrg</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">triggered</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.prep_mtrg"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.prep_mtrg">[docs]</a>    <span class="k">def</span> <span class="nf">prep_mtrg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.prep_mtrg">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.prep_mtrg">[docs]</a>
+    <span class="k">def</span> <span class="nf">prep_mtrg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">PR</span><span class="o">.</span><span class="n">Yellow</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mtrg </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">mtrg</span><span class="si">}</span><span class="s1"> assume free-run , set source NONE&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">top_uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span></div>
 
-<div class="viewcode-block" id="ReleasesTriggerWhenReady.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ReleasesTriggerWhenReady.__init__">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.ReleasesTriggerWhenReady.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SCRN</span> <span class="o">=</span> <span class="n">SCRN</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut_collection</span> <span class="o">=</span> <span class="n">uut_collection</span>
@@ -639,6 +726,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trg_action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">null_trg_action</span></div>
 
+
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_armed</span><span class="p">):</span>
         <span class="n">rc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trg_action</span><span class="p">(</span><span class="n">all_armed</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SCRN</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">trg_msg</span><span class="si">}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">RESET</span><span class="se">}}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -646,7 +734,10 @@
         <span class="k">return</span> <span class="n">rc</span></div>
 
 
-<div class="viewcode-block" id="hot_run_init"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_init">[docs]</a><span class="k">def</span> <span class="nf">hot_run_init</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="hot_run_init">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_init">[docs]</a>
+<span class="k">def</span> <span class="nf">hot_run_init</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
     <span class="n">total_streams</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">uut_item</span> <span class="ow">in</span> <span class="n">uut_collection</span><span class="p">:</span>
         <span class="n">uut_item</span><span class="o">.</span><span class="n">configure</span><span class="p">()</span>
@@ -654,14 +745,20 @@
         <span class="n">total_streams</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uut_item</span><span class="o">.</span><span class="n">streams</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">total_streams</span></div>
 
-<div class="viewcode-block" id="hot_run_start"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_start">[docs]</a><span class="k">def</span> <span class="nf">hot_run_start</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="hot_run_start">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_start">[docs]</a>
+<span class="k">def</span> <span class="nf">hot_run_start</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">uut_item</span> <span class="ow">in</span> <span class="n">uut_collection</span><span class="p">:</span>
         <span class="n">uut_item</span><span class="o">.</span><span class="n">thread</span> <span class="o">=</span>  <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">uut_item</span><span class="o">.</span><span class="n">get_state_forever</span><span class="p">)</span>
         <span class="n">uut_item</span><span class="o">.</span><span class="n">thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="n">uut_item</span><span class="o">.</span><span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">uut_item</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="hot_run_status_update_wrapper"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_status_update_wrapper">[docs]</a><span class="k">def</span> <span class="nf">hot_run_status_update_wrapper</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="hot_run_status_update_wrapper">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run_status_update_wrapper">[docs]</a>
+<span class="k">def</span> <span class="nf">hot_run_status_update_wrapper</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">hot_run_status_update</span><span class="p">():</span>
         <span class="n">armed_uuts</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">running_uuts</span> <span class="o">=</span> <span class="mi">0</span>
@@ -697,7 +794,10 @@
         <span class="k">return</span> <span class="n">armed_uuts</span><span class="p">,</span> <span class="n">running_uuts</span><span class="p">,</span> <span class="n">ended_streams</span><span class="p">,</span> <span class="n">armed_uuts</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">),</span> <span class="n">running_uuts</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hot_run_status_update</span></div>
 
-<div class="viewcode-block" id="dry_run"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.dry_run">[docs]</a><span class="k">def</span> <span class="nf">dry_run</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dry_run">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.dry_run">[docs]</a>
+<span class="k">def</span> <span class="nf">dry_run</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new style Stream.get_stream_conns </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Stream</span><span class="o">.</span><span class="n">get_stream_conns</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span>
     <span class="n">top_uut</span> <span class="o">=</span> <span class="n">uut_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">api</span>
@@ -710,11 +810,17 @@
     <span class="n">exit</span><span class="p">(</span><span class="n">PR</span><span class="o">.</span><span class="n">Yellow</span><span class="p">(</span><span class="s1">&#39;Dry Run Complete&#39;</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="RateLimiter"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.RateLimiter">[docs]</a><span class="k">class</span> <span class="nc">RateLimiter</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RateLimiter">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.RateLimiter">[docs]</a>
+<span class="k">class</span> <span class="nc">RateLimiter</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; limits cycle rate &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="RateLimiter.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.RateLimiter.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_cycle_max</span><span class="p">):</span>
+<div class="viewcode-block" id="RateLimiter.__init__">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.RateLimiter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_cycle_max</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cycle_max</span> <span class="o">=</span> <span class="n">_cycle_max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cycle_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span></div>
+
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">cycle_length</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cycle_start</span>
@@ -722,7 +828,10 @@
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cycle_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="hot_run"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run">[docs]</a><span class="k">def</span> <span class="nf">hot_run</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">,</span> <span class="n">configure_host</span><span class="p">):</span>
+
+<div class="viewcode-block" id="hot_run">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.hot_run">[docs]</a>
+<span class="k">def</span> <span class="nf">hot_run</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">,</span> <span class="n">configure_host</span><span class="p">):</span>
     <span class="n">total_streams</span> <span class="o">=</span> <span class="n">hot_run_init</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">)</span>
     <span class="n">release_trigger_when_ready</span> <span class="o">=</span> <span class="n">ReleasesTriggerWhenReady</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">)</span>
     <span class="n">hot_run_status_update</span> <span class="o">=</span> <span class="n">hot_run_status_update_wrapper</span><span class="p">(</span><span class="n">SCRN</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">)</span>
@@ -791,7 +900,10 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exception Run Done&#39;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="run_main">
+<a class="viewcode-back" href="../../../user_apps.acq2106.hts_multistream.html#user_apps.acq2106.hts_multistream.run_main">[docs]</a>
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">uut_collection</span> <span class="o">=</span> <span class="n">object_builder</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="n">configure_host</span><span class="p">(</span><span class="n">uut_collection</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
 
@@ -799,6 +911,7 @@
         <span class="n">dry_run</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">hot_run</span><span class="p">(</span><span class="n">DISPLAY</span><span class="p">(),</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut_collection</span><span class="p">,</span> <span class="n">configure_host</span><span class="p">)</span></div>
+
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.special.amx_start_demo &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.special.amx_start_demo &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -91,14 +93,19 @@
 <span class="kn">import</span> <span class="nn">time</span>
 
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;start amx demo&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;increase verbosity&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--wrtt&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;use WRTT to start the fleet&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uutnames&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uuts&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span>  </div>
 
-<div class="viewcode-block" id="wait_bist_ok"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.wait_bist_ok">[docs]</a><span class="k">def</span> <span class="nf">wait_bist_ok</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wait_bist_ok">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.wait_bist_ok">[docs]</a>
+<span class="k">def</span> <span class="nf">wait_bist_ok</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;http://</span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s1">/d-tacq/bist0_status&#39;</span>
     <span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">maxi</span> <span class="o">=</span> <span class="mi">100</span>
@@ -122,9 +129,12 @@
         <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="n">ii</span> <span class="o">&gt;=</span> <span class="n">maxi</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span></div>
+
     
     
-<div class="viewcode-block" id="tee_up_action"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_action">[docs]</a><span class="k">def</span> <span class="nf">tee_up_action</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="tee_up_action">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_action">[docs]</a>
+<span class="k">def</span> <span class="nf">tee_up_action</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hello </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">if</span> <span class="n">wait_bist_ok</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
@@ -145,13 +155,19 @@
     <span class="n">u</span><span class="o">.</span><span class="n">amx_demo_ok</span> <span class="o">=</span> <span class="n">ok</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;u.amx_demo_ok set </span><span class="si">{</span><span class="n">ok</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
     
-<div class="viewcode-block" id="tee_up_mt_action"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_mt_action">[docs]</a><span class="k">def</span> <span class="nf">tee_up_mt_action</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="tee_up_mt_action">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_mt_action">[docs]</a>
+<span class="k">def</span> <span class="nf">tee_up_mt_action</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">_tee_up_mt_action</span><span class="p">():</span>
         <span class="n">tee_up_action</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">_tee_up_mt_action</span></div>
 
-<div class="viewcode-block" id="tee_up_mt"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_mt">[docs]</a><span class="nd">@timing</span> 
+
+<div class="viewcode-block" id="tee_up_mt">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.tee_up_mt">[docs]</a>
+<span class="nd">@timing</span> 
 <span class="k">def</span> <span class="nf">tee_up_mt</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">thx</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">:</span>
@@ -166,15 +182,22 @@
     <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">u</span><span class="o">.</span><span class="n">amx_demo_ok</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s2"> is NOT OK&quot;</span><span class="p">)</span></div>
+
              
 
-<div class="viewcode-block" id="connect"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.connect">[docs]</a><span class="nd">@timing</span> 
+<div class="viewcode-block" id="connect">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.connect">[docs]</a>
+<span class="nd">@timing</span> 
 <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">args</span><span class="o">.</span><span class="n">uuts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq2106</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">has_comms</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_wr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uutnames</span> <span class="p">]</span></div>
+
     
-<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_main">
+<a class="viewcode-back" href="../../../user_apps.special.amx_start_demo.html#user_apps.special.amx_start_demo.run_main">[docs]</a>
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">connect</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="n">tee_up_mt</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+
     
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>

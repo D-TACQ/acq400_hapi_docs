@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.utils.bin2csv &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.utils.bin2csv &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -106,7 +108,9 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<div class="viewcode-block" id="get_word_type"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.get_word_type">[docs]</a><span class="k">def</span> <span class="nf">get_word_type</span><span class="p">(</span><span class="n">wtype</span><span class="p">):</span>
+<div class="viewcode-block" id="get_word_type">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.get_word_type">[docs]</a>
+<span class="k">def</span> <span class="nf">get_word_type</span><span class="p">(</span><span class="n">wtype</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">wtype</span> <span class="o">==</span> <span class="s1">&#39;int16&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span>
     <span class="k">elif</span> <span class="n">wtype</span> <span class="o">==</span> <span class="s1">&#39;int32&#39;</span><span class="p">:</span>
@@ -115,7 +119,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR, undefined word type </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wtype</span><span class="p">))</span>
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="csv_name"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.csv_name">[docs]</a><span class="k">def</span> <span class="nf">csv_name</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">binfile</span><span class="p">):</span>
+
+<div class="viewcode-block" id="csv_name">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.csv_name">[docs]</a>
+<span class="k">def</span> <span class="nf">csv_name</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">binfile</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">out</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">basename</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">out</span>
     <span class="k">else</span><span class="p">:</span>
@@ -123,7 +130,10 @@
 
     <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}{}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outroot</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outroot</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="bin2csv_onesource_manychan"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv_onesource_manychan">[docs]</a><span class="k">def</span> <span class="nf">bin2csv_onesource_manychan</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bin2csv_onesource_manychan">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv_onesource_manychan">[docs]</a>
+<span class="k">def</span> <span class="nf">bin2csv_onesource_manychan</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">binfiles</span><span class="p">:</span>
         <span class="n">raw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">wtype</span><span class="p">)</span>
         <span class="n">nrows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span><span class="o">//</span><span class="n">args</span><span class="o">.</span><span class="n">nchan</span>
@@ -133,9 +143,12 @@
            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">fout</span><span class="p">)</span>
            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrows</span><span class="p">):</span>
                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">chx</span><span class="p">[</span><span class="n">row</span><span class="p">,:])</span></div>
+
                 
                 
-<div class="viewcode-block" id="bin2csv_many_onechan_sources"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv_many_onechan_sources">[docs]</a><span class="k">def</span> <span class="nf">bin2csv_many_onechan_sources</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="bin2csv_many_onechan_sources">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv_many_onechan_sources">[docs]</a>
+<span class="k">def</span> <span class="nf">bin2csv_many_onechan_sources</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">chx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">binf</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">binfiles</span><span class="p">:</span>
         <span class="n">chx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">binf</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">wtype</span><span class="p">))</span>
@@ -147,15 +160,21 @@
         <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">fout</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrows</span><span class="p">):</span>
             <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">chxx</span><span class="p">[:,</span><span class="n">row</span><span class="p">])</span>    </div>
+
             
-<div class="viewcode-block" id="bin2csv"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv">[docs]</a><span class="k">def</span> <span class="nf">bin2csv</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="bin2csv">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.bin2csv">[docs]</a>
+<span class="k">def</span> <span class="nf">bin2csv</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">args</span><span class="o">.</span><span class="n">wtype</span> <span class="o">=</span> <span class="n">get_word_type</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">word</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">paste</span><span class="p">:</span>
         <span class="n">bin2csv_many_onechan_sources</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">bin2csv_onesource_manychan</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+
         
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.utils.bin2csv.html#user_apps.utils.bin2csv.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;input raw binary, output csv&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--nchan&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of channels&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--word&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;int16|int32&quot;</span><span class="p">)</span>
@@ -164,6 +183,7 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--paste&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;1: paste multiple files * 1 chan&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;binfiles&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;file[s] to convert&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
      
     
     

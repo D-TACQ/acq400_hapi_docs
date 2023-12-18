@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.acq400.acq400_rtm_stream &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.acq400.acq400_rtm_stream &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -89,7 +91,9 @@
 <span class="kn">import</span> <span class="nn">time</span>
 
 
-<div class="viewcode-block" id="create_data_dir"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.create_data_dir">[docs]</a><span class="k">def</span> <span class="nf">create_data_dir</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="create_data_dir">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.create_data_dir">[docs]</a>
+<span class="k">def</span> <span class="nf">create_data_dir</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A function to create the new directory in which to store data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -102,7 +106,10 @@
     <span class="k">return</span> <span class="kc">None</span></div>
 
 
-<div class="viewcode-block" id="configure_uut"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.configure_uut">[docs]</a><span class="k">def</span> <span class="nf">configure_uut</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">):</span>
+
+<div class="viewcode-block" id="configure_uut">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.configure_uut">[docs]</a>
+<span class="k">def</span> <span class="nf">configure_uut</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A function to configure the UUT for an RTM capture.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -115,10 +122,16 @@
     <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">bufferlen</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">rtm_translen</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">nchan</span><span class="p">())</span>
     <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="FileSink"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSink">[docs]</a><span class="k">class</span> <span class="nc">FileSink</span><span class="p">:</span>
-<div class="viewcode-block" id="FileSink.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSink.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FileSink">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSink">[docs]</a>
+<span class="k">class</span> <span class="nc">FileSink</span><span class="p">:</span>
+<div class="viewcode-block" id="FileSink.__init__">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSink.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_dir</span><span class="p">,</span> <span class="s2">&quot;muxed_data.dat&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bytes_written</span> <span class="o">=</span> <span class="mi">0</span></div>
+
         
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -127,8 +140,11 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bytes_written</span> <span class="o">%</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pages written: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bytes_written</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
         <span class="k">return</span> <span class="kc">False</span></div>
+
     
-<div class="viewcode-block" id="FileSinkFun"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSinkFun">[docs]</a><span class="k">def</span> <span class="nf">FileSinkFun</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSinkFun">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.FileSinkFun">[docs]</a>
+<span class="k">def</span> <span class="nf">FileSinkFun</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">data_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_dir</span><span class="p">,</span> <span class="s2">&quot;muxed_data.dat&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
     <span class="n">bytes_written</span> <span class="o">=</span> <span class="mi">0</span>
     
@@ -142,9 +158,12 @@
         <span class="k">return</span> <span class="kc">False</span>
     
     <span class="k">return</span> <span class="n">sink</span></div>
+
     
 
-<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">uut</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">data_dir</span> <span class="o">==</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
@@ -160,7 +179,10 @@
 
     <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.acq400.acq400_rtm_stream.html#user_apps.acq400.acq400_rtm_stream.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Start RTM stream&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--rtm_translen&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s1">&#39;How many samples to capture after each trigger.&#39;</span><span class="p">)</span>
@@ -171,6 +193,7 @@
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uut&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Name of uut to stream.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>

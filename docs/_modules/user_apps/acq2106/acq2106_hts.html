@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.acq2106.acq2106_hts &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.acq2106.acq2106_hts &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -146,17 +148,25 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">acq400_hapi</span> <span class="kn">import</span> <span class="n">intSI</span> <span class="k">as</span> <span class="n">intSI</span>
 
-<div class="viewcode-block" id="read_knob"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.read_knob">[docs]</a><span class="k">def</span> <span class="nf">read_knob</span><span class="p">(</span><span class="n">knob</span><span class="p">):</span>
+<div class="viewcode-block" id="read_knob">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.read_knob">[docs]</a>
+<span class="k">def</span> <span class="nf">read_knob</span><span class="p">(</span><span class="n">knob</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">knob</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="config_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.config_shot">[docs]</a><span class="k">def</span> <span class="nf">config_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="config_shot">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.config_shot">[docs]</a>
+<span class="k">def</span> <span class="nf">config_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">exec_args</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
     <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">run0</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">sites</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">spad</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">decimate</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">decimate</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">decimate</span></div>
 
-<div class="viewcode-block" id="hexdump_string"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.hexdump_string">[docs]</a><span class="k">def</span> <span class="nf">hexdump_string</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">sites</span><span class="p">,</span> <span class="n">spad</span><span class="p">):</span>
+
+<div class="viewcode-block" id="hexdump_string">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.hexdump_string">[docs]</a>
+<span class="k">def</span> <span class="nf">hexdump_string</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">sites</span><span class="p">,</span> <span class="n">spad</span><span class="p">):</span>
     <span class="n">nspad</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">spad</span> <span class="o">==</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">spad</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hexdump_string </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">sites</span><span class="p">,</span> <span class="n">nspad</span><span class="p">))</span>
     <span class="n">dumpstr</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;hexdump -ve &#39;</span><span class="se">\&quot;</span><span class="s2">%10_ad,</span><span class="se">\&quot;</span><span class="s2"> &quot;</span><span class="p">)</span>
@@ -173,7 +183,10 @@
         <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> $*</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dumpstr</span><span class="p">))</span>
     <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s2">&quot;hexdump</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span> <span class="mo">0o777</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="init_comms"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.init_comms">[docs]</a><span class="k">def</span> <span class="nf">init_comms</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="init_comms">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.init_comms">[docs]</a>
+<span class="k">def</span> <span class="nf">init_comms</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">spad</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">spad</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">spad</span>
         <span class="c1"># use spare spad elements as data markers</span>
@@ -192,17 +205,29 @@
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">hexdump</span><span class="p">:</span>
             <span class="n">hexdump_string</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">csites</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">spad</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="init_work"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.init_work">[docs]</a><span class="k">def</span> <span class="nf">init_work</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="init_work">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.init_work">[docs]</a>
+<span class="k">def</span> <span class="nf">init_work</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init_work&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="get_data_pid"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_data_pid">[docs]</a><span class="k">def</span> <span class="nf">get_data_pid</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="get_data_pid">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_data_pid">[docs]</a>
+<span class="k">def</span> <span class="nf">get_data_pid</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">read_knob</span><span class="p">(</span><span class="s2">&quot;/dev/rtm-t.</span><span class="si">{}</span><span class="s2">.ctrl/streamer_pid&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">lport</span><span class="p">)))</span></div>
 
-<div class="viewcode-block" id="start_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.start_shot">[docs]</a><span class="k">def</span> <span class="nf">start_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>    
+
+<div class="viewcode-block" id="start_shot">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.start_shot">[docs]</a>
+<span class="k">def</span> <span class="nf">start_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>    
     <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">streamtonowhered</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span></div>
 
 
-<div class="viewcode-block" id="stop_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.stop_shot">[docs]</a><span class="k">def</span> <span class="nf">stop_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="stop_shot">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.stop_shot">[docs]</a>
+<span class="k">def</span> <span class="nf">stop_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;stop_shot&quot;</span><span class="p">)</span>
     <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">streamtonowhered</span> <span class="o">=</span> <span class="s2">&quot;stop&quot;</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -211,7 +236,10 @@
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;sudo kill -9 </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="get_state"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_state">[docs]</a><span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="get_state">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_state">[docs]</a>
+<span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">job</span> <span class="o">=</span> <span class="n">read_knob</span><span class="p">(</span><span class="s2">&quot;/proc/driver/afhba/afhba.</span><span class="si">{}</span><span class="s2">/Job&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">lport</span><span class="p">))</span>
     <span class="n">env</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">pp</span> <span class="ow">in</span> <span class="n">job</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
@@ -220,7 +248,10 @@
     <span class="n">args</span><span class="o">.</span><span class="n">job_state</span> <span class="o">=</span> <span class="n">env</span></div>
 
 
-<div class="viewcode-block" id="wait_completion"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.wait_completion">[docs]</a><span class="k">def</span> <span class="nf">wait_completion</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wait_completion">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.wait_completion">[docs]</a>
+<span class="k">def</span> <span class="nf">wait_completion</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="n">ts</span>  <span class="o">=</span> <span class="mi">0</span>
     <span class="n">STATFMT</span> <span class="o">=</span> <span class="s2">&quot;Rate </span><span class="si">%d</span><span class="s2"> NBUFS </span><span class="si">%d</span><span class="s2"> Time ... </span><span class="si">%8d</span><span class="s2"> / </span><span class="si">%8d</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -249,7 +280,10 @@
     <span class="n">stop_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="run_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.run_shot">[docs]</a><span class="k">def</span> <span class="nf">run_shot</span><span class="p">(</span><span class="n">args</span><span class="p">):</span> 
+
+<div class="viewcode-block" id="run_shot">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.run_shot">[docs]</a>
+<span class="k">def</span> <span class="nf">run_shot</span><span class="p">(</span><span class="n">args</span><span class="p">):</span> 
     <span class="n">uut</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">datahandler</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">cmd</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">datahandler</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">lport</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">nbuffers</span><span class="p">)</span>
@@ -272,7 +306,10 @@
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">nowait</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">wait_completion</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>    
+
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.acq2106.acq2106_hts.html#user_apps.acq2106.acq2106_hts.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>    
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;High Throughput Stream using AFHBA&#39;</span><span class="p">)</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">transient</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--nowait&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;start the shot but do not wait for completion&#39;</span><span class="p">)</span>
@@ -287,6 +324,7 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--nbuffers&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">9999999999</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;set capture length in buffers&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uut&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uut &quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
 
 <span class="c1"># execution starts here</span>
 

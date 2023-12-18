@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.analysis.analyse_burst &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.analysis.analyse_burst &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -103,13 +105,17 @@
 
 
 
-<div class="viewcode-block" id="ES_STATS"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS">[docs]</a><span class="k">class</span> <span class="nc">ES_STATS</span><span class="p">:</span>
+<div class="viewcode-block" id="ES_STATS">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS">[docs]</a>
+<span class="k">class</span> <span class="nc">ES_STATS</span><span class="p">:</span>
     <span class="n">the_stats</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">the_raw_ix</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">the_sample_counts</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">the_clk_counts</span> <span class="o">=</span> <span class="p">[]</span>
     
-<div class="viewcode-block" id="ES_STATS.__init__"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_es_fields</span><span class="p">):</span>
+<div class="viewcode-block" id="ES_STATS.__init__">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_es_fields</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">iraw</span> <span class="o">=</span> <span class="n">_es_fields</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sample</span> <span class="o">=</span> <span class="n">_es_fields</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clk</span> <span class="o">=</span> <span class="n">_es_fields</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -126,17 +132,26 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">d_sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample</span> <span class="o">-</span> <span class="n">es1</span><span class="o">.</span><span class="n">sample</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">d_clk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clk</span> <span class="o">-</span> <span class="n">es1</span><span class="o">.</span><span class="n">clk</span>
         <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
         
-<div class="viewcode-block" id="ES_STATS.print"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.print">[docs]</a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ES_STATS.print">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.print">[docs]</a>
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ES_STATS </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">my_id</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iraw</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">clk</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
         
-<div class="viewcode-block" id="ES_STATS.print_all"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.print_all">[docs]</a>    <span class="k">def</span> <span class="nf">print_all</span><span class="p">():</span>
+<div class="viewcode-block" id="ES_STATS.print_all">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.print_all">[docs]</a>
+    <span class="k">def</span> <span class="nf">print_all</span><span class="p">():</span>
         <span class="n">t</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">([</span><span class="s1">&#39;ii&#39;</span><span class="p">,</span> <span class="s1">&#39;iraw&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;clk&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_iraw&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_clk&#39;</span><span class="p">],</span> <span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">ess</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">):</span>
             <span class="n">t</span><span class="o">.</span><span class="n">add_row</span><span class="p">((</span><span class="n">ii</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">iraw</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">clk</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">d_iraw</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">d_sample</span><span class="p">,</span> <span class="n">ess</span><span class="o">.</span><span class="n">d_clk</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></div>
+
         
-<div class="viewcode-block" id="ES_STATS.is_valid"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.is_valid">[docs]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">():</span>
+<div class="viewcode-block" id="ES_STATS.is_valid">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.is_valid">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">():</span>
         <span class="n">model_d_sample</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">d_sample</span>
         <span class="n">model_d_clk</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">d_clk</span>
         <span class="n">sample_fail_count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -154,27 +169,43 @@
                 
         <span class="k">return</span> <span class="p">(</span><span class="n">sample_fail_count</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">clk_fail_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">sample_fail_count</span><span class="p">,</span> <span class="n">clk_fail_count</span><span class="p">)</span></div>
 
+
     <span class="c1"># ES_STATS.the_stats[:-1] final burst may not be complete, ignore it.</span>
-<div class="viewcode-block" id="ES_STATS.get_raw_ix"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_raw_ix">[docs]</a>    <span class="k">def</span> <span class="nf">get_raw_ix</span><span class="p">():</span>
+<div class="viewcode-block" id="ES_STATS.get_raw_ix">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_raw_ix">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_raw_ix</span><span class="p">():</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_raw_ix</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">):</span>
             <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_raw_ix</span> <span class="o">=</span> <span class="p">[</span> <span class="n">es</span><span class="o">.</span><span class="n">iraw</span> <span class="k">for</span> <span class="n">es</span> <span class="ow">in</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_raw_ix</span></div>
 
-<div class="viewcode-block" id="ES_STATS.get_sample_counts"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_sample_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_sample_counts</span><span class="p">():</span>
+
+<div class="viewcode-block" id="ES_STATS.get_sample_counts">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_sample_counts">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sample_counts</span><span class="p">():</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_sample_counts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">):</span>
             <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_sample_counts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">es</span><span class="o">.</span><span class="n">sample</span> <span class="k">for</span> <span class="n">es</span> <span class="ow">in</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_sample_counts</span> </div>
 
-<div class="viewcode-block" id="ES_STATS.get_clk_counts"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_clk_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_clk_counts</span><span class="p">():</span>
+
+<div class="viewcode-block" id="ES_STATS.get_clk_counts">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_clk_counts">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_clk_counts</span><span class="p">():</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_clk_counts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">):</span>
             <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_clk_counts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">es</span><span class="o">.</span><span class="n">clk</span> <span class="k">for</span> <span class="n">es</span> <span class="ow">in</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_clk_counts</span>    </div>
 
-<div class="viewcode-block" id="ES_STATS.get_blen"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_blen">[docs]</a>    <span class="k">def</span> <span class="nf">get_blen</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">d_sample</span></div></div>
+
+<div class="viewcode-block" id="ES_STATS.get_blen">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.ES_STATS.get_blen">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_blen</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">the_stats</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">d_sample</span></div>
+</div>
+
 
             
-<div class="viewcode-block" id="is_valid_es"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.is_valid_es">[docs]</a><span class="k">def</span> <span class="nf">is_valid_es</span><span class="p">(</span><span class="n">iraw</span><span class="p">,</span> <span class="n">es</span><span class="p">):</span>
+<div class="viewcode-block" id="is_valid_es">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.is_valid_es">[docs]</a>
+<span class="k">def</span> <span class="nf">is_valid_es</span><span class="p">(</span><span class="n">iraw</span><span class="p">,</span> <span class="n">es</span><span class="p">):</span>
 <span class="c1"># return if this is an ES, load it and return True FAIL fast!  </span>
 <span class="c1"># we pre-filtered es[0] == ES_MAGIC0, so we expect all PASS</span>
     <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">ES_MAGIC0_FIELDS</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -194,11 +225,14 @@
     
     <span class="n">ES_STATS</span><span class="p">((</span><span class="n">iraw</span><span class="p">,</span> <span class="n">es</span><span class="p">[</span><span class="n">ES_SAMPLE</span><span class="p">],</span> <span class="n">es</span><span class="p">[</span><span class="n">ES_CLK</span><span class="p">]))</span>
     <span class="k">return</span> <span class="kc">True</span>           </div>
+
             
     
 <span class="n">DATA</span><span class="o">=</span><span class="s1">&#39;nodata&#39;</span>          
         
-<div class="viewcode-block" id="analyse_es"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse_es">[docs]</a><span class="k">def</span> <span class="nf">analyse_es</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_es</span><span class="p">):</span>
+<div class="viewcode-block" id="analyse_es">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse_es">[docs]</a>
+<span class="k">def</span> <span class="nf">analyse_es</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_es</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;raw_es.shape:</span><span class="si">{</span><span class="n">raw_es</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">esx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">raw_es</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ES_MAGIC0</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;type esx </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">esx</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -223,11 +257,17 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DATA</span><span class="si">}</span><span class="s1"> ES Analysis: </span><span class="si">{</span><span class="n">es_valid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> PASS </span><span class="si">{</span><span class="n">es_valid</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> sample FAIL </span><span class="si">{</span><span class="n">es_valid</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> clk FAIL&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="sample_count_plot"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.sample_count_plot">[docs]</a><span class="k">def</span> <span class="nf">sample_count_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+
+<div class="viewcode-block" id="sample_count_plot">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.sample_count_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">sample_count_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Plot of burst first sample count ES[</span><span class="si">{</span><span class="n">ES_SAMPLE</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_sample_counts</span><span class="p">())</span></div>
+
     
-<div class="viewcode-block" id="timing_plot"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.timing_plot">[docs]</a><span class="k">def</span> <span class="nf">timing_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<div class="viewcode-block" id="timing_plot">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.timing_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">timing_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="c1">#ax1.figure()</span>
     <span class="c1">#ax1.title(f&#39;Plot of burst start time in sample clocks\n{DATA}&#39;)</span>
     <span class="c1">#ax1.ylabel(&#39;clocks&#39;)</span>
@@ -235,8 +275,11 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Plot of burst start time in sample clocks ES[</span><span class="si">{</span><span class="n">ES_CLK</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_clk_counts</span><span class="p">())</span></div>
 
+
     
-<div class="viewcode-block" id="stack_plot"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.stack_plot">[docs]</a><span class="k">def</span> <span class="nf">stack_plot</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stackoff</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="stack_plot">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.stack_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">stack_plot</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stackoff</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;stack_plot </span><span class="si">{</span><span class="n">ax</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">blen</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_blen</span><span class="p">()</span>
     <span class="n">raw_ix</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_raw_ix</span><span class="p">()</span>
@@ -264,7 +307,10 @@
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
            <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="correlate"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.correlate">[docs]</a><span class="k">def</span> <span class="nf">correlate</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch0</span><span class="p">,</span> <span class="n">_atol</span><span class="p">,</span> <span class="n">_rtol</span><span class="p">):</span>
+
+<div class="viewcode-block" id="correlate">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.correlate">[docs]</a>
+<span class="k">def</span> <span class="nf">correlate</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch0</span><span class="p">,</span> <span class="n">_atol</span><span class="p">,</span> <span class="n">_rtol</span><span class="p">):</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="n">ch0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">matches</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="p">{}</span>
@@ -295,9 +341,12 @@
     <span class="n">t</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s1">&#39;T&#39;</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="n">ic</span><span class="p">])</span> <span class="k">else</span> <span class="s1">&#39;F&#39;</span> <span class="k">for</span> <span class="n">ic</span> <span class="ow">in</span> <span class="n">ch0</span><span class="p">])</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></div>
 
+
 <span class="n">MAX_FALLING_FIDUCIALS</span><span class="o">=</span><span class="mi">2</span>         <span class="c1"># our FG falling edge is really quite .. slow</span>
 
-<div class="viewcode-block" id="analyse_fiducial"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse_fiducial">[docs]</a><span class="k">def</span> <span class="nf">analyse_fiducial</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_adc</span><span class="p">):</span>
+<div class="viewcode-block" id="analyse_fiducial">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse_fiducial">[docs]</a>
+<span class="k">def</span> <span class="nf">analyse_fiducial</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_adc</span><span class="p">):</span>
     <span class="n">f0</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">fiducial_plot</span><span class="o">-</span><span class="mi">1</span>
     <span class="n">blen</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_blen</span><span class="p">()</span>
     <span class="n">raw_ix</span> <span class="o">=</span> <span class="n">ES_STATS</span><span class="o">.</span><span class="n">get_raw_ix</span><span class="p">()</span>
@@ -322,7 +371,10 @@
     <span class="k">return</span> <span class="n">falling_value_count</span></div>
 
 
-<div class="viewcode-block" id="plot_timeseries"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.plot_timeseries">[docs]</a><span class="k">def</span> <span class="nf">plot_timeseries</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot_timeseries">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.plot_timeseries">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_timeseries</span><span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
     <span class="c1">#plt.figure()</span>
     <span class="c1">#plt.title(f&#39;{label} Time-series plot of CH{ch}\n{DATA}&#39;)    </span>
     <span class="c1">#plt.ylabel(&#39;ADC codes&#39;)</span>
@@ -334,7 +386,10 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_no_es</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;CH</span><span class="si">{</span><span class="n">ch</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="analyse"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse">[docs]</a><span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="analyse">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.analyse">[docs]</a>
+<span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">STACKOFF</span>
     <span class="n">STACKOFF</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">stack_off</span>
     <span class="n">fname</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -380,7 +435,10 @@
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">raw_adc</span><span class="p">,</span> <span class="n">raw_es</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;rgm plot demo&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--nchan&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data_type&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Use int16 or int32 for data demux.&#39;</span><span class="p">)</span>
@@ -393,8 +451,11 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--uut&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;uut for title&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;data &quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
  
-<div class="viewcode-block" id="fix_args"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.fix_args">[docs]</a><span class="k">def</span> <span class="nf">fix_args</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="fix_args">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.fix_args">[docs]</a>
+<span class="k">def</span> <span class="nf">fix_args</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">DATA</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
         <span class="n">args</span><span class="o">.</span><span class="n">np_data_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span>
@@ -419,9 +480,13 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;processing </span><span class="si">{</span><span class="n">DATA</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">args</span></div>
 
+
    
-<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
+<div class="viewcode-block" id="run_main">
+<a class="viewcode-back" href="../../../user_apps.analysis.analyse_burst.html#user_apps.analysis.analyse_burst.run_main">[docs]</a>
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
     <span class="n">analyse</span><span class="p">(</span><span class="n">fix_args</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()))</span></div>
+
 
 <span class="c1"># execution starts here</span>
 

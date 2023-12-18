@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>acq2106_mr &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="_static/custom_style.css" type="text/css" />
+  <title>acq2106_mr &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/design-tabs.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/design-tabs.js?v=36754332"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="acq2106_wr_reset" href="user_apps.special.acq2106_wr_reset.html" />
@@ -77,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="acq2106-mr">
-<h1>acq2106_mr<a class="headerlink" href="#acq2106-mr" title="Permalink to this heading"></a></h1>
+<h1>acq2106_mr<a class="headerlink" href="#acq2106-mr" title="Link to this heading"></a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Usage<div class="sd-summary-down docutils">
@@ -85,21 +87,16 @@ Usage<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">acq2106_mr</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pre</span> <span class="n">PRE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">post</span> <span class="n">POST</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">demux</span> <span class="n">DEMUX</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">clk</span> <span class="n">CLK</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg</span> <span class="n">TRG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">sim</span> <span class="n">SIM</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">trace</span> <span class="n">TRACE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">auto_soft_trigger</span> <span class="n">AUTO_SOFT_TRIGGER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">clear_counters</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">save_data</span> <span class="n">SAVE_DATA</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">plot_data</span> <span class="n">PLOT_DATA</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">one_plot</span> <span class="n">ONE_PLOT</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">trace_upload</span> <span class="n">TRACE_UPLOAD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">channels</span> <span class="n">CHANNELS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">MR</span> <span class="n">MR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stl</span> <span class="n">STL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">Fclk</span> <span class="n">FCLK</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">debug</span> <span class="n">DEBUG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">WRTD_DELTA_NS</span> <span class="n">WRTD_DELTA_NS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg0_src</span> <span class="n">TRG0_SRC</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">tune_si5326</span> <span class="n">TUNE_SI5326</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">set_arm</span> <span class="n">SET_ARM</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">set_shot</span> <span class="n">SET_SHOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">evsel0</span> <span class="n">EVSEL0</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">MR10DEC</span> <span class="n">MR10DEC</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span> <span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">get_epics4</span> <span class="n">GET_EPICS4</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">get_mdsplus</span> <span class="n">GET_MDSPLUS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tee_up_mt</span> <span class="n">TEE_UP_MT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">force_training</span> <span class="n">FORCE_TRAINING</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">force_wr_reset</span> <span class="n">FORCE_WR_RESET</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">zombie_timeout</span> <span class="n">ZOMBIE_TIMEOUT</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">clear_any_units_found_in_arm</span> <span class="n">CLEAR_ANY_UNITS_FOUND_IN_ARM</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">acq2106_mr</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pre</span> <span class="n">PRE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">post</span> <span class="n">POST</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">demux</span> <span class="n">DEMUX</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">clk</span> <span class="n">CLK</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg</span> <span class="n">TRG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">sim</span> <span class="n">SIM</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trace</span> <span class="n">TRACE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">auto_soft_trigger</span> <span class="n">AUTO_SOFT_TRIGGER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">clear_counters</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">save_data</span> <span class="n">SAVE_DATA</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">plot_data</span> <span class="n">PLOT_DATA</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">one_plot</span> <span class="n">ONE_PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trace_upload</span> <span class="n">TRACE_UPLOAD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">channels</span> <span class="n">CHANNELS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">MR</span> <span class="n">MR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stl</span> <span class="n">STL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">Fclk</span> <span class="n">FCLK</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">debug</span> <span class="n">DEBUG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">WRTD_DELTA_NS</span> <span class="n">WRTD_DELTA_NS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg0_src</span> <span class="n">TRG0_SRC</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tune_si5326</span> <span class="n">TUNE_SI5326</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">set_arm</span> <span class="n">SET_ARM</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">set_shot</span> <span class="n">SET_SHOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">evsel0</span> <span class="n">EVSEL0</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">MR10DEC</span> <span class="n">MR10DEC</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span> <span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">get_epics4</span> <span class="n">GET_EPICS4</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">get_mdsplus</span> <span class="n">GET_MDSPLUS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tee_up_mt</span> <span class="n">TEE_UP_MT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">force_training</span> <span class="n">FORCE_TRAINING</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">force_wr_reset</span> <span class="n">FORCE_WR_RESET</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">zombie_timeout</span> <span class="n">ZOMBIE_TIMEOUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">clear_any_units_found_in_arm</span> <span class="n">CLEAR_ANY_UNITS_FOUND_IN_ARM</span><span class="p">]</span>
                      <span class="n">uutnames</span> <span class="p">[</span><span class="n">uutnames</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading"></a></h2>
+<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>uutnames</kbd></dt>
 <dd><p class="sd-card-text">uuts</p>
@@ -107,7 +104,7 @@ Usage<div class="sd-summary-down docutils">
 </dl>
 </section>
 <section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>--pre</kbd></dt>
 <dd><p class="sd-card-text">pre-trigger samples</p>
@@ -236,7 +233,7 @@ Usage<div class="sd-summary-down docutils">
 </section>
 </div>
 </details><section id="module-user_apps.special.acq2106_mr">
-<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.special.acq2106_mr" title="Permalink to this heading"></a></h2>
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.special.acq2106_mr" title="Link to this heading"></a></h2>
 <p>configure and run a Multi Rate (MR) shot on one or more UUTs</p>
 <p>pre-requisite: transient capture configured on all boxes</p>
 <p>example:</p>
@@ -255,112 +252,112 @@ uut                   uut</p>
 –stl STL             stl file</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.timing">
-<span class="sig-name descname"><span class="pre">timing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#timing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.timing" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">timing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#timing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.timing" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.denormalise_stl">
-<span class="sig-name descname"><span class="pre">denormalise_stl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#denormalise_stl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.denormalise_stl" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">denormalise_stl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#denormalise_stl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.denormalise_stl" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.selects_trg_src">
-<span class="sig-name descname"><span class="pre">selects_trg_src</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#selects_trg_src"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.selects_trg_src" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">selects_trg_src</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#selects_trg_src"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.selects_trg_src" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.allows_one_wrtd">
-<span class="sig-name descname"><span class="pre">allows_one_wrtd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#allows_one_wrtd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.allows_one_wrtd" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">allows_one_wrtd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#allows_one_wrtd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.allows_one_wrtd" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.do_immediate_trigger">
-<span class="sig-name descname"><span class="pre">do_immediate_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#do_immediate_trigger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.do_immediate_trigger" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">do_immediate_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#do_immediate_trigger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.do_immediate_trigger" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_postprocess_command">
-<span class="sig-name descname"><span class="pre">run_postprocess_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uut_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_postprocess_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_postprocess_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_postprocess_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uut_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_postprocess_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_postprocess_command" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.open_safe">
-<span class="sig-name descname"><span class="pre">open_safe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#open_safe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.open_safe" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">open_safe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#open_safe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.open_safe" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.tune_action">
-<span class="sig-name descname"><span class="pre">tune_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tune_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tune_action" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tune_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tune_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tune_action" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.tune_up_mt">
-<span class="sig-name descname"><span class="pre">tune_up_mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tune_up_mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tune_up_mt" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tune_up_mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tune_up_mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tune_up_mt" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.tee_up_action">
-<span class="sig-name descname"><span class="pre">tee_up_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_action" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tee_up_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_action" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.tee_up_mt_action">
-<span class="sig-name descname"><span class="pre">tee_up_mt_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_mt_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_mt_action" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tee_up_mt_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_mt_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_mt_action" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.tee_up_mt">
-<span class="sig-name descname"><span class="pre">tee_up_mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_mt" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tee_up_mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#tee_up_mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.tee_up_mt" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.post_shot_check_action">
-<span class="sig-name descname"><span class="pre">post_shot_check_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#post_shot_check_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.post_shot_check_action" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">post_shot_check_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#post_shot_check_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.post_shot_check_action" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.post_shot_checks">
-<span class="sig-name descname"><span class="pre">post_shot_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#post_shot_checks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.post_shot_checks" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">post_shot_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#post_shot_checks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.post_shot_checks" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.arm_shot">
-<span class="sig-name descname"><span class="pre">arm_shot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shot_controller</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#arm_shot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.arm_shot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">arm_shot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shot_controller</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#arm_shot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.arm_shot" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_shot">
-<span class="sig-name descname"><span class="pre">run_shot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shot_controller</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_shot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_shot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_shot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shot_controller</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_shot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_shot" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_epics_offload">
-<span class="sig-name descname"><span class="pre">run_epics_offload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_epics_offload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_epics_offload" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_epics_offload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_epics_offload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_epics_offload" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_mdsplus_offload">
-<span class="sig-name descname"><span class="pre">run_mdsplus_offload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_mdsplus_offload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_mdsplus_offload" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_mdsplus_offload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_mdsplus_offload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_mdsplus_offload" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.connect" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.connect" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_mr">
-<span class="sig-name descname"><span class="pre">run_mr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_mr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_mr" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_mr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_mr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_mr" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.run_main">
-<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_main" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.run_main" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.special.acq2106_mr.get_parser">
-<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.get_parser" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/special/acq2106_mr.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.special.acq2106_mr.get_parser" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>

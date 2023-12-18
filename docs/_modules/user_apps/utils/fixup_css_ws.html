@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>user_apps.utils.fixup_css_ws &mdash; acq400_hapi aae86601b7b4611f2feb451bfafd648b6a2022e7 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom_style.css" type="text/css" />
+  <title>user_apps.utils.fixup_css_ws &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+
+  
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -85,7 +87,9 @@
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser">
+<a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.get_parser">[docs]</a>
+<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;acq400_remote_script&#39;</span><span class="p">)</span> 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span><span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;show more info&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--olduser&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;user name to change&quot;</span><span class="p">)</span>
@@ -93,6 +97,7 @@
 <span class="c1">#    parser.add_argument(&#39;--uuts&#39;, default=None, help=&quot;uuts to change [uut[1][,uut2[,uut3...]]]]&quot;)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;workspace[s] to change&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
+
    
 
 <span class="c1"># ASCII ROOLS OK, BackSlash, ForwardSlash</span>
@@ -114,7 +119,9 @@
 
 <span class="sd">&#39;&#39;&#39;</span>
 
-<div class="viewcode-block" id="fixup"><a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.fixup">[docs]</a><span class="k">def</span> <span class="nf">fixup</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ws</span><span class="p">):</span>
+<div class="viewcode-block" id="fixup">
+<a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.fixup">[docs]</a>
+<span class="k">def</span> <span class="nf">fixup</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ws</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fixup </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ws</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">ws</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
@@ -178,13 +185,17 @@
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">wmode</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
                     <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div>
 
+
           
-<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_main">
+<a class="viewcode-back" href="../../../user_apps.utils.fixup_css_ws.html#user_apps.utils.fixup_css_ws.run_main">[docs]</a>
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="c1">#args.pat = re.compile(r&#39;/home/pgm/&#39;)</span>
     <span class="n">args</span><span class="o">.</span><span class="n">pat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">olduser</span><span class="p">))</span>
     <span class="n">args</span><span class="o">.</span><span class="n">bpat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">((</span><span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">olduser</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">ws</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">ws</span><span class="p">:</span>
         <span class="n">fixup</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ws</span><span class="p">)</span></div>
+
     
     
 
