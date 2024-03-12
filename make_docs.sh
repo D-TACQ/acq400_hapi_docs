@@ -14,9 +14,9 @@ AUTHOR='D-Tacq'
 PROJECT='acq400_hapi'
 RELEASE='2.14.10'
 LANG='en'
-#REPO='https://github.com/D-TACQ/acq400_hapi'
+REPO='https://github.com/D-TACQ/acq400_hapi'
 
-REPO='https://github.com/D-TACQ/acq400_hapi -b doc' #until big merge
+#REPO='https://github.com/D-TACQ/acq400_hapi -b doc' #until big merge
 
 #REPO='https://github.com/sambelltacq/acq400_hapi -b SPHINX_CLEANUP' #for testing
 
@@ -46,6 +46,7 @@ rm $sphinx_root -rf
 
 git clone $REPO $PROJECT || true
 RELEASE=$(cd $PROJECT;git log -n 1 --pretty=format:"%H")
+echo Hello RELEASE $RELEASE
 
 
 #sphinx-quickstart generates conf.py, index.rst, source dir
