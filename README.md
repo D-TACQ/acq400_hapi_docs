@@ -21,6 +21,13 @@ Install dependencies:
     pip3 install sphinx-design
     pip3 install sphinx-rtd-theme
     pip3 install pykeystore pyepics
+    pip3 install flask
+    pip3 install pyepics
+    pip3 install xlsxwriter
+    pip3 install libpasteurize
+    pip3 install pasteurize
+    pip3 install prettytable pykeystore
+
 
     sudo apt install python3-matplotlib
     sudo apt install python3-flask
