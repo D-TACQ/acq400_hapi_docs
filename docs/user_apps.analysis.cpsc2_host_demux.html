@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>cpsc2_host_demux &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
@@ -16,12 +16,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/design-tabs.js?v=36754332"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/design-tabs.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="cpsc2_test" href="user_apps.analysis.cpsc2_test.html" />
@@ -79,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="cpsc2-host-demux">
-<h1>cpsc2_host_demux<a class="headerlink" href="#cpsc2-host-demux" title="Link to this heading"></a></h1>
+<h1>cpsc2_host_demux<a class="headerlink" href="#cpsc2-host-demux" title="Permalink to this heading"></a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Usage<div class="sd-summary-down docutils">
@@ -87,12 +87,12 @@ Usage<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cpsc2_host_demux</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nblks</span> <span class="n">NBLKS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">save</span> <span class="n">SAVE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">src</span> <span class="n">SRC</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">cycle</span> <span class="n">CYCLE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pchan</span> <span class="n">PCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">egu</span> <span class="n">EGU</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">xdt</span> <span class="n">XDT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">data_type</span> <span class="n">DATA_TYPE</span><span class="p">]</span>
-                           <span class="p">[</span><span class="o">--</span><span class="n">double_up</span> <span class="n">DOUBLE_UP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">plot_mpl</span> <span class="n">PLOT_MPL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">drive_letter</span> <span class="n">DRIVE_LETTER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">show_columns</span> <span class="n">SHOW_COLUMNS</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cpsc2_host_demux</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nblks</span> <span class="n">NBLKS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">save</span> <span class="n">SAVE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">src</span> <span class="n">SRC</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">cycle</span> <span class="n">CYCLE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pchan</span> <span class="n">PCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">egu</span> <span class="n">EGU</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">xdt</span> <span class="n">XDT</span><span class="p">]</span>
+                           <span class="p">[</span><span class="o">--</span><span class="n">data_type</span> <span class="n">DATA_TYPE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">double_up</span> <span class="n">DOUBLE_UP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">plot_mpl</span> <span class="n">PLOT_MPL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">drive_letter</span> <span class="n">DRIVE_LETTER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">show_columns</span> <span class="n">SHOW_COLUMNS</span><span class="p">]</span>
 </pre></div>
 </div>
 <section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading"></a></h2>
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>--nchan</kbd></dt>
 <dd><p class="sd-card-text">Default: 80</p>
@@ -145,7 +145,7 @@ Usage<div class="sd-summary-down docutils">
 </section>
 </div>
 </details><section id="module-user_apps.analysis.cpsc2_host_demux">
-<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.analysis.cpsc2_host_demux" title="Link to this heading"></a></h2>
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.analysis.cpsc2_host_demux" title="Permalink to this heading"></a></h2>
 <p>host_demux.py Demux Data on HOST Computer</p>
 <blockquote>
 <div><ul class="simple">
@@ -222,160 +222,160 @@ uut            uut</p>
 </dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.channel_required">
-<span class="sig-name descname"><span class="pre">channel_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#channel_required"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.channel_required" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">channel_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#channel_required"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.channel_required" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.create_npdata">
-<span class="sig-name descname"><span class="pre">create_npdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nblk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nchn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#create_npdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.create_npdata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_npdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nblk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nchn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#create_npdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.create_npdata" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.make_cycle_list">
-<span class="sig-name descname"><span class="pre">make_cycle_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_cycle_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_cycle_list" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">make_cycle_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_cycle_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_cycle_list" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.get_file_names">
-<span class="sig-name descname"><span class="pre">get_file_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#get_file_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.get_file_names" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_file_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#get_file_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.get_file_names" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.read_data">
-<span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCHAN</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#read_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.read_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCHAN</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#read_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.read_data" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.read_data_file">
-<span class="sig-name descname"><span class="pre">read_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCHAN</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#read_data_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.read_data_file" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">read_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCHAN</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#read_data_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.read_data_file" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.save_data">
-<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#save_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.save_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#save_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.save_data" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.decode_dac_data">
-<span class="sig-name descname"><span class="pre">decode_dac_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#decode_dac_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.decode_dac_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">decode_dac_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#decode_dac_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.decode_dac_data" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.decode_pass">
-<span class="sig-name descname"><span class="pre">decode_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#decode_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.decode_pass" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">decode_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#decode_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.decode_pass" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.ColumnHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.ColumnHandler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.ColumnHandler.decode">
-<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.decode" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.decode" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.ColumnHandler.title">
-<span class="sig-name descname"><span class="pre">title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.title" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.title" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.ColumnHandler.tostr">
-<span class="sig-name descname"><span class="pre">tostr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.tostr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.tostr" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tostr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#ColumnHandler.tostr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler.tostr" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PacketID_ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#PacketID_ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PacketID_ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#PacketID_ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler" title="user_apps.analysis.cpsc2_host_demux.ColumnHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnHandler</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#PacketID_ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#PacketID_ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.PacketID_ColumnHandler.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Payload_ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Payload_ColumnHandler</span></span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#user_apps.analysis.cpsc2_host_demux.ColumnHandler" title="user_apps.analysis.cpsc2_host_demux.ColumnHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnHandler</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.decode">
-<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.decode" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.decode" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.title">
-<span class="sig-name descname"><span class="pre">title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.title" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.title" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.tostr">
-<span class="sig-name descname"><span class="pre">tostr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.tostr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.tostr" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tostr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#Payload_ColumnHandler.tostr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.Payload_ColumnHandler.tostr" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.add_titlebox">
-<span class="sig-name descname"><span class="pre">add_titlebox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#add_titlebox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.add_titlebox" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_titlebox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#add_titlebox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.add_titlebox" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.make_columns">
-<span class="sig-name descname"><span class="pre">make_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_columns" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">make_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_columns" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.show_columns">
-<span class="sig-name descname"><span class="pre">show_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#show_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.show_columns" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">show_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#show_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.show_columns" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.plot_mpl">
-<span class="sig-name descname"><span class="pre">plot_mpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_mpl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_mpl" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_mpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_mpl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_mpl" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.plot_data_kst">
-<span class="sig-name descname"><span class="pre">plot_data_kst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_data_kst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_data_kst" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_data_kst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_data_kst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_data_kst" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.plot_data">
-<span class="sig-name descname"><span class="pre">plot_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#plot_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.plot_data" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.process_data">
-<span class="sig-name descname"><span class="pre">process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#process_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.process_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#process_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.process_data" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.make_pc_list">
-<span class="sig-name descname"><span class="pre">make_pc_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_pc_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_pc_list" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">make_pc_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#make_pc_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.make_pc_list" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.run_main">
-<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.run_main" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.run_main" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.cpsc2_host_demux.get_parser">
-<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.get_parser" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/cpsc2_host_demux.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.cpsc2_host_demux.get_parser" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -389,7 +389,7 @@ uut            uut</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

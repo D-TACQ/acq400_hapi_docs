@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.analysis.cluster_plotter &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -120,19 +120,14 @@
 <span class="p">}</span>
 <span class="n">data_globs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;?.??&#39;</span><span class="p">,</span><span class="s1">&#39;*.dat&#39;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="run_main">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.run_main">[docs]</a>
-<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">scaffold</span> <span class="o">=</span> <span class="n">build_scaffold</span><span class="p">(</span><span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
     <span class="n">demux</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">scaffold</span><span class="p">)</span>
     <span class="n">plot</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="build_scaffold">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.build_scaffold">[docs]</a>
-<span class="k">def</span> <span class="nf">build_scaffold</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">nchan</span><span class="p">,</span> <span class="n">cycles</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">secs</span><span class="p">,</span> <span class="n">offline</span><span class="p">,</span> <span class="n">egu</span><span class="p">,</span> <span class="n">spadlen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="build_scaffold"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.build_scaffold">[docs]</a><span class="k">def</span> <span class="nf">build_scaffold</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">nchan</span><span class="p">,</span> <span class="n">cycles</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">secs</span><span class="p">,</span> <span class="n">offline</span><span class="p">,</span> <span class="n">egu</span><span class="p">,</span> <span class="n">spadlen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;building&#39;</span><span class="p">)</span>
     <span class="n">scaffold</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
@@ -217,29 +212,20 @@
 
     <span class="k">return</span> <span class="n">scaffold</span></div>
 
-
-<div class="viewcode-block" id="identify_uut">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.identify_uut">[docs]</a>
-<span class="k">def</span> <span class="nf">identify_uut</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<div class="viewcode-block" id="identify_uut"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.identify_uut">[docs]</a><span class="k">def</span> <span class="nf">identify_uut</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">match</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;(acq[0-9]</span><span class="si">{4}</span><span class="s2">_[0-9]</span><span class="si">{3}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">match</span></div>
 
-
-<div class="viewcode-block" id="attach_api">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.attach_api">[docs]</a>
-<span class="k">def</span> <span class="nf">attach_api</span><span class="p">(</span><span class="n">uutname</span><span class="p">):</span>
+<div class="viewcode-block" id="attach_api"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.attach_api">[docs]</a><span class="k">def</span> <span class="nf">attach_api</span><span class="p">(</span><span class="n">uutname</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">uutname</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unable to connect to </span><span class="si">{</span><span class="n">uutname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span></div>
-
     
-<div class="viewcode-block" id="get_files">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_files">[docs]</a>
-<span class="k">def</span> <span class="nf">get_files</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<div class="viewcode-block" id="get_files"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_files">[docs]</a><span class="k">def</span> <span class="nf">get_files</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
     <span class="n">dat_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">data_glob</span> <span class="ow">in</span> <span class="n">data_globs</span><span class="p">:</span>
@@ -254,10 +240,7 @@
     <span class="n">first_cycle</span> <span class="o">=</span> <span class="n">get_first_cycle</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dat_files</span><span class="p">,</span> <span class="n">first_cycle</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">first_cycle</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">first_cycle</span><span class="o">.</span><span class="n">files</span></div>
 
-
-<div class="viewcode-block" id="get_first_cycle">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_first_cycle">[docs]</a>
-<span class="k">def</span> <span class="nf">get_first_cycle</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<div class="viewcode-block" id="get_first_cycle"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_first_cycle">[docs]</a><span class="k">def</span> <span class="nf">get_first_cycle</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">first_cycle</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;first_cycle&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">data_glob</span> <span class="ow">in</span> <span class="n">data_globs</span><span class="p">:</span>
@@ -266,10 +249,7 @@
                 <span class="k">return</span> <span class="n">first_cycle</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Error could not find first cycle&#39;</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="demux">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.demux">[docs]</a>
-<span class="k">def</span> <span class="nf">demux</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="n">chans</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="demux"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.demux">[docs]</a><span class="k">def</span> <span class="nf">demux</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="n">chans</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;demuxing&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">uut</span> <span class="ow">in</span> <span class="n">uuts</span><span class="p">:</span>
         <span class="n">item</span> <span class="o">=</span> <span class="n">scaffold</span><span class="p">[</span><span class="n">uut</span><span class="p">]</span>
@@ -285,10 +265,7 @@
             <span class="n">item</span><span class="p">[</span><span class="s1">&#39;num_chans&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">item</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">][</span><span class="n">chan</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">ichan</span><span class="p">::</span><span class="n">nchan</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="plot">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.plot">[docs]</a>
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="n">secs</span><span class="p">,</span> <span class="n">egu</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">plots</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">scaffold</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="n">secs</span><span class="p">,</span> <span class="n">egu</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">plots</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;plotting&#39;</span><span class="p">)</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Seconds&#39;</span> <span class="k">if</span> <span class="n">secs</span> <span class="k">else</span> <span class="s1">&#39;Samples&#39;</span>
@@ -366,11 +343,8 @@
     <span class="n">wrapper</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span></div>
-
         
-<div class="viewcode-block" id="list_of_channels">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.list_of_channels">[docs]</a>
-<span class="k">def</span> <span class="nf">list_of_channels</span><span class="p">(</span><span class="n">chans</span><span class="p">):</span>
+<div class="viewcode-block" id="list_of_channels"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.list_of_channels">[docs]</a><span class="k">def</span> <span class="nf">list_of_channels</span><span class="p">(</span><span class="n">chans</span><span class="p">):</span>
     <span class="n">channels</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">chan</span> <span class="ow">in</span> <span class="n">chans</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
         <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">chan</span><span class="p">:</span>
@@ -380,10 +354,7 @@
         <span class="n">channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">chan</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">channels</span></div>
 
-
-<div class="viewcode-block" id="prefix_number">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.prefix_number">[docs]</a>
-<span class="k">def</span> <span class="nf">prefix_number</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="prefix_number"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.prefix_number">[docs]</a><span class="k">def</span> <span class="nf">prefix_number</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="n">prefixes</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
         <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
@@ -394,10 +365,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="get_parser">
-<a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_parser">[docs]</a>
-<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.analysis.cluster_plotter.html#user_apps.analysis.cluster_plotter.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Plot data from a cluster of UUTs&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--src&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;/mnt/afhba.*/acq2?06_???&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;src dir&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--chans&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_of_channels</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;channels to plot 1,2,3-5&quot;</span><span class="p">)</span>
@@ -414,7 +382,6 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uuts&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uuts&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
 
-
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
 
@@ -427,7 +394,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

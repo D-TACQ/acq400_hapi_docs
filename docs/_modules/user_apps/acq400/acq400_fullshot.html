@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.acq400.acq400_fullshot &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -147,46 +147,29 @@
 
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span>
 
-<div class="viewcode-block" id="EnableExtTrgAction">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableExtTrgAction">[docs]</a>
-<span class="k">class</span> <span class="nc">EnableExtTrgAction</span><span class="p">:</span>
-<div class="viewcode-block" id="EnableExtTrgAction.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableExtTrgAction.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
+<div class="viewcode-block" id="EnableExtTrgAction"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableExtTrgAction">[docs]</a><span class="k">class</span> <span class="nc">EnableExtTrgAction</span><span class="p">:</span>
+<div class="viewcode-block" id="EnableExtTrgAction.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableExtTrgAction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s2">&quot;NONE&quot;</span>
 <span class="c1">#        while int(float(self.master.s0.SIG_TRG_EXT_ACTIVE.split(&quot; &quot;)[1])) == 1:</span>
         <span class="k">while</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">activepv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_TRG_EXT_ACTIVE</span><span class="p">):</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span></div>
-
         
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s2">&quot;EXT&quot;</span></div>
 
-
-<div class="viewcode-block" id="WrtdAction">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.WrtdAction">[docs]</a>
-<span class="k">class</span> <span class="nc">WrtdAction</span><span class="p">:</span>
-<div class="viewcode-block" id="WrtdAction.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.WrtdAction.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">,</span> <span class="n">max_triggers</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="WrtdAction"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.WrtdAction">[docs]</a><span class="k">class</span> <span class="nc">WrtdAction</span><span class="p">:</span>
+<div class="viewcode-block" id="WrtdAction.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.WrtdAction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">,</span> <span class="n">max_triggers</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_triggers</span> <span class="o">=</span> <span class="n">max_triggers</span></div>
-
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">wrtd_tx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_triggers</span></div>
 
-
-<div class="viewcode-block" id="NetworkFgAction">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.NetworkFgAction">[docs]</a>
-<span class="k">class</span> <span class="nc">NetworkFgAction</span><span class="p">:</span>
-<div class="viewcode-block" id="NetworkFgAction.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.NetworkFgAction.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">dnsname</span><span class="p">):</span>
+<div class="viewcode-block" id="NetworkFgAction"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.NetworkFgAction">[docs]</a><span class="k">class</span> <span class="nc">NetworkFgAction</span><span class="p">:</span>
+<div class="viewcode-block" id="NetworkFgAction.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.NetworkFgAction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">dnsname</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">uut</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fg</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Agilent33210A</span><span class="p">(</span><span class="n">dnsname</span><span class="p">)</span>        </div>
-
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">intpv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">TRANS_ACT_PRE</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">:</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -198,20 +181,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fg</span><span class="o">.</span><span class="n">trigger</span><span class="p">()</span></div>
 
 
-
 <span class="n">ST_DELAY</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SOFT_TRIGGER_DELAY&quot;</span><span class="p">,</span> <span class="s2">&quot;1.0&quot;</span><span class="p">))</span>
 
-<div class="viewcode-block" id="EnableSoftSoftTrgAction">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableSoftSoftTrgAction">[docs]</a>
-<span class="k">class</span> <span class="nc">EnableSoftSoftTrgAction</span><span class="p">:</span>
-<div class="viewcode-block" id="EnableSoftSoftTrgAction.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableSoftSoftTrgAction.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">):</span>
+<div class="viewcode-block" id="EnableSoftSoftTrgAction"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableSoftSoftTrgAction">[docs]</a><span class="k">class</span> <span class="nc">EnableSoftSoftTrgAction</span><span class="p">:</span>
+<div class="viewcode-block" id="EnableSoftSoftTrgAction.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.EnableSoftSoftTrgAction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">uut</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">trg</span> <span class="o">=</span> <span class="s1">&#39;1,1,1&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">event0</span> <span class="o">=</span> <span class="s1">&#39;1,1,1&#39;</span></div>
-
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">intpv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">TRANS_ACT_PRE</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">:</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -223,19 +200,13 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SOFT EVENT TRIGGER&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">soft_trigger</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div>
 
-
  
-<div class="viewcode-block" id="set_shot">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.set_shot">[docs]</a>
-<span class="k">def</span> <span class="nf">set_shot</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uuts</span><span class="p">):</span>
+<div class="viewcode-block" id="set_shot"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.set_shot">[docs]</a><span class="k">def</span> <span class="nf">set_shot</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uuts</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">shot</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">uuts</span><span class="p">:</span>
             <span class="n">u</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">shot</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">shot</span></div>
 
-
-<div class="viewcode-block" id="run_shot">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.run_shot">[docs]</a>
-<span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
+<div class="viewcode-block" id="run_shot"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.run_shot">[docs]</a><span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
 <span class="k">def</span> <span class="nf">run_shot</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uuts</span><span class="p">,</span> <span class="n">shot_controller</span><span class="p">,</span> <span class="n">trigger_action</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">capture</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -266,20 +237,14 @@
 
 
 
-
-<div class="viewcode-block" id="TriggerCountLogger">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TriggerCountLogger">[docs]</a>
-<span class="k">class</span> <span class="nc">TriggerCountLogger</span><span class="p">:</span>
+<div class="viewcode-block" id="TriggerCountLogger"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TriggerCountLogger">[docs]</a><span class="k">class</span> <span class="nc">TriggerCountLogger</span><span class="p">:</span>
     <span class="n">knobs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;SIG:TRG_EXT:&quot;</span><span class="p">,</span> <span class="s2">&quot;SIG:TRG_MB:&quot;</span><span class="p">,</span> <span class="s2">&quot;SIG:TRG_S1:&quot;</span><span class="p">)</span>
     
-<div class="viewcode-block" id="TriggerCountLogger.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TriggerCountLogger.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uuts</span><span class="p">):</span>
+<div class="viewcode-block" id="TriggerCountLogger.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TriggerCountLogger.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uuts</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uuts</span> <span class="o">=</span> <span class="n">uuts</span>
         <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">uuts</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">TriggerCountLogger</span><span class="o">.</span><span class="n">knobs</span><span class="p">:</span>
                 <span class="n">u</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">sr</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">RESET=1&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span></div>
-
         
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
@@ -289,27 +254,15 @@
                 
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trigger Check </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;GOOD&quot;</span> <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;FAIL&quot;</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="TimedShotController">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController">[docs]</a>
-<span class="k">class</span> <span class="nc">TimedShotController</span><span class="p">(</span><span class="n">acq400_hapi</span><span class="o">.</span><span class="n">ShotControllerWithDataHandler</span><span class="p">):</span>
-<div class="viewcode-block" id="TimedShotController.handle_data">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController.handle_data">[docs]</a>
-    <span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
+<div class="viewcode-block" id="TimedShotController"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController">[docs]</a><span class="k">class</span> <span class="nc">TimedShotController</span><span class="p">(</span><span class="n">acq400_hapi</span><span class="o">.</span><span class="n">ShotControllerWithDataHandler</span><span class="p">):</span>
+<div class="viewcode-block" id="TimedShotController.handle_data"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController.handle_data">[docs]</a>    <span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
     <span class="k">def</span> <span class="nf">handle_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">handle_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="TimedShotController.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uuts</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">_uuts</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="p">)</span></div>
-</div>
-
+<div class="viewcode-block" id="TimedShotController.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.TimedShotController.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uuts</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">_uuts</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="p">)</span></div></div>
          
-<div class="viewcode-block" id="upload">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.upload">[docs]</a>
-<span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
+<div class="viewcode-block" id="upload"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.upload">[docs]</a><span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
 <span class="k">def</span> <span class="nf">upload</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">shots</span><span class="p">,</span> <span class="n">doClose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">uuts</span> <span class="o">=</span> <span class="p">[</span><span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">]</span>
     <span class="p">[</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">exec_args</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="k">for</span> <span class="n">uut</span> <span class="ow">in</span> <span class="n">uuts</span> <span class="p">]</span>
@@ -364,13 +317,10 @@
         <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">uuts</span><span class="p">:</span>
             <span class="n">u</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-
 <span class="n">SOFT_TRIGGER</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SOFT_TRIGGER&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">))</span>
 <span class="n">CAPTURE</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CAPTURE&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
 
-<div class="viewcode-block" id="uniq">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.uniq">[docs]</a>
-<span class="k">def</span> <span class="nf">uniq</span><span class="p">(</span><span class="n">inp</span><span class="p">):</span>
+<div class="viewcode-block" id="uniq"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.uniq">[docs]</a><span class="k">def</span> <span class="nf">uniq</span><span class="p">(</span><span class="n">inp</span><span class="p">):</span>
     <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">inp</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">out</span><span class="p">:</span>
@@ -378,10 +328,7 @@
     <span class="k">return</span> <span class="n">out</span></div>
 
 
-
-<div class="viewcode-block" id="get_parser">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.get_parser">[docs]</a>
-<span class="k">def</span> <span class="nf">get_parser</span><span class="p">(</span><span class="n">argStr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">(</span><span class="n">argStr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Run a shot and capture data&#39;</span><span class="p">)</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">ShotControllerUI</span><span class="o">.</span><span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">transient</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -399,10 +346,7 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uuts&#39;</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uut[s]&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
 
-
-<div class="viewcode-block" id="run_main">
-<a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.run_main">[docs]</a>
-<span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.acq400.acq400_fullshot.html#user_apps.acq400.acq400_fullshot.run_main">[docs]</a><span class="nd">@acq400_hapi</span><span class="o">.</span><span class="n">timing</span>
 <span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>    
     <span class="c1"># deduplicate (yes, some non-optimal apps call with duplicated uuts, wastes time)</span>
     <span class="n">args</span><span class="o">.</span><span class="n">uuts</span> <span class="o">=</span> <span class="n">uniq</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">)</span>
@@ -415,7 +359,6 @@
             <span class="n">upload</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">doClose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">upload</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">shots</span><span class="p">)</span></div>
-
 
 <span class="c1"># execution starts here</span>
 
@@ -430,7 +373,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

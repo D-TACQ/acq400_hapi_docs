@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>analyse_burst &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
@@ -16,12 +16,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/design-tabs.js?v=36754332"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/design-tabs.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="analyse_stored_buffers" href="user_apps.analysis.analyse_stored_buffers.html" />
@@ -79,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="analyse-burst">
-<h1>analyse_burst<a class="headerlink" href="#analyse-burst" title="Link to this heading"></a></h1>
+<h1>analyse_burst<a class="headerlink" href="#analyse-burst" title="Permalink to this heading"></a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Usage<div class="sd-summary-down docutils">
@@ -87,13 +87,13 @@ Usage<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">analyse_burst</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">data_type</span> <span class="n">DATA_TYPE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span> <span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stack_plot</span> <span class="n">STACK_PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stack_off</span> <span class="n">STACK_OFF</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">check_range</span> <span class="n">CHECK_RANGE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">print_hash</span> <span class="n">PRINT_HASH</span><span class="p">]</span>
-                        <span class="p">[</span><span class="o">--</span><span class="n">fiducial_plot</span> <span class="n">FIDUCIAL_PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">uut</span> <span class="n">UUT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">analyse_burst</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">nchan</span> <span class="n">NCHAN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">data_type</span> <span class="n">DATA_TYPE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span> <span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stack_plot</span> <span class="n">STACK_PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">stack_off</span> <span class="n">STACK_OFF</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">check_range</span> <span class="n">CHECK_RANGE</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">print_hash</span> <span class="n">PRINT_HASH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">fiducial_plot</span> <span class="n">FIDUCIAL_PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">uut</span> <span class="n">UUT</span><span class="p">]</span>
                         <span class="n">data</span>
 </pre></div>
 </div>
 <section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading"></a></h2>
+<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>data</kbd></dt>
 <dd><p class="sd-card-text">data</p>
@@ -101,7 +101,7 @@ Usage<div class="sd-summary-down docutils">
 </dl>
 </section>
 <section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading"></a></h2>
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>--nchan</kbd></dt>
 <dd><p class="sd-card-text">Default: 32</p>
@@ -140,133 +140,133 @@ Usage<div class="sd-summary-down docutils">
 </section>
 </div>
 </details><section id="module-user_apps.analysis.analyse_burst">
-<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.analysis.analyse_burst" title="Link to this heading"></a></h2>
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.analysis.analyse_burst" title="Permalink to this heading"></a></h2>
 <p>Created on 20 Jul 2023</p>
 <p>&#64;author: pgm</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ES_STATS</span></span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ES_STATS</span></span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.the_stats">
-<span class="sig-name descname"><span class="pre">the_stats</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_stats" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">the_stats</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_stats" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.the_raw_ix">
-<span class="sig-name descname"><span class="pre">the_raw_ix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_raw_ix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">the_raw_ix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_raw_ix" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.the_sample_counts">
-<span class="sig-name descname"><span class="pre">the_sample_counts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_sample_counts" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">the_sample_counts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_sample_counts" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.the_clk_counts">
-<span class="sig-name descname"><span class="pre">the_clk_counts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_clk_counts" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">the_clk_counts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.the_clk_counts" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_es_fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_es_fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.print">
-<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.print"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.print" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.print"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.print" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.print_all">
-<span class="sig-name descname"><span class="pre">print_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.print_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.print_all" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">print_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.print_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.print_all" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.is_valid">
-<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.is_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.is_valid" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.is_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.is_valid" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.get_raw_ix">
-<span class="sig-name descname"><span class="pre">get_raw_ix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_raw_ix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_raw_ix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_raw_ix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_raw_ix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_raw_ix" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.get_sample_counts">
-<span class="sig-name descname"><span class="pre">get_sample_counts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_sample_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_sample_counts" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_sample_counts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_sample_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_sample_counts" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.get_clk_counts">
-<span class="sig-name descname"><span class="pre">get_clk_counts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_clk_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_clk_counts" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_clk_counts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_clk_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_clk_counts" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.ES_STATS.get_blen">
-<span class="sig-name descname"><span class="pre">get_blen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_blen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_blen" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_blen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#ES_STATS.get_blen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.ES_STATS.get_blen" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.is_valid_es">
-<span class="sig-name descname"><span class="pre">is_valid_es</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iraw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#is_valid_es"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.is_valid_es" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_valid_es</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iraw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#is_valid_es"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.is_valid_es" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.analyse_es">
-<span class="sig-name descname"><span class="pre">analyse_es</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_es</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse_es"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse_es" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">analyse_es</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_es</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse_es"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse_es" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.sample_count_plot">
-<span class="sig-name descname"><span class="pre">sample_count_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#sample_count_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.sample_count_plot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">sample_count_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#sample_count_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.sample_count_plot" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.timing_plot">
-<span class="sig-name descname"><span class="pre">timing_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#timing_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.timing_plot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">timing_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#timing_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.timing_plot" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.stack_plot">
-<span class="sig-name descname"><span class="pre">stack_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stackoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#stack_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.stack_plot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">stack_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stackoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#stack_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.stack_plot" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.correlate">
-<span class="sig-name descname"><span class="pre">correlate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_atol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_rtol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#correlate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.correlate" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">correlate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_atol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_rtol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#correlate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.correlate" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.analyse_fiducial">
-<span class="sig-name descname"><span class="pre">analyse_fiducial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse_fiducial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse_fiducial" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">analyse_fiducial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse_fiducial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse_fiducial" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.plot_timeseries">
-<span class="sig-name descname"><span class="pre">plot_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#plot_timeseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.plot_timeseries" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_adc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#plot_timeseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.plot_timeseries" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.analyse">
-<span class="sig-name descname"><span class="pre">analyse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">analyse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#analyse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.analyse" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.get_parser">
-<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.get_parser" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.get_parser" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.fix_args">
-<span class="sig-name descname"><span class="pre">fix_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#fix_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.fix_args" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fix_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#fix_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.fix_args" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.analysis.analyse_burst.run_main">
-<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.run_main" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/analysis/analyse_burst.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.analysis.analyse_burst.run_main" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -280,7 +280,7 @@ Usage<div class="sd-summary-down docutils">
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

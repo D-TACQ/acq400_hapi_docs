@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.acq2106.mgtdramshot &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -150,9 +150,7 @@
 
 <span class="n">MGT_BLOCK_BYTES</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq2106_Mgtdram8</span><span class="o">.</span><span class="n">MGT_BLOCK_BYTES</span>
 
-<div class="viewcode-block" id="logprint">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.logprint">[docs]</a>
-<span class="k">def</span> <span class="nf">logprint</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+<div class="viewcode-block" id="logprint"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.logprint">[docs]</a><span class="k">def</span> <span class="nf">logprint</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    logprint = 1: Print output only to stdout</span>
 <span class="sd">    logprint = 2: Print output to stdout, also save to config file.</span>
@@ -165,10 +163,7 @@
     <span class="k">return</span> <span class="kc">None</span></div>
 
 
-
-<div class="viewcode-block" id="make_data_dir">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.make_data_dir">[docs]</a>
-<span class="k">def</span> <span class="nf">make_data_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+<div class="viewcode-block" id="make_data_dir"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.make_data_dir">[docs]</a><span class="k">def</span> <span class="nf">make_data_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
@@ -177,10 +172,7 @@
         <span class="k">pass</span></div>
 
 
-
-<div class="viewcode-block" id="validate_streamed_data">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.validate_streamed_data">[docs]</a>
-<span class="k">def</span> <span class="nf">validate_streamed_data</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
+<div class="viewcode-block" id="validate_streamed_data"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.validate_streamed_data">[docs]</a><span class="k">def</span> <span class="nf">validate_streamed_data</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
     <span class="c1"># Using this method there is no detectable overhead.</span>
 
     <span class="n">compare_data</span> <span class="o">=</span> <span class="n">good_data</span> <span class="o">+</span> <span class="p">((</span><span class="n">cycle</span><span class="p">)</span> <span class="o">*</span> <span class="n">good_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -206,10 +198,7 @@
     <span class="k">return</span> <span class="kc">None</span></div>
 
 
-
-<div class="viewcode-block" id="UploadStatus">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadStatus">[docs]</a>
-<span class="k">def</span> <span class="nf">UploadStatus</span><span class="p">(</span><span class="n">report_interval</span><span class="p">):</span>
+<div class="viewcode-block" id="UploadStatus"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadStatus">[docs]</a><span class="k">def</span> <span class="nf">UploadStatus</span><span class="p">(</span><span class="n">report_interval</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="n">new_buf</span><span class="p">):</span>
         <span class="nb">filter</span><span class="o">.</span><span class="n">currentbytes</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_buf</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">filter</span><span class="o">.</span><span class="n">currentbytes</span> <span class="o">-</span> <span class="nb">filter</span><span class="o">.</span><span class="n">lastreport</span> <span class="o">&gt;</span> <span class="n">report_interval</span><span class="p">:</span>
@@ -219,10 +208,7 @@
     <span class="nb">filter</span><span class="o">.</span><span class="n">lastreport</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="nb">filter</span></div>
 
-
-<div class="viewcode-block" id="host_pull">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.host_pull">[docs]</a>
-<span class="k">def</span> <span class="nf">host_pull</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">shot</span><span class="p">):</span>
+<div class="viewcode-block" id="host_pull"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.host_pull">[docs]</a><span class="k">def</span> <span class="nf">host_pull</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">shot</span><span class="p">):</span>
     <span class="c1"># set up a RawClient to pull data from the mgtdram host_pull port.</span>
     <span class="n">rc</span> <span class="o">=</span> <span class="n">uut</span><span class="o">.</span><span class="n">create_mgtdram_pull_client</span><span class="p">()</span>
     <span class="n">uut_name</span> <span class="o">=</span> <span class="n">uut</span><span class="o">.</span><span class="n">uut</span>
@@ -277,25 +263,16 @@
     <span class="k">return</span> <span class="n">nread</span></div>
 
 
-
-<div class="viewcode-block" id="write_console">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.write_console">[docs]</a>
-<span class="k">def</span> <span class="nf">write_console</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+<div class="viewcode-block" id="write_console"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.write_console">[docs]</a><span class="k">def</span> <span class="nf">write_console</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
     <span class="c1"># explicit flush needed to avoid lockup on Windows.</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>
 
 
-
-<div class="viewcode-block" id="UploadFilter">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadFilter">[docs]</a>
-<span class="k">class</span> <span class="nc">UploadFilter</span><span class="p">:</span>
-<div class="viewcode-block" id="UploadFilter.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadFilter.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UploadFilter"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadFilter">[docs]</a><span class="k">class</span> <span class="nc">UploadFilter</span><span class="p">:</span>
+<div class="viewcode-block" id="UploadFilter.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.UploadFilter.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">okregex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;axi0 start OK ([0-9]</span><span class="si">{4}</span><span class="s2">) OK&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">line</span> <span class="o">=</span> <span class="mi">0</span></div>
-
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
         <span class="n">st</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
@@ -316,15 +293,9 @@
             <span class="n">write_console</span><span class="p">(</span><span class="s2">&quot;&gt;</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">line</span> <span class="o">=</span> <span class="mi">0</span></div>
 
-
-<div class="viewcode-block" id="AtFilter">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.AtFilter">[docs]</a>
-<span class="k">class</span> <span class="nc">AtFilter</span><span class="p">:</span>
-<div class="viewcode-block" id="AtFilter.__init__">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.AtFilter.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AtFilter"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.AtFilter">[docs]</a><span class="k">class</span> <span class="nc">AtFilter</span><span class="p">:</span>
+<div class="viewcode-block" id="AtFilter.__init__"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.AtFilter.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filter_regex_set</span> <span class="o">=</span> <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;@@@&quot;</span><span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;process&quot;</span><span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;log file&quot;</span><span class="p">))</span></div>
-
 
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
@@ -335,35 +306,23 @@
                 <span class="k">return</span>
         <span class="n">write_console</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="run_shot">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shot">[docs]</a>
-<span class="k">def</span> <span class="nf">run_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shot">[docs]</a><span class="k">def</span> <span class="nf">run_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="c1"># always capture over. The offload is zero based anyway, so add another one</span>
     <span class="n">uut</span><span class="o">.</span><span class="n">s14</span><span class="o">.</span><span class="n">mgt_run_shot</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">captureblocks</span>
     <span class="n">uut</span><span class="o">.</span><span class="n">run_mgt</span><span class="p">(</span><span class="n">AtFilter</span><span class="p">())</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="wait_shot">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.wait_shot">[docs]</a>
-<span class="k">def</span> <span class="nf">wait_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>    
+<div class="viewcode-block" id="wait_shot"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.wait_shot">[docs]</a><span class="k">def</span> <span class="nf">wait_shot</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>    
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">offloadblocks</span> <span class="o">!=</span> <span class="s1">&#39;capture&#39;</span><span class="p">:</span> 
         <span class="n">args</span><span class="o">.</span><span class="n">offloadblocks_count</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">intpv</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">BLT_BUFFERS_M</span><span class="p">)</span>
     <span class="n">uut</span><span class="o">.</span><span class="n">run_mgt</span><span class="p">(</span><span class="n">AtFilter</span><span class="p">(),</span> <span class="n">set_arm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span></div>
-
         
      
-<div class="viewcode-block" id="run_offload">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_offload">[docs]</a>
-<span class="k">def</span> <span class="nf">run_offload</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="p">):</span>
+<div class="viewcode-block" id="run_offload"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_offload">[docs]</a><span class="k">def</span> <span class="nf">run_offload</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">shot</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">host_pull</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">shot</span><span class="p">)</span>        </div>
 
-
-<div class="viewcode-block" id="run_shots">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shots">[docs]</a>
-<span class="k">def</span> <span class="nf">run_shots</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_shots"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shots">[docs]</a><span class="k">def</span> <span class="nf">run_shots</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">LOG</span>
     <span class="k">global</span> <span class="n">_logprint</span>
 <span class="c1">#    print(&quot;run_shots {}&quot;.format(args))</span>
@@ -427,19 +386,13 @@
 
     <span class="n">os</span><span class="o">.</span><span class="n">_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="run_shots1">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shots1">[docs]</a>
-<span class="k">def</span> <span class="nf">run_shots1</span><span class="p">(</span><span class="n">targs</span><span class="p">):</span>
+<div class="viewcode-block" id="run_shots1"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_shots1">[docs]</a><span class="k">def</span> <span class="nf">run_shots1</span><span class="p">(</span><span class="n">targs</span><span class="p">):</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mgtdram_</span><span class="si">{}</span><span class="s2">.log&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">targs</span><span class="o">.</span><span class="n">uut</span><span class="p">),</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">run_shots</span><span class="p">(</span><span class="n">targs</span><span class="p">)</span></div>
 
-
 <span class="kn">import</span> <span class="nn">copy</span>
 
-<div class="viewcode-block" id="trigger_when_armed">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.trigger_when_armed">[docs]</a>
-<span class="k">def</span> <span class="nf">trigger_when_armed</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="trigger_when_armed"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.trigger_when_armed">[docs]</a><span class="k">def</span> <span class="nf">trigger_when_armed</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">uuts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">]</span>
     <span class="n">top</span> <span class="o">=</span> <span class="n">uuts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         
@@ -462,10 +415,7 @@
      
     <span class="n">top</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s1">&#39;EXT&#39;</span>    </div>
 
-
-<div class="viewcode-block" id="prep_many">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.prep_many">[docs]</a>
-<span class="k">def</span> <span class="nf">prep_many</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="prep_many"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.prep_many">[docs]</a><span class="k">def</span> <span class="nf">prep_many</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">uuts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">]</span>
     <span class="n">top</span> <span class="o">=</span> <span class="n">uuts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
@@ -474,11 +424,8 @@
             <span class="n">u</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">shot</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">shot</span>
     <span class="n">top</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span>
     <span class="n">top</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG_DX</span> <span class="o">=</span> <span class="s1">&#39;d0&#39;</span></div>
-
         
-<div class="viewcode-block" id="control_many">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.control_many">[docs]</a>
-<span class="k">def</span> <span class="nf">control_many</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="control_many"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.control_many">[docs]</a><span class="k">def</span> <span class="nf">control_many</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">prep_many</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="n">ps</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1">#    ps = [mp.Process(target=trigger_when_armed, args=(args,))]</span>
@@ -498,10 +445,7 @@
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">:</span>
         <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="run_main">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_main">[docs]</a>
-<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">wait_shot</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">args</span><span class="o">.</span><span class="n">captureblocks</span> <span class="o">=</span> <span class="mi">0</span>
        
@@ -513,10 +457,7 @@
         <span class="n">args</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">uuts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">run_shots</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="get_parser">
-<a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.get_parser">[docs]</a>
-<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq2106.mgtdramshot.html#user_apps.acq2106.mgtdramshot.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;mgtdram test&#39;</span><span class="p">)</span>
     <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">Acq400UI</span><span class="o">.</span><span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--loop&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;loop count&quot;</span><span class="p">)</span>
@@ -540,7 +481,6 @@
                               <span class="s1">&#39;2: Save reduced log to log file.&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uuts&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uut &quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
-
     
 <span class="c1"># execution starts here</span>
 
@@ -555,7 +495,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

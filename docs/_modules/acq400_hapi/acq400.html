@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>acq400_hapi.acq400 &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../search.html" /> 
 </head>
@@ -112,16 +112,11 @@
 <span class="kn">import</span> <span class="nn">timeit</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<div class="viewcode-block" id="DataNotAvailableError">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.DataNotAvailableError">[docs]</a>
-<span class="k">class</span> <span class="nc">DataNotAvailableError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="DataNotAvailableError"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.DataNotAvailableError">[docs]</a><span class="k">class</span> <span class="nc">DataNotAvailableError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">pass</span></div>
 
 
-
-<div class="viewcode-block" id="AcqPorts">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.AcqPorts">[docs]</a>
-<span class="k">class</span> <span class="nc">AcqPorts</span><span class="p">:</span>
+<div class="viewcode-block" id="AcqPorts"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.AcqPorts">[docs]</a><span class="k">class</span> <span class="nc">AcqPorts</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;uut server port constants&quot;&quot;&quot;</span>
     <span class="n">TSTAT</span> <span class="o">=</span> <span class="mi">2235</span>
     <span class="n">STREAM</span> <span class="o">=</span> <span class="mi">4210</span>
@@ -153,10 +148,7 @@
     <span class="n">MGTDRAM_PULL_DATA</span> <span class="o">=</span> <span class="mi">53991</span>
     <span class="n">SLOWMON</span> <span class="o">=</span> <span class="mi">53666</span></div>
 
-
-<div class="viewcode-block" id="AcqSites">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.AcqSites">[docs]</a>
-<span class="k">class</span> <span class="nc">AcqSites</span><span class="p">:</span>
+<div class="viewcode-block" id="AcqSites"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.AcqSites">[docs]</a><span class="k">class</span> <span class="nc">AcqSites</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;uut site constants&quot;&quot;&quot;</span>
     <span class="n">SITE0</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">SITE1</span> <span class="o">=</span> <span class="mi">1</span>
@@ -171,10 +163,7 @@
     <span class="n">SITE_DSP</span> <span class="o">=</span> <span class="mi">14</span>
     <span class="n">SITE_HUDP</span> <span class="o">=</span> <span class="mi">10</span></div>
 
-
-<div class="viewcode-block" id="SF">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.SF">[docs]</a>
-<span class="k">class</span> <span class="nc">SF</span><span class="p">:</span>
+<div class="viewcode-block" id="SF"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.SF">[docs]</a><span class="k">class</span> <span class="nc">SF</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;uut system state constants&quot;&quot;&quot;</span>
     <span class="n">STATE</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">PRE</span> <span class="o">=</span> <span class="mi">1</span>
@@ -182,10 +171,7 @@
     <span class="n">ELAPSED</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">DEMUX</span> <span class="o">=</span> <span class="mi">5</span></div>
 
-
-<div class="viewcode-block" id="STATE">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.STATE">[docs]</a>
-<span class="k">class</span> <span class="nc">STATE</span><span class="p">:</span>
+<div class="viewcode-block" id="STATE"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.STATE">[docs]</a><span class="k">class</span> <span class="nc">STATE</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;transient state constants&quot;&quot;&quot;</span>
     <span class="n">IDLE</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">ARM</span> <span class="o">=</span> <span class="mi">1</span>
@@ -193,9 +179,7 @@
     <span class="n">RUNPOST</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">POPROCESS</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">CLEANUP</span> <span class="o">=</span> <span class="mi">5</span>
-<div class="viewcode-block" id="STATE.str">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.STATE.str">[docs]</a>
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="STATE.str"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.STATE.str">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">str</span><span class="p">(</span><span class="n">st</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">st</span><span class="o">==</span><span class="n">STATE</span><span class="o">.</span><span class="n">IDLE</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;IDLE&quot;</span>
@@ -209,36 +193,21 @@
             <span class="k">return</span> <span class="s2">&quot;POPROCESS&quot;</span>
         <span class="k">if</span> <span class="n">st</span><span class="o">==</span><span class="n">STATE</span><span class="o">.</span><span class="n">CLEANUP</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;CLEANUP&quot;</span>
-        <span class="k">return</span> <span class="s2">&quot;UNDEF&quot;</span></div>
-</div>
+        <span class="k">return</span> <span class="s2">&quot;UNDEF&quot;</span></div></div>
 
-
-<div class="viewcode-block" id="Signals">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Signals">[docs]</a>
-<span class="k">class</span> <span class="nc">Signals</span><span class="p">:</span>
+<div class="viewcode-block" id="Signals"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Signals">[docs]</a><span class="k">class</span> <span class="nc">Signals</span><span class="p">:</span>
     <span class="n">EXT_TRG_DX</span> <span class="o">=</span> <span class="s1">&#39;d0&#39;</span>
     <span class="n">INT_TRG_DX</span> <span class="o">=</span> <span class="s1">&#39;d1&#39;</span>
     <span class="n">MB_CLK_DX</span> <span class="o">=</span> <span class="s1">&#39;d1&#39;</span></div>
 
-
-<div class="viewcode-block" id="StreamClient">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.StreamClient">[docs]</a>
-<span class="k">class</span> <span class="nc">StreamClient</span><span class="p">(</span><span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamClient"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.StreamClient">[docs]</a><span class="k">class</span> <span class="nc">StreamClient</span><span class="p">(</span><span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;handles live streaming data&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="StreamClient.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.StreamClient.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;worktodo&quot;</span><span class="p">)</span></div>
-</div>
+<div class="viewcode-block" id="StreamClient.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.StreamClient.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;worktodo&quot;</span><span class="p">)</span></div></div>
 
-
-<div class="viewcode-block" id="RawClient">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient">[docs]</a>
-<span class="k">class</span> <span class="nc">RawClient</span><span class="p">(</span><span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">):</span>
+<div class="viewcode-block" id="RawClient"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient">[docs]</a><span class="k">class</span> <span class="nc">RawClient</span><span class="p">(</span><span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; handles raw data from any service port&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="RawClient.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+<div class="viewcode-block" id="RawClient.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init RawClient</span>
 
 <span class="sd">        Args:</span>
@@ -247,10 +216,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="RawClient.read">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.read">[docs]</a>
-    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nelems</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="RawClient.read"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nelems</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;read data from channel data server</span>
 
 <span class="sd">        Args:</span>
@@ -279,34 +245,21 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: early termination at </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">buf</span><span class="p">[:</span><span class="n">pos</span><span class="p">],</span> <span class="n">_dtype</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="RawClient.get_blocks">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.get_blocks">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_blocks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nelems</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="RawClient.get_blocks"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.RawClient.get_blocks">[docs]</a>    <span class="k">def</span> <span class="nf">get_blocks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nelems</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">block</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nelems</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="n">data_size</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">block</span></div>
-</div>
+                <span class="k">yield</span> <span class="n">block</span></div></div>
+
+
+<div class="viewcode-block" id="MgtDramPullClient"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.MgtDramPullClient">[docs]</a><span class="k">class</span> <span class="nc">MgtDramPullClient</span><span class="p">(</span><span class="n">RawClient</span><span class="p">):</span>
+<div class="viewcode-block" id="MgtDramPullClient.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.MgtDramPullClient.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+        <span class="n">RawClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">MGTDRAM_PULL_DATA</span><span class="p">)</span></div></div>
 
 
 
-<div class="viewcode-block" id="MgtDramPullClient">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.MgtDramPullClient">[docs]</a>
-<span class="k">class</span> <span class="nc">MgtDramPullClient</span><span class="p">(</span><span class="n">RawClient</span><span class="p">):</span>
-<div class="viewcode-block" id="MgtDramPullClient.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.MgtDramPullClient.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
-        <span class="n">RawClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">MGTDRAM_PULL_DATA</span><span class="p">)</span></div>
-</div>
-
-
-
-
-<div class="viewcode-block" id="ChannelClient">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ChannelClient">[docs]</a>
-<span class="k">class</span> <span class="nc">ChannelClient</span><span class="p">(</span><span class="n">RawClient</span><span class="p">):</span>
+<div class="viewcode-block" id="ChannelClient"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ChannelClient">[docs]</a><span class="k">class</span> <span class="nc">ChannelClient</span><span class="p">(</span><span class="n">RawClient</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;handles post shot data for one channel.</span>
 
 <span class="sd">    Args:</span>
@@ -315,31 +268,19 @@
 <span class="sd">        ch (int) : channel number 1..N</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="ChannelClient.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ChannelClient.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">ch</span><span class="p">):</span>
-        <span class="n">RawClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DATA0</span><span class="o">+</span><span class="n">ch</span><span class="p">)</span></div>
-</div>
+<div class="viewcode-block" id="ChannelClient.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ChannelClient.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">ch</span><span class="p">):</span>
+        <span class="n">RawClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DATA0</span><span class="o">+</span><span class="n">ch</span><span class="p">)</span></div></div>
 
 
 
-
-<div class="viewcode-block" id="ExitCommand">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ExitCommand">[docs]</a>
-<span class="k">class</span> <span class="nc">ExitCommand</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="ExitCommand"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ExitCommand">[docs]</a><span class="k">class</span> <span class="nc">ExitCommand</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">pass</span></div>
 
 
-
-<div class="viewcode-block" id="signal_handler">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.signal_handler">[docs]</a>
-<span class="k">def</span> <span class="nf">signal_handler</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+<div class="viewcode-block" id="signal_handler"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.signal_handler">[docs]</a><span class="k">def</span> <span class="nf">signal_handler</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
     <span class="k">raise</span> <span class="n">ExitCommand</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor">[docs]</a>
-<span class="k">class</span> <span class="nc">Statusmonitor</span><span class="p">:</span>
+<div class="viewcode-block" id="Statusmonitor"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor">[docs]</a><span class="k">class</span> <span class="nc">Statusmonitor</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; monitors the status channel</span>
 
 <span class="sd">    Efficient event-driven monitoring in a separate thread</span>
@@ -352,9 +293,7 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logclient</span><span class="p">)</span>
     
-<div class="viewcode-block" id="Statusmonitor.st_monitor">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.st_monitor">[docs]</a>
-    <span class="k">def</span> <span class="nf">st_monitor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.st_monitor"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.st_monitor">[docs]</a>    <span class="k">def</span> <span class="nf">st_monitor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_valid</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span>
 
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">quit_requested</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
@@ -423,41 +362,23 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status1</span></div>
 
 
-
-<div class="viewcode-block" id="Statusmonitor.get_state">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_state">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.get_state"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">STATE</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor.get_pre">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_pre">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_pre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.get_pre"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_pre">[docs]</a>    <span class="k">def</span> <span class="nf">get_pre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">PRE</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor.get_post">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_post">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.get_post"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_post">[docs]</a>    <span class="k">def</span> <span class="nf">get_post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">POST</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor.get_total">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_total">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.get_total"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pre</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor.get_elapsed">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_elapsed">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_elapsed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.get_elapsed"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.get_elapsed">[docs]</a>    <span class="k">def</span> <span class="nf">get_elapsed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">ELAPSED</span><span class="p">]</span></div>
 
 
-
-<div class="viewcode-block" id="Statusmonitor.wait_event">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_event">[docs]</a>
-    <span class="k">def</span> <span class="nf">wait_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">descr</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.wait_event"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_event">[docs]</a>    <span class="k">def</span> <span class="nf">wait_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">descr</span><span class="p">):</span>
     <span class="c1">#       print(&quot;wait_%s 02 %d&quot; % (descr, ev.is_set()))</span>
         <span class="k">while</span> <span class="n">ev</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">break_requested</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">quit_requested</span><span class="p">:</span>
@@ -466,29 +387,20 @@
 
 <span class="c1">#        print(&quot;wait_%s 88 %d&quot; % (descr, ev.is_set()))</span>
         <span class="n">ev</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
-
 <span class="c1">#        print(&quot;wait_%s 99 %d&quot; % (descr, ev.is_set()))</span>
 
-<div class="viewcode-block" id="Statusmonitor.wait_armed">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_armed">[docs]</a>
-    <span class="k">def</span> <span class="nf">wait_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.wait_armed"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_armed">[docs]</a>    <span class="k">def</span> <span class="nf">wait_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;blocks until uut is ARMED&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">armed</span><span class="p">,</span> <span class="s2">&quot;armed&quot;</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Statusmonitor.wait_stopped">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_stopped">[docs]</a>
-    <span class="k">def</span> <span class="nf">wait_stopped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.wait_stopped"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.wait_stopped">[docs]</a>    <span class="k">def</span> <span class="nf">wait_stopped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;blocks until uut is STOPPED&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stopped</span><span class="p">,</span> <span class="s2">&quot;stopped&quot;</span><span class="p">)</span></div>
-
 
     <span class="n">trace</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;STATUSMONITOR_TRACE&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="Statusmonitor.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">_status</span><span class="p">):</span>
+<div class="viewcode-block" id="Statusmonitor.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Statusmonitor.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">_status</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">break_requested</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">quit_requested</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="o">=</span> <span class="n">Statusmonitor</span><span class="o">.</span><span class="n">trace</span>
@@ -503,28 +415,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">st_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_valid</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">search_roi_count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">search_all_count</span> <span class="o">=</span> <span class="mi">0</span></div>
-</div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">search_all_count</span> <span class="o">=</span> <span class="mi">0</span></div></div>
 
 
-
-<div class="viewcode-block" id="NullFilter">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.NullFilter">[docs]</a>
-<span class="k">class</span> <span class="nc">NullFilter</span><span class="p">:</span>
+<div class="viewcode-block" id="NullFilter"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.NullFilter">[docs]</a><span class="k">class</span> <span class="nc">NullFilter</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__call__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">)</span></div>
 
-
 <span class="n">null_filter</span> <span class="o">=</span> <span class="n">NullFilter</span><span class="p">()</span>
 
-<div class="viewcode-block" id="ProcessMonitor">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor">[docs]</a>
-<span class="k">class</span> <span class="nc">ProcessMonitor</span><span class="p">:</span>
+<div class="viewcode-block" id="ProcessMonitor"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor">[docs]</a><span class="k">class</span> <span class="nc">ProcessMonitor</span><span class="p">:</span>
     <span class="n">st_rex</span> <span class="o">=</span> <span class="p">(</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^END&quot;</span> <span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^real&quot;</span><span class="p">))</span>
 
-<div class="viewcode-block" id="ProcessMonitor.st_monitor">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor.st_monitor">[docs]</a>
-    <span class="k">def</span> <span class="nf">st_monitor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ProcessMonitor.st_monitor"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor.st_monitor">[docs]</a>    <span class="k">def</span> <span class="nf">st_monitor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">quit_requested</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
             <span class="n">st</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logclient</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">output_filter</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
@@ -533,10 +436,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">quit_requested</span> <span class="o">=</span> <span class="kc">True</span>
                     <span class="k">break</span></div>
 
-
-<div class="viewcode-block" id="ProcessMonitor.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">_monport</span><span class="p">,</span>  <span class="n">_filter</span><span class="p">,</span> <span class="n">set_arm</span><span class="p">):</span>
+<div class="viewcode-block" id="ProcessMonitor.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.ProcessMonitor.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">_monport</span><span class="p">,</span>  <span class="n">_filter</span><span class="p">,</span> <span class="n">set_arm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init ProcessMonitor</span>
 
 <span class="sd">        Args:</span>
@@ -553,22 +453,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">st_thread</span><span class="o">.</span><span class="n">setDaemon</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">st_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">set_arm</span><span class="p">:</span>
-            <span class="n">_uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">BLT_SET_ARM</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div>
-</div>
+            <span class="n">_uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">BLT_SET_ARM</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div></div>
 
-
-<div class="viewcode-block" id="Acq400">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400">[docs]</a>
-<span class="k">class</span> <span class="nc">Acq400</span><span class="p">:</span>
+<div class="viewcode-block" id="Acq400"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400">[docs]</a><span class="k">class</span> <span class="nc">Acq400</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Host-side proxy for Acq400 uut.</span>
 
 <span class="sd">    acq400 discovers and maintains all site servers, maintains a monitor  and \</span>
 <span class="sd">    handles multiple channel post shot upload</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Acq400.init_site_client">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.init_site_client">[docs]</a>
-    <span class="k">def</span> <span class="nf">init_site_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.init_site_client"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.init_site_client">[docs]</a>    <span class="k">def</span> <span class="nf">init_site_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">):</span>
         <span class="n">svc</span> <span class="o">=</span> <span class="n">netclient</span><span class="o">.</span><span class="n">Siteclient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">SITE0</span><span class="o">+</span><span class="n">site</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">site</span><span class="p">]</span> <span class="o">=</span> <span class="n">svc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">=</span> <span class="n">svc</span>
@@ -578,10 +472,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mod_count</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.create_uuts">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.create_uuts">[docs]</a>
-    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Acq400.create_uuts"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.create_uuts">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_uuts</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">uut_names</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; create_uuts():  factory .. create them in parallel</span>
 
@@ -602,13 +493,10 @@
 
         <span class="k">return</span> <span class="n">uuts</span></div>
 
-
     <span class="n">uuts_methods</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c1"># for cloning by new</span>
     <span class="n">uuts</span> <span class="o">=</span> <span class="p">{}</span>                <span class="c1"># for re-use by factory</span>
 
-<div class="viewcode-block" id="Acq400.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init acq400</span>
 
 <span class="sd">        Args:</span>
@@ -666,10 +554,7 @@
         <span class="n">Acq400</span><span class="o">.</span><span class="n">uuts_methods</span><span class="p">[</span><span class="n">_uut</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>   <span class="c1"># store the dict for reuse by __init__</span>
         <span class="n">Acq400</span><span class="o">.</span><span class="n">uuts</span><span class="p">[</span><span class="n">_uut</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>                    <span class="c1"># store the object for reuse by factory()</span></div>
 
-
-<div class="viewcode-block" id="Acq400.close">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.close">[docs]</a>
-    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.close"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Closes uut connection gracefully&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">quit_reqested</span> <span class="o">=</span> <span class="kc">True</span>
 
@@ -690,7 +575,6 @@
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR </span><span class="si">{}</span><span class="s2"> instance not in cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">))</span></div>
 
-
 <span class="c1">#    def __del__(self):</span>
 <span class="c1">#        print(&quot;__del__ {}&quot;.format(self.uut))</span>
 <span class="c1">#        try:</span>
@@ -706,46 +590,23 @@
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&#39;</span><span class="si">{0}</span><span class="s2">&#39; object has no attribute &#39;</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 
-<div class="viewcode-block" id="Acq400.state">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.state">[docs]</a>
-    <span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.state"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.state">[docs]</a>    <span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">STATE</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="Acq400.post_samples">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.post_samples">[docs]</a>
-    <span class="k">def</span> <span class="nf">post_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.post_samples"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.post_samples">[docs]</a>    <span class="k">def</span> <span class="nf">post_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">POST</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="Acq400.pre_samples">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pre_samples">[docs]</a>
-    <span class="k">def</span> <span class="nf">pre_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.pre_samples"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pre_samples">[docs]</a>    <span class="k">def</span> <span class="nf">pre_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">PRE</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="Acq400.elapsed_samples">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.elapsed_samples">[docs]</a>
-    <span class="k">def</span> <span class="nf">elapsed_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.elapsed_samples"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.elapsed_samples">[docs]</a>    <span class="k">def</span> <span class="nf">elapsed_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">ELAPSED</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="Acq400.demux_status">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.demux_status">[docs]</a>
-    <span class="k">def</span> <span class="nf">demux_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.demux_status"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.demux_status">[docs]</a>    <span class="k">def</span> <span class="nf">demux_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="n">SF</span><span class="o">.</span><span class="n">DEMUX</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="Acq400.samples">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.samples">[docs]</a>
-    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.samples"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.samples">[docs]</a>    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_samples</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_samples</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="Acq400.get_aggregator_sites">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_aggregator_sites">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_aggregator_sites</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.get_aggregator_sites"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_aggregator_sites">[docs]</a>    <span class="k">def</span> <span class="nf">get_aggregator_sites</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">aggregator</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.fetch_all_calibration">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.fetch_all_calibration">[docs]</a>
-    <span class="k">def</span> <span class="nf">fetch_all_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.fetch_all_calibration"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.fetch_all_calibration">[docs]</a>    <span class="k">def</span> <span class="nf">fetch_all_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets uut calibration and stores in instance&quot;&quot;&quot;</span>
 <span class="c1">#        print(&quot;Fetching calibration data&quot;)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cal_eslo</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span>
@@ -754,10 +615,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">cal_eslo</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">AI_CAL_ESLO</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">:])</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cal_eoff</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">AI_CAL_EOFF</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">:])</span></div>
 
-
-<div class="viewcode-block" id="Acq400.scale_raw">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.scale_raw">[docs]</a>
-    <span class="k">def</span> <span class="nf">scale_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">volts</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.scale_raw"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.scale_raw">[docs]</a>    <span class="k">def</span> <span class="nf">scale_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">volts</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;ACQ43&quot;</span><span class="p">):</span>
                 <span class="n">rshift</span> <span class="o">=</span> <span class="mi">8</span>
@@ -772,10 +630,7 @@
             <span class="k">break</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">right_shift</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">rshift</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.chan2volts">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.chan2volts">[docs]</a>
-    <span class="k">def</span> <span class="nf">chan2volts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">raw</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.chan2volts"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.chan2volts">[docs]</a>    <span class="k">def</span> <span class="nf">chan2volts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">raw</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;returns calibrated volts for channel</span>
 
 <span class="sd">        Args:</span>
@@ -796,10 +651,7 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">eslo</span><span class="p">),</span> <span class="n">eoff</span><span class="p">)</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.read_chan">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_chan">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">nsam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.read_chan"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_chan">[docs]</a>    <span class="k">def</span> <span class="nf">read_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">nsam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reads a channels data</span>
 
 <span class="sd">        Args:</span>
@@ -833,10 +685,7 @@
 
         <span class="k">return</span> <span class="n">ccraw</span></div>
 
-
-<div class="viewcode-block" id="Acq400.read_decims">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_decims">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_decims</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.read_decims"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_decims">[docs]</a>    <span class="k">def</span> <span class="nf">read_decims</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">nsam</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">nsam</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_samples</span><span class="p">()</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">post_samples</span><span class="p">()</span>
         <span class="n">cc</span> <span class="o">=</span> <span class="n">ChannelClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DATAT</span><span class="o">-</span><span class="n">AcqPorts</span><span class="o">.</span><span class="n">DATA0</span><span class="p">)</span>
@@ -855,10 +704,7 @@
         <span class="k">return</span> <span class="n">ccraw</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.nchan">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.nchan">[docs]</a>
-    <span class="k">def</span> <span class="nf">nchan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.nchan"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.nchan">[docs]</a>    <span class="k">def</span> <span class="nf">nchan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;gets total number of channels</span>
 
 <span class="sd">        can include scratchpad</span>
@@ -873,10 +719,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nchan</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.data_size">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.data_size">[docs]</a>
-    <span class="k">def</span> <span class="nf">data_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.data_size"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.data_size">[docs]</a>    <span class="k">def</span> <span class="nf">data_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;gets data size</span>
 
 <span class="sd">        Returns:</span>
@@ -884,20 +727,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="mi">4</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">data32</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span> <span class="k">else</span> <span class="mi">2</span></div>
 
-
-<div class="viewcode-block" id="Acq400.uut_demux_enabled">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.uut_demux_enabled">[docs]</a>
-    <span class="k">def</span> <span class="nf">uut_demux_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.uut_demux_enabled"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.uut_demux_enabled">[docs]</a>    <span class="k">def</span> <span class="nf">uut_demux_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;returns demux status&quot;&quot;&quot;</span>
         <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">transient</span>
         <span class="n">rc</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">transient</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;DEMUX=&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
         <span class="c1">#print (&quot;uut_demux_enabled(): transient {} decoded DEMUX={} rc={}&quot;.format(ts, ts.split(&quot;DEMUX=&quot;,1)[1][0], rc))</span>
         <span class="k">return</span> <span class="n">rc</span></div>
 
-
-<div class="viewcode-block" id="Acq400.read_channels">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_channels">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_channels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">(),</span> <span class="n">nsam</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">localdemux</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.read_channels"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_channels">[docs]</a>    <span class="k">def</span> <span class="nf">read_channels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">(),</span> <span class="n">nsam</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">localdemux</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;read selected channels post shot data.</span>
 
 <span class="sd">        uut_demux_enabled() == False: UUT did NOT demux the data, data order [sample][channel]</span>
@@ -984,10 +821,7 @@
 
         <span class="k">return</span> <span class="n">chx</span></div>
 
-
-<div class="viewcode-block" id="Acq400.read_transient_timebase">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_transient_timebase">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_transient_timebase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.read_transient_timebase"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_transient_timebase">[docs]</a>    <span class="k">def</span> <span class="nf">read_transient_timebase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fs</span> <span class="o">=</span> <span class="n">freq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">ACQ480_OSR</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
@@ -997,19 +831,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">isi</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">fs</span> <span class="o">/</span> <span class="mf">1e3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span>  <span class="c1"># interval in seconds</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pre</span><span class="o">*</span><span class="n">isi</span><span class="p">,</span> <span class="p">(</span><span class="n">nsamples</span><span class="o">-</span><span class="n">pre</span><span class="p">)</span><span class="o">*</span><span class="n">isi</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">)</span></div>
-
     <span class="c1"># DEPRECATED</span>
-<div class="viewcode-block" id="Acq400.load_segments">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_segments">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segs</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_segments"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_segments">[docs]</a>    <span class="k">def</span> <span class="nf">load_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segs</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">SEGSW</span><span class="p">)</span> <span class="k">as</span> <span class="n">nc</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segs</span><span class="p">:</span>
                 <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">((</span><span class="n">seg</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
-
     <span class="c1"># DEPRECATED</span>
-<div class="viewcode-block" id="Acq400.show_segments">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.show_segments">[docs]</a>
-    <span class="k">def</span> <span class="nf">show_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.show_segments"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.show_segments">[docs]</a>    <span class="k">def</span> <span class="nf">show_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">SEGSR</span><span class="p">)</span> <span class="k">as</span> <span class="n">nc</span><span class="p">:</span>
             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="n">buf</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
@@ -1018,34 +846,22 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">break</span></div>
 
-
-<div class="viewcode-block" id="Acq400.clear_counters">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.clear_counters">[docs]</a>
-    <span class="k">def</span> <span class="nf">clear_counters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.clear_counters"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.clear_counters">[docs]</a>    <span class="k">def</span> <span class="nf">clear_counters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">sr</span><span class="p">(</span><span class="s1">&#39;*RESET=1&#39;</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.set_sync_routing_master">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing_master">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_sync_routing_master</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clk_dx</span><span class="o">=</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">trg_dx</span><span class="o">=</span><span class="s2">&quot;d0&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.set_sync_routing_master"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing_master">[docs]</a>    <span class="k">def</span> <span class="nf">set_sync_routing_master</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clk_dx</span><span class="o">=</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">trg_dx</span><span class="o">=</span><span class="s2">&quot;d0&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_CLK</span> <span class="o">=</span> <span class="s2">&quot;CLK&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_CLK_DX</span> <span class="o">=</span> <span class="n">clk_dx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG</span> <span class="o">=</span> <span class="s2">&quot;TRG&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG_DX</span> <span class="o">=</span> <span class="n">trg_dx</span></div>
 
-
-<div class="viewcode-block" id="Acq400.set_sync_routing_slave">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing_slave">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_sync_routing_slave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.set_sync_routing_slave"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing_slave">[docs]</a>    <span class="k">def</span> <span class="nf">set_sync_routing_slave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_sync_routing_master</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_CLK_1</span> <span class="o">=</span> <span class="s2">&quot;HDMI&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s2">&quot;HDMI&quot;</span></div>
 
-
-<div class="viewcode-block" id="Acq400.set_sync_routing">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_sync_routing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.set_sync_routing"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_sync_routing">[docs]</a>    <span class="k">def</span> <span class="nf">set_sync_routing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
         <span class="c1"># deprecated</span>
         <span class="c1"># set sync mode on HDMI daisychain</span>
         <span class="c1"># valid roles: master or slave</span>
@@ -1056,10 +872,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;undefined role </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">role</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="Acq400.set_mb_clk">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_mb_clk">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_mb_clk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hz</span><span class="o">=</span><span class="mi">4000000</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;zclk&quot;</span><span class="p">,</span> <span class="n">fin</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.set_mb_clk"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_mb_clk">[docs]</a>    <span class="k">def</span> <span class="nf">set_mb_clk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hz</span><span class="o">=</span><span class="mi">4000000</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;zclk&quot;</span><span class="p">,</span> <span class="n">fin</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
         <span class="n">hz</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hz</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">src</span> <span class="o">==</span> <span class="s2">&quot;zclk&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_ZCLK_SRC</span> <span class="o">=</span> <span class="s2">&quot;INT33M&quot;</span>
@@ -1083,10 +896,7 @@
                     <span class="k">return</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;frequency out of range </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hz</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="Acq400.load_stl">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_stl">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_stl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">wait_eof</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">wait_eol</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_stl"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_stl">[docs]</a>    <span class="k">def</span> <span class="nf">load_stl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">wait_eof</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">wait_eol</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Send a STL file to the specified port</span>
 
 <span class="sd">        Args:</span>
@@ -1127,10 +937,7 @@
 
 
 
-
-<div class="viewcode-block" id="Acq400.load_gpg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_gpg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_gpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_gpg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_gpg">[docs]</a>    <span class="k">def</span> <span class="nf">load_gpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Send stl to GPG port</span>
 
 <span class="sd">        Args:</span>
@@ -1140,10 +947,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">load_stl</span><span class="p">(</span><span class="n">stl</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">GPGSTL</span><span class="p">,</span> <span class="n">trace</span><span class="p">)</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.load_dpg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_dpg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_dpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_dpg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_dpg">[docs]</a>    <span class="k">def</span> <span class="nf">load_dpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Send stl to DPG port</span>
 
 <span class="sd">        Args:</span>
@@ -1152,40 +956,22 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_stl</span><span class="p">(</span><span class="n">stl</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DPGSTL</span><span class="p">,</span> <span class="n">trace</span><span class="p">,</span> <span class="n">wait_eol</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.load_wrpg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_wrpg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_wrpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_wrpg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_wrpg">[docs]</a>    <span class="k">def</span> <span class="nf">load_wrpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_stl</span><span class="p">(</span><span class="n">stl</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">WRPG</span><span class="p">,</span> <span class="n">trace</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.load_dio482pg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_dio482pg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_dio482pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_dio482pg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_dio482pg">[docs]</a>    <span class="k">def</span> <span class="nf">load_dio482pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_stl</span><span class="p">(</span><span class="n">stl</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DIO482_PG_STL</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">trace</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.set_DO">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_DO">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_DO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">dox</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.set_DO"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.set_DO">[docs]</a>    <span class="k">def</span> <span class="nf">set_DO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">dox</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span><span class="o">.</span><span class="n">set_knob</span><span class="p">(</span><span class="s2">&quot;DO_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dox</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.AwgBusyError">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.AwgBusyError">[docs]</a>
-    <span class="k">class</span> <span class="nc">AwgBusyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<div class="viewcode-block" id="Acq400.AwgBusyError.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.AwgBusyError.__init__">[docs]</a>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.AwgBusyError"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.AwgBusyError">[docs]</a>    <span class="k">class</span> <span class="nc">AwgBusyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.AwgBusyError.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.AwgBusyError.__init__">[docs]</a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span></div>
-
         <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.load_awg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_awg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_awg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">autorearm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">continuous</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.load_awg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.load_awg">[docs]</a>    <span class="k">def</span> <span class="nf">load_awg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">autorearm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">continuous</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Load and config a AWG pattern</span>
 
 <span class="sd">        Args:</span>
@@ -1212,10 +998,7 @@
                     <span class="k">break</span>
             <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="Acq400.run_service">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_service">[docs]</a>
-    <span class="k">def</span> <span class="nf">run_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">eof</span><span class="o">=</span><span class="s2">&quot;EOF&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.run_service"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_service">[docs]</a>    <span class="k">def</span> <span class="nf">run_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">eof</span><span class="o">=</span><span class="s2">&quot;EOF&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Run a service on the uut</span>
 
 <span class="sd">        Args:</span>
@@ -1240,10 +1023,7 @@
 
         <span class="k">return</span> <span class="n">txt</span></div>
 
-
-<div class="viewcode-block" id="Acq400.run_oneshot">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_oneshot">[docs]</a>
-    <span class="k">def</span> <span class="nf">run_oneshot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.run_oneshot"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_oneshot">[docs]</a>    <span class="k">def</span> <span class="nf">run_oneshot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">ONESHOT</span><span class="p">)</span> <span class="k">as</span> <span class="n">nc</span><span class="p">:</span>
             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="n">rx</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">receive_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NL</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
@@ -1253,10 +1033,7 @@
             <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">shutdown</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SHUT_RDWR</span><span class="p">)</span>
             <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-
-<div class="viewcode-block" id="Acq400.run_livetop">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_livetop">[docs]</a>
-    <span class="k">def</span> <span class="nf">run_livetop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.run_livetop"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.run_livetop">[docs]</a>    <span class="k">def</span> <span class="nf">run_livetop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">netclient</span><span class="o">.</span><span class="n">Netclient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">LIVETOP</span><span class="p">)</span> <span class="k">as</span> <span class="n">nc</span><span class="p">:</span>
             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="n">rx</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">receive_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NL</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
@@ -1267,28 +1044,19 @@
             <span class="n">nc</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.disable_trigger">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.disable_trigger">[docs]</a>
-    <span class="k">def</span> <span class="nf">disable_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.disable_trigger"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.disable_trigger">[docs]</a>    <span class="k">def</span> <span class="nf">disable_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1">#master.s0.SIG_SRC_TRG_0 = &#39;NONE&#39;</span>
         <span class="c1">#master.s0.SIG_SRC_TRG_1 = &#39;NONE&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_1</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span></div>
 
-
-<div class="viewcode-block" id="Acq400.enable_trigger">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.enable_trigger">[docs]</a>
-    <span class="k">def</span> <span class="nf">enable_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trg_0</span><span class="o">=</span><span class="s1">&#39;EXT&#39;</span><span class="p">,</span> <span class="n">trg_1</span><span class="o">=</span><span class="s1">&#39;STRIG&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.enable_trigger"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.enable_trigger">[docs]</a>    <span class="k">def</span> <span class="nf">enable_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trg_0</span><span class="o">=</span><span class="s1">&#39;EXT&#39;</span><span class="p">,</span> <span class="n">trg_1</span><span class="o">=</span><span class="s1">&#39;STRIG&#39;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">trg_0</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="n">trg_0</span>
         <span class="k">if</span> <span class="n">trg_1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_1</span> <span class="o">=</span> <span class="n">trg_1</span></div>
 
-
-<div class="viewcode-block" id="Acq400.configure_post">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_post">[docs]</a>
-    <span class="k">def</span> <span class="nf">configure_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.configure_post"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_post">[docs]</a>    <span class="k">def</span> <span class="nf">configure_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; Configure UUT for a regular transient capture</span>
 
 <span class="sd">        Args:</span>
@@ -1318,11 +1086,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_EVENT_SRC_0</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="k">return</span> <span class="kc">None</span></div>
-
     
-<div class="viewcode-block" id="Acq400.configure_pre_post">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_pre_post">[docs]</a>
-    <span class="k">def</span> <span class="nf">configure_pre_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">pre</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.configure_pre_post"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_pre_post">[docs]</a>    <span class="k">def</span> <span class="nf">configure_pre_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">pre</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Configure UUT for pre/post mode.</span>
 
 <span class="sd">        Default setup: soft trigger starts the data flow and trigger the event on a hard external trigger.</span>
@@ -1358,11 +1123,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">RGM</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Make sure RGM mode is turned off.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_EVENT_SRC_0</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="kc">None</span></div>
-
     
-<div class="viewcode-block" id="Acq400.configure_rtm">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_rtm">[docs]</a>
-    <span class="k">def</span> <span class="nf">configure_rtm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">rtm_translen</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">gpg</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.configure_rtm"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_rtm">[docs]</a>    <span class="k">def</span> <span class="nf">configure_rtm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">rtm_translen</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">gpg</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; Configure UUT for rtm mode.</span>
 
 <span class="sd">        Default setup: external trigger starts the capture and takes 5000 samples,\</span>
@@ -1402,10 +1164,7 @@
 
         <span class="k">return</span> <span class="kc">None</span></div>
 
-
-<div class="viewcode-block" id="Acq400.configure_transient">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_transient">[docs]</a>
-    <span class="k">def</span> <span class="nf">configure_transient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+<div class="viewcode-block" id="Acq400.configure_transient"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_transient">[docs]</a>    <span class="k">def</span> <span class="nf">configure_transient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
         <span class="n">sig_DX</span><span class="o">=</span><span class="s1">&#39;d0&#39;</span><span class="p">,</span> <span class="n">auto_soft_trigger</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">demux</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;rising&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; Configure uut for transient capture.</span>
 
@@ -1433,10 +1192,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">transient</span> <span class="o">=</span> <span class="s2">&quot;PRE=</span><span class="si">{}</span><span class="s2"> POST=</span><span class="si">{}</span><span class="s2"> SOFT_TRIGGER=</span><span class="si">{}</span><span class="s2"> DEMUX=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
             <span class="nb">format</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">auto_soft_trigger</span><span class="p">,</span> <span class="n">demux</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.configure_rgm">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_rgm">[docs]</a>
-    <span class="k">def</span> <span class="nf">configure_rgm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="s2">&quot;100000&quot;</span><span class="p">,</span> <span class="n">gpg</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.configure_rgm"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.configure_rgm">[docs]</a>    <span class="k">def</span> <span class="nf">configure_rgm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">event</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">post</span><span class="o">=</span><span class="s2">&quot;100000&quot;</span><span class="p">,</span> <span class="n">gpg</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Configure UUT for RGM mode</span>
 
 <span class="sd">        Args:</span>
@@ -1466,10 +1222,7 @@
 
         <span class="k">return</span> <span class="kc">None</span></div>
 
-
-<div class="viewcode-block" id="Acq400.get_demux_state">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_demux_state">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_demux_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.get_demux_state"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_demux_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_demux_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the current state of demux</span>
 
 <span class="sd">        Beware: if demux is set after the shot then this function will return the new state. There is no way to</span>
@@ -1479,11 +1232,8 @@
         <span class="n">transient</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">transient</span>
         <span class="n">demux_state</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;DEMUX=&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">demux_state</span><span class="p">)</span></div>
-
     
-<div class="viewcode-block" id="Acq400.pull_plot">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pull_plot">[docs]</a>
-    <span class="k">def</span> <span class="nf">pull_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">(),</span> <span class="n">demux</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.pull_plot"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pull_plot">[docs]</a>    <span class="k">def</span> <span class="nf">pull_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">(),</span> <span class="n">demux</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns an array of the specified channels and plots the data.</span>
 
 <span class="sd">        Pulls data from 53000 or 5300X and will return the corresponding data from each 5300X port \</span>
@@ -1517,10 +1267,7 @@
         <span class="k">return</span> <span class="n">data</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.read_muxed_data">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_muxed_data">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_muxed_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.read_muxed_data"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.read_muxed_data">[docs]</a>    <span class="k">def</span> <span class="nf">read_muxed_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;returns data from port 53000. </span>
 <span class="sd">        </span>
 <span class="sd">        Only use if demux is turned off.</span>
@@ -1528,10 +1275,7 @@
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_channels</span><span class="p">((</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Acq400.pull_data">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pull_data">[docs]</a>
-    <span class="k">def</span> <span class="nf">pull_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.pull_data"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.pull_data">[docs]</a>    <span class="k">def</span> <span class="nf">pull_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets data from all AI channels</span>
 
 <span class="sd">        Returns:</span>
@@ -1552,10 +1296,7 @@
         <span class="k">return</span> <span class="n">data</span></div>
 
 
-
-<div class="viewcode-block" id="Acq400.get_ai_channels">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_ai_channels">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_ai_channels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.get_ai_channels"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_ai_channels">[docs]</a>    <span class="k">def</span> <span class="nf">get_ai_channels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets total number of AI channels</span>
 
 <span class="sd">        nchan can sometimes include scratchpad</span>
@@ -1571,10 +1312,7 @@
 
         <span class="k">return</span> <span class="n">ai_channels</span></div>
 
-
-<div class="viewcode-block" id="Acq400.get_site_types">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_site_types">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_site_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.get_site_types"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_site_types">[docs]</a>    <span class="k">def</span> <span class="nf">get_site_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;gets all sites grouped by site type</span>
 
 <span class="sd">        Returns:</span>
@@ -1599,10 +1337,7 @@
         <span class="n">site_types</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;AISITES&quot;</span><span class="p">:</span> <span class="n">AISITES</span><span class="p">,</span> <span class="s2">&quot;AOSITES&quot;</span><span class="p">:</span> <span class="n">AOSITES</span><span class="p">,</span> <span class="s2">&quot;DIOSITES&quot;</span><span class="p">:</span> <span class="n">DIOSITES</span> <span class="p">}</span>
         <span class="k">return</span> <span class="n">site_types</span></div>
 
-
-<div class="viewcode-block" id="Acq400.get_es_indices">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_es_indices">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_es_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">human_readable</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">return_hex_string</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.get_es_indices"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.get_es_indices">[docs]</a>    <span class="k">def</span> <span class="nf">get_es_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">nchan</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">human_readable</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">return_hex_string</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the location of event samples.</span>
 
 <span class="sd">        Args:</span>
@@ -1663,10 +1398,7 @@
 
         <span class="k">return</span> <span class="p">[</span><span class="n">indices</span><span class="p">,</span> <span class="n">event_samples</span><span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Acq400.stream">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream">[docs]</a>
-    <span class="k">def</span> <span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recvlen</span><span class="o">=</span><span class="mi">4096</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">AcqPorts</span><span class="o">.</span><span class="n">STREAM</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.stream"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream">[docs]</a>    <span class="k">def</span> <span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recvlen</span><span class="o">=</span><span class="mi">4096</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">AcqPorts</span><span class="o">.</span><span class="n">STREAM</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Runs stream and yields data buffers</span>
 
 <span class="sd">        Args:</span>
@@ -1694,21 +1426,15 @@
                     <span class="n">view</span> <span class="o">=</span> <span class="n">view</span><span class="p">[</span><span class="n">nrx</span><span class="p">:]</span>
                     <span class="n">pos</span> <span class="o">+=</span> <span class="n">nrx</span>
             <span class="k">yield</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">buf</span><span class="p">[:</span><span class="n">pos</span><span class="p">],</span> <span class="n">dtype</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="Acq400.stream_close">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream_close">[docs]</a>
-    <span class="k">def</span> <span class="nf">stream_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.stream_close"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream_close">[docs]</a>    <span class="k">def</span> <span class="nf">stream_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream_nc</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stream_nc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stream_nc</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;stream_close(), sorry not possible to close it down ..&quot;</span><span class="p">)</span></div>
 
-
     <span class="c1"># if spad is set, it&#39;s a synthetic spad, not part of ssb</span>
-<div class="viewcode-block" id="Acq400.stream_slowmon">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream_slowmon">[docs]</a>
-    <span class="k">def</span> <span class="nf">stream_slowmon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nspad</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.stream_slowmon"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.stream_slowmon">[docs]</a>    <span class="k">def</span> <span class="nf">stream_slowmon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nspad</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">ssb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">ssb</span><span class="p">)</span>
         <span class="n">data_sz</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">data32</span><span class="p">)</span> <span class="k">else</span> <span class="mi">2</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">nspad</span><span class="p">:</span>
@@ -1744,17 +1470,12 @@
             <span class="n">spx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">sp_dtype</span><span class="p">)[</span><span class="n">spad_off</span><span class="p">:]</span>
             <span class="k">yield</span><span class="p">(</span><span class="n">chx</span><span class="p">,</span> <span class="n">spx</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq400.slowmon_close">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.slowmon_close">[docs]</a>
-    <span class="k">def</span> <span class="nf">slowmon_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq400.slowmon_close"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq400.slowmon_close">[docs]</a>    <span class="k">def</span> <span class="nf">slowmon_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slowmon_nc</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">slowmon_nc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">slowmon_nc</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slowmon_close(), sorry not possible to close it down ..&quot;</span><span class="p">)</span></div>
-</div>
-
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slowmon_close(), sorry not possible to close it down ..&quot;</span><span class="p">)</span></div></div>
 
 <span class="k">def</span> <span class="nf">pv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">_pv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
@@ -1763,41 +1484,28 @@
 <span class="c1">#deprecated</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
 
-<div class="viewcode-block" id="freqpv">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.freqpv">[docs]</a>
-<span class="k">def</span> <span class="nf">freqpv</span><span class="p">(</span><span class="n">sig</span><span class="p">):</span>
+<div class="viewcode-block" id="freqpv"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.freqpv">[docs]</a><span class="k">def</span> <span class="nf">freqpv</span><span class="p">(</span><span class="n">sig</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="floatpv">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.floatpv">[docs]</a>
-<span class="k">def</span> <span class="nf">floatpv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
+<div class="viewcode-block" id="floatpv"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.floatpv">[docs]</a><span class="k">def</span> <span class="nf">floatpv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">_pv</span><span class="p">))</span></div>
-
 
 <span class="k">def</span> <span class="nf">intpv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">_pv</span><span class="p">))</span>
 
-<div class="viewcode-block" id="activepv">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.activepv">[docs]</a>
-<span class="k">def</span> <span class="nf">activepv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
+<div class="viewcode-block" id="activepv"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.activepv">[docs]</a><span class="k">def</span> <span class="nf">activepv</span><span class="p">(</span><span class="n">_pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">_pv</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">0</span></div>
 
 
 
 
-
-<div class="viewcode-block" id="Acq2106">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106">[docs]</a>
-<span class="k">class</span> <span class="nc">Acq2106</span><span class="p">(</span><span class="n">Acq400</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106">[docs]</a><span class="k">class</span> <span class="nc">Acq2106</span><span class="p">(</span><span class="n">Acq400</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Acq2106 specialization of Acq400</span>
 
 <span class="sd">    Defines features specific to ACQ2106</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Acq2106.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">has_dsp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_comms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">has_wr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_hudp</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">has_dsp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_comms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">has_wr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_hudp</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init acq2106</span>
 
 <span class="sd">        Args:</span>
@@ -1831,10 +1539,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;uut </span><span class="si">{}</span><span class="s2"> site </span><span class="si">{}</span><span class="s2"> not populated&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_uut</span><span class="p">,</span> <span class="n">site</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">mod_count</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-
-<div class="viewcode-block" id="Acq2106.get_mgt_site">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.get_mgt_site">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_mgt_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mgt</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.get_mgt_site"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.get_mgt_site">[docs]</a>    <span class="k">def</span> <span class="nf">get_mgt_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mgt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;gets mgt site str from num</span>
 
 <span class="sd">        Args:</span>
@@ -1850,10 +1555,7 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">comms_config</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">mgt</span><span class="p">)]</span></div>
 
-
-<div class="viewcode-block" id="Acq2106.set_mb_clk">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_mb_clk">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_mb_clk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hz</span><span class="o">=</span><span class="mi">4000000</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;zclk&quot;</span><span class="p">,</span> <span class="n">fin</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.set_mb_clk"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_mb_clk">[docs]</a>    <span class="k">def</span> <span class="nf">set_mb_clk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hz</span><span class="o">=</span><span class="mi">4000000</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;zclk&quot;</span><span class="p">,</span> <span class="n">fin</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;set_mb_clk </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hz</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">fin</span><span class="p">))</span>
         <span class="n">Acq400</span><span class="o">.</span><span class="n">set_mb_clk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hz</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1862,27 +1564,18 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYS_CLK_DIST_CLK_SRC, deprecated&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SYS_CLK_OE_CLK1_ZYNQ</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div>
 
-
-<div class="viewcode-block" id="Acq2106.set_sync_routing_slave">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_sync_routing_slave">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_sync_routing_slave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.set_sync_routing_slave"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_sync_routing_slave">[docs]</a>    <span class="k">def</span> <span class="nf">set_sync_routing_slave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">Acq400</span><span class="o">.</span><span class="n">set_sync_routing_slave</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SYS_CLK_OE_CLK1_ZYNQ</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div>
 
-
-<div class="viewcode-block" id="Acq2106.set_master_trg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_master_trg">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_master_trg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trg</span><span class="p">,</span> <span class="n">edge</span> <span class="o">=</span> <span class="s2">&quot;rising&quot;</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.set_master_trg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_master_trg">[docs]</a>    <span class="k">def</span> <span class="nf">set_master_trg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trg</span><span class="p">,</span> <span class="n">edge</span> <span class="o">=</span> <span class="s2">&quot;rising&quot;</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">trg</span> <span class="o">==</span> <span class="s2">&quot;fp&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_0</span> <span class="o">=</span> <span class="s2">&quot;EXT&quot;</span> <span class="k">if</span> <span class="n">enabled</span> <span class="k">else</span> <span class="s2">&quot;HOSTB&quot;</span>
         <span class="k">elif</span> <span class="n">trg</span> <span class="o">==</span> <span class="s2">&quot;int&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_1</span> <span class="o">=</span> <span class="s2">&quot;STRIG&quot;</span></div>
 
 
-
-<div class="viewcode-block" id="Acq2106.set_MR">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_MR">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_MR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">,</span> <span class="n">evsel0</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">evsel1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">MR10DEC</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.set_MR"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.set_MR">[docs]</a>    <span class="k">def</span> <span class="nf">set_MR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">,</span> <span class="n">evsel0</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">evsel1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">MR10DEC</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">enable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">ACQ480_MR_EVSEL_0</span> <span class="o">=</span> <span class="s1">&#39;d</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evsel0</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">ACQ480_MR_EVSEL_1</span> <span class="o">=</span> <span class="s1">&#39;d</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evsel1</span><span class="p">)</span>
@@ -1890,10 +1583,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">ACQ480_MR_EN</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">ACQ480_MR_EN</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span></div>
-
-<div class="viewcode-block" id="Acq2106.wr_PPS_active">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.wr_PPS_active">[docs]</a>
-    <span class="k">def</span> <span class="nf">wr_PPS_active</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.wr_PPS_active"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.wr_PPS_active">[docs]</a>    <span class="k">def</span> <span class="nf">wr_PPS_active</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cC</span><span class="o">.</span><span class="n">WR_PPS_ACTIVE</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1.0&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1903,10 +1593,7 @@
             <span class="k">return</span> <span class="n">pps0</span> <span class="o">!=</span> <span class="n">pps1</span></div>
 
 
-
-<div class="viewcode-block" id="Acq2106.get_sys_info">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.get_sys_info">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_sys_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106.get_sys_info"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106.get_sys_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_sys_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets uut system information</span>
 
 <span class="sd">        Returns:</span>
@@ -1931,13 +1618,9 @@
                                 <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span><span class="o">.</span><span class="n">PART_NUM</span><span class="p">,</span>
                                 <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span><span class="o">.</span><span class="n">SERIAL</span><span class="p">)</span>
         <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">72</span>
-        <span class="k">return</span> <span class="n">info</span></div>
-</div>
+        <span class="k">return</span> <span class="n">info</span></div></div>
 
-
-<div class="viewcode-block" id="Acq2106_Mgtdram8">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8">[docs]</a>
-<span class="k">class</span> <span class="nc">Acq2106_Mgtdram8</span><span class="p">(</span><span class="n">Acq2106</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_Mgtdram8"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8">[docs]</a><span class="k">class</span> <span class="nc">Acq2106_Mgtdram8</span><span class="p">(</span><span class="n">Acq2106</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Mgtdram8 specialization of Acq2106</span>
 
 <span class="sd">    Defines features specific to Acq2106_Mgtdram8</span>
@@ -1945,9 +1628,7 @@
     <span class="n">MGT_BLOCK_BYTES</span> <span class="o">=</span> <span class="mh">0x400000</span>
     <span class="n">MGT_BLOCK_MULTIPLE</span> <span class="o">=</span> <span class="mi">16</span>
 
-<div class="viewcode-block" id="Acq2106_Mgtdram8.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_Mgtdram8.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init Acq2106_Mgtdram8</span>
 
 <span class="sd">        Args:</span>
@@ -1957,33 +1638,21 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">Acq2106</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="n">monitor</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="n">s0_client</span><span class="p">,</span> <span class="n">has_dsp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq2106_Mgtdram8.run_mgt">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.run_mgt">[docs]</a>
-    <span class="k">def</span> <span class="nf">run_mgt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span> <span class="o">=</span> <span class="n">null_filter</span><span class="p">,</span> <span class="n">set_arm</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_Mgtdram8.run_mgt"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.run_mgt">[docs]</a>    <span class="k">def</span> <span class="nf">run_mgt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span> <span class="o">=</span> <span class="n">null_filter</span><span class="p">,</span> <span class="n">set_arm</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">pm</span> <span class="o">=</span> <span class="n">ProcessMonitor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">MGTDRAM</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">set_arm</span><span class="p">)</span>
         <span class="k">while</span> <span class="n">pm</span><span class="o">.</span><span class="n">quit_requested</span> <span class="o">!=</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
 
+<div class="viewcode-block" id="Acq2106_Mgtdram8.create_mgtdram_pull_client"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.create_mgtdram_pull_client">[docs]</a>    <span class="k">def</span> <span class="nf">create_mgtdram_pull_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MgtDramPullClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">)</span></div></div>
 
-<div class="viewcode-block" id="Acq2106_Mgtdram8.create_mgtdram_pull_client">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_Mgtdram8.create_mgtdram_pull_client">[docs]</a>
-    <span class="k">def</span> <span class="nf">create_mgtdram_pull_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">MgtDramPullClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="p">)</span></div>
-</div>
-
-
-<div class="viewcode-block" id="Acq2106_TIGA">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA">[docs]</a>
-<span class="k">class</span> <span class="nc">Acq2106_TIGA</span><span class="p">(</span><span class="n">Acq2106</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_TIGA"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA">[docs]</a><span class="k">class</span> <span class="nc">Acq2106_TIGA</span><span class="p">(</span><span class="n">Acq2106</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;TIGA specialization of Acq2106</span>
 
 <span class="sd">    Defines features specific to Acq2106_TIGA</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Acq2106_TIGA.__init__">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_TIGA.__init__"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;init Acq2106_TIGA</span>
 
 <span class="sd">        Args:</span>
@@ -1994,24 +1663,14 @@
         <span class="n">Acq2106</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="n">monitor</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="n">s0_client</span><span class="p">,</span> <span class="n">has_wr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pg_sites</span> <span class="o">=</span> <span class="p">[</span> <span class="n">sx</span> <span class="k">for</span> <span class="n">sx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">sx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sites</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sx</span><span class="p">)]</span><span class="o">.</span><span class="n">MTYPE</span> <span class="o">==</span> <span class="s1">&#39;7B&#39;</span> <span class="p">]</span></div>
 
-
-<div class="viewcode-block" id="Acq2106_TIGA.load_dio482pg">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.load_dio482pg">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_dio482pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Acq2106_TIGA.load_dio482pg"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.load_dio482pg">[docs]</a>    <span class="k">def</span> <span class="nf">load_dio482pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">stl</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_stl</span><span class="p">(</span><span class="n">stl</span><span class="p">,</span> <span class="n">AcqPorts</span><span class="o">.</span><span class="n">DIO482_PG_STL</span><span class="o">+</span><span class="n">site</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">trace</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Acq2106_TIGA.set_DO">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.set_DO">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_DO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">dox</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span><span class="o">.</span><span class="n">set_knob</span><span class="p">(</span><span class="s2">&quot;DO_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dox</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span></div>
-</div>
+<div class="viewcode-block" id="Acq2106_TIGA.set_DO"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.Acq2106_TIGA.set_DO">[docs]</a>    <span class="k">def</span> <span class="nf">set_DO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">dox</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="s2">&quot;s</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">)]</span><span class="o">.</span><span class="n">set_knob</span><span class="p">(</span><span class="s2">&quot;DO_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dox</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span></div></div>
 
 
-
-<div class="viewcode-block" id="run_unit_test">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.run_unit_test">[docs]</a>
-<span class="k">def</span> <span class="nf">run_unit_test</span><span class="p">():</span>
+<div class="viewcode-block" id="run_unit_test"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.run_unit_test">[docs]</a><span class="k">def</span> <span class="nf">run_unit_test</span><span class="p">():</span>
     <span class="n">SERVER_ADDRESS</span> <span class="o">=</span> <span class="s1">&#39;10.12.132.22&#39;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">SERVER_ADDRESS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -2029,20 +1688,14 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SITE:</span><span class="si">%s</span><span class="s2"> MODEL:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">uut</span><span class="o">.</span><span class="n">svc</span><span class="p">[</span><span class="n">sx</span><span class="p">]</span><span class="o">.</span><span class="n">sr</span><span class="p">(</span><span class="s2">&quot;MODEL&quot;</span><span class="p">)))</span></div>
 
 
-
-<div class="viewcode-block" id="sigsel">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.sigsel">[docs]</a>
-<span class="k">def</span> <span class="nf">sigsel</span><span class="p">(</span><span class="n">enable</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="sigsel"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.sigsel">[docs]</a><span class="k">def</span> <span class="nf">sigsel</span><span class="p">(</span><span class="n">enable</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">site</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enable</span><span class="p">,</span> <span class="n">site</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enable</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span></div>
 
 
-
-<div class="viewcode-block" id="factory">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.factory">[docs]</a>
-<span class="k">def</span> <span class="nf">factory</span><span class="p">(</span><span class="n">_uut</span><span class="p">):</span>
+<div class="viewcode-block" id="factory"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.factory">[docs]</a><span class="k">def</span> <span class="nf">factory</span><span class="p">(</span><span class="n">_uut</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;deduce what sort of uut this is and invoke the appropriate class</span>
 
 <span class="sd">    Preferred to init hapi instance</span>
@@ -2099,31 +1752,18 @@
               <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">FW is older than necessary. Using default acq2106 settings.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Acq2106</span><span class="p">(</span><span class="n">_uut</span><span class="p">,</span> <span class="n">s0_client</span><span class="o">=</span><span class="n">s0</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="get_hapi">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.get_hapi">[docs]</a>
-<span class="k">def</span> <span class="nf">get_hapi</span><span class="p">():</span>
+<div class="viewcode-block" id="get_hapi"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.get_hapi">[docs]</a><span class="k">def</span> <span class="nf">get_hapi</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39; find instance of hapi &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="freq">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.freq">[docs]</a>
-<span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">sig</span><span class="p">):</span>
+<div class="viewcode-block" id="freq"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.freq">[docs]</a><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">sig</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span></div>
 
-
-<div class="viewcode-block" id="intpv">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.intpv">[docs]</a>
-<span class="k">def</span> <span class="nf">intpv</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
+<div class="viewcode-block" id="intpv"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.intpv">[docs]</a><span class="k">def</span> <span class="nf">intpv</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span></div>
 
-
-<div class="viewcode-block" id="pv">
-<a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.pv">[docs]</a>
-<span class="k">def</span> <span class="nf">pv</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
+<div class="viewcode-block" id="pv"><a class="viewcode-back" href="../../acq400_hapi.acq400.html#acq400_hapi.acq400.pv">[docs]</a><span class="k">def</span> <span class="nf">pv</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span></div>
-
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_unit_test</span><span class="p">()</span>
@@ -2136,7 +1776,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

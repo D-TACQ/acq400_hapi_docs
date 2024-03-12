@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>hudp_setup &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
@@ -16,12 +16,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/design-tabs.js?v=36754332"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/design-tabs.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="load_wrpg_stl" href="user_apps.acq2106.load_wrpg_stl.html" />
@@ -79,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="hudp-setup">
-<h1>hudp_setup<a class="headerlink" href="#hudp-setup" title="Link to this heading"></a></h1>
+<h1>hudp_setup<a class="headerlink" href="#hudp-setup" title="Permalink to this heading"></a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Usage<div class="sd-summary-down docutils">
@@ -87,13 +87,13 @@ Usage<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">hudp_setup</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">netmask</span> <span class="n">NETMASK</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tx_ip</span> <span class="n">TX_IP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">rx_ip</span> <span class="n">RX_IP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">gw</span> <span class="n">GW</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">port</span> <span class="n">PORT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">run0</span> <span class="n">RUN0</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">play0</span> <span class="n">PLAY0</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">broadcast</span> <span class="n">BROADCAST</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">disco</span> <span class="n">DISCO</span><span class="p">]</span>
-                     <span class="p">[</span><span class="o">--</span><span class="n">hudp_relay</span> <span class="n">HUDP_RELAY</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">spp</span> <span class="n">SPP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">hudp_decim</span> <span class="n">HUDP_DECIM</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">hudp_setup</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">netmask</span> <span class="n">NETMASK</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tx_ip</span> <span class="n">TX_IP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">rx_ip</span> <span class="n">RX_IP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">gw</span> <span class="n">GW</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">port</span> <span class="n">PORT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">run0</span> <span class="n">RUN0</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">play0</span> <span class="n">PLAY0</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">broadcast</span> <span class="n">BROADCAST</span><span class="p">]</span>
+                     <span class="p">[</span><span class="o">--</span><span class="n">disco</span> <span class="n">DISCO</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">hudp_relay</span> <span class="n">HUDP_RELAY</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">spp</span> <span class="n">SPP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">hudp_decim</span> <span class="n">HUDP_DECIM</span><span class="p">]</span>
                      <span class="n">txuut</span> <span class="n">rxuut</span>
 </pre></div>
 </div>
 <section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading"></a></h2>
+<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>txuut</kbd></dt>
 <dd><p class="sd-card-text">transmit uut (if it’s a PC, type one of (‘none’, ‘pc’))</p>
@@ -104,7 +104,7 @@ Usage<div class="sd-summary-down docutils">
 </dl>
 </section>
 <section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading"></a></h2>
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
 <dl class="option-list">
 <dt><kbd>--netmask</kbd></dt>
 <dd><p class="sd-card-text">netmask</p>
@@ -155,7 +155,7 @@ Usage<div class="sd-summary-down docutils">
 </section>
 </div>
 </details><section id="module-user_apps.acq2106.hudp_setup">
-<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.acq2106.hudp_setup" title="Link to this heading"></a></h2>
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.acq2106.hudp_setup" title="Permalink to this heading"></a></h2>
 <p>hudp_setup.py : configure Hardware UDP</p>
 <p>hudp_setup.py [opts] TXUUT RXUUT</p>
 <p>sets up a one way transfer from TXUUT to RXUUT</p>
@@ -230,37 +230,37 @@ rxuut                 transmit uut</p>
 –hudp_decim HUDP_DECIM  hudp decimation, 1..16 (default: 1)</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.hudp_init">
-<span class="sig-name descname"><span class="pre">hudp_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#hudp_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.hudp_init" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">hudp_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#hudp_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.hudp_init" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.hudp_enable">
-<span class="sig-name descname"><span class="pre">hudp_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#hudp_enable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.hudp_enable" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">hudp_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#hudp_enable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.hudp_enable" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.ip_broadcast">
-<span class="sig-name descname"><span class="pre">ip_broadcast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#ip_broadcast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.ip_broadcast" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ip_broadcast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#ip_broadcast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.ip_broadcast" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.config_tx_uut">
-<span class="sig-name descname"><span class="pre">config_tx_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txuut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#config_tx_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.config_tx_uut" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">config_tx_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txuut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#config_tx_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.config_tx_uut" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.config_rx_uut">
-<span class="sig-name descname"><span class="pre">config_rx_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rxuut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#config_rx_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.config_rx_uut" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">config_rx_uut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rxuut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#config_rx_uut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.config_rx_uut" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.run_main">
-<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.run_main" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.run_main" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="user_apps.acq2106.hudp_setup.get_parser">
-<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.get_parser" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq2106/hudp_setup.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq2106.hudp_setup.get_parser" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -274,7 +274,7 @@ rxuut                 transmit uut</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.analysis.cs_demux &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -149,15 +149,10 @@
 
 <span class="c1"># ES spans two samples, check the lot.</span>
 
-<div class="viewcode-block" id="isES">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isES">[docs]</a>
-<span class="k">def</span> <span class="nf">isES</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<div class="viewcode-block" id="isES"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isES">[docs]</a><span class="k">def</span> <span class="nf">isES</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">_isES</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">:])</span> <span class="ow">and</span> <span class="n">_isES</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span></div>
 
-
-<div class="viewcode-block" id="find_zero_index">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.find_zero_index">[docs]</a>
-<span class="k">def</span> <span class="nf">find_zero_index</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="find_zero_index"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.find_zero_index">[docs]</a><span class="k">def</span> <span class="nf">find_zero_index</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="c1"># This function finds the first 0xaa55f154 short value in the data and then</span>
     <span class="c1"># uses its position to check the index before this event sample and the</span>
     <span class="c1"># index after this event sample and checks the latter is one greater</span>
@@ -201,10 +196,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: we do not want to be here&quot;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="find_all_es">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.find_all_es">[docs]</a>
-<span class="k">def</span> <span class="nf">find_all_es</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="find_all_es"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.find_all_es">[docs]</a><span class="k">def</span> <span class="nf">find_all_es</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">hits</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">pos0</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -214,10 +206,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ES#</span><span class="si">{:4d}</span><span class="s2">: </span><span class="si">{:6d}</span><span class="s2"> </span><span class="si">{:8.1f}</span><span class="s2">  len:</span><span class="si">{:6.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hits</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">pos</span><span class="o">/</span><span class="n">LPS</span><span class="p">,</span> <span class="p">(</span><span class="n">pos</span><span class="o">-</span><span class="n">pos0</span><span class="p">)</span><span class="o">/</span><span class="n">LPS</span><span class="p">))</span>
             <span class="n">pos0</span> <span class="o">=</span> <span class="n">pos</span> </div>
 
-
-<div class="viewcode-block" id="extract_bursts">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.extract_bursts">[docs]</a>
-<span class="k">def</span> <span class="nf">extract_bursts</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="extract_bursts"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.extract_bursts">[docs]</a><span class="k">def</span> <span class="nf">extract_bursts</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">burst32</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">transient_length</span><span class="o">*</span><span class="n">LPS</span>
     <span class="n">burst16</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">transient_length</span><span class="o">*</span><span class="n">SPS</span>
     <span class="n">burst_es</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">transient_length</span><span class="o">*</span><span class="n">LPS</span> <span class="o">+</span> <span class="n">ESL</span>
@@ -257,21 +246,15 @@
     <span class="k">for</span> <span class="n">ic</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span> <span class="n">ch</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">data</span></div>
-
         
-<div class="viewcode-block" id="save_data">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.save_data">[docs]</a>
-<span class="k">def</span> <span class="nf">save_data</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="save_data"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.save_data">[docs]</a><span class="k">def</span> <span class="nf">save_data</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
         <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">_cooked&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="n">ch</span><span class="p">),</span> <span class="n">data</span><span class="p">[</span><span class="n">ch</span><span class="p">])</span>
     
     <span class="k">return</span> <span class="kc">None</span></div>
 
 
-
-<div class="viewcode-block" id="get_plot_timebase">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.get_plot_timebase">[docs]</a>
-<span class="k">def</span> <span class="nf">get_plot_timebase</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="get_plot_timebase"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.get_plot_timebase">[docs]</a><span class="k">def</span> <span class="nf">get_plot_timebase</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">maxlen</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
  
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot_facets</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
@@ -282,11 +265,8 @@
         <span class="n">plen</span> <span class="o">=</span> <span class="n">maxlen</span>
     <span class="n">tt</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">plen</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">plen</span><span class="p">,</span> <span class="n">tt</span> </div>
-
    
-<div class="viewcode-block" id="plot_data">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.plot_data">[docs]</a>
-<span class="k">def</span> <span class="nf">plot_data</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="plot_data"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.plot_data">[docs]</a><span class="k">def</span> <span class="nf">plot_data</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;Demuxed channels from acq1001&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot; rev2 with embedded D1,D2&quot;</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">msb_direct</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">file:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_file</span><span class="p">),</span>
         <span class="s2">&quot;CH01 </span><span class="se">\n</span><span class="s2"> (Sampled </span><span class="se">\n</span><span class="s2"> FACET)&quot;</span><span class="p">,</span>
@@ -322,10 +302,7 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">return</span> <span class="kc">None</span></div>
 
-
-<div class="viewcode-block" id="print_stats">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.print_stats">[docs]</a>
-<span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="print_stats"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.print_stats">[docs]</a><span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">nb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">CH_INDEX</span><span class="p">])</span><span class="o">//</span><span class="n">args</span><span class="o">.</span><span class="n">transient_length</span>
     
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">print_stats</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -337,24 +314,15 @@
     <span class="k">for</span> <span class="n">bb</span> <span class="ow">in</span> <span class="n">bursts</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="p">[</span><span class="n">bb</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">transient_length</span><span class="p">,</span> <span class="p">(</span><span class="n">bb</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">transient_length</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="n">bb</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">CH_INDEX</span><span class="p">][</span><span class="n">ii</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">CH_FACET</span><span class="p">][</span><span class="n">ii</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">CH_AGSAM</span><span class="p">][</span><span class="n">ii</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">CH_USEC</span><span class="p">][</span><span class="n">ii</span><span class="p">]))</span></div>
-
         
 
-<div class="viewcode-block" id="isNewIndex_default">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isNewIndex_default">[docs]</a>
-<span class="k">def</span> <span class="nf">isNewIndex_default</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
+<div class="viewcode-block" id="isNewIndex_default"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isNewIndex_default">[docs]</a><span class="k">def</span> <span class="nf">isNewIndex_default</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">w1</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="n">w2</span></div>
 
-
-<div class="viewcode-block" id="isNewIndex_msb_direct">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isNewIndex_msb_direct">[docs]</a>
-<span class="k">def</span> <span class="nf">isNewIndex_msb_direct</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
+<div class="viewcode-block" id="isNewIndex_msb_direct"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.isNewIndex_msb_direct">[docs]</a><span class="k">def</span> <span class="nf">isNewIndex_msb_direct</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">w1</span><span class="o">&amp;</span><span class="mh">0x7fffffff</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="p">(</span><span class="n">w2</span><span class="o">&amp;</span><span class="mh">0x7fffffff</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="run_main">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.run_main">[docs]</a>
-<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">args</span><span class="o">.</span><span class="n">isNewIndex</span> <span class="o">=</span> <span class="n">isNewIndex_msb_direct</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">msb_direct</span> <span class="k">else</span> <span class="n">isNewIndex_default</span>
     
     <span class="n">args</span><span class="o">.</span><span class="n">data32</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
@@ -373,10 +341,7 @@
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">print_stats</span><span class="p">:</span>
         <span class="n">print_stats</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="get_parser">
-<a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.get_parser">[docs]</a>
-<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.analysis.cs_demux.html#user_apps.analysis.cs_demux.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Demux for cs system&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Plot data&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot_facets&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;No of facets&quot;</span>
@@ -390,7 +355,6 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--print_stats&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;print burst statistics, 1:top/tail 2:all bursts&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
 
-
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
 </pre></div>
@@ -402,7 +366,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

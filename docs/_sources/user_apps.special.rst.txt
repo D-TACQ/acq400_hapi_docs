@@ -24,7 +24,7 @@ Submodules
 
 
 
-* :doc:`user_apps.special.acq2106_mr` **Multirate shot**
+* :doc:`user_apps.special.acq2106_mr`
 
 
 

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.analysis.wrtd_analysis &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -94,9 +94,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
-<div class="viewcode-block" id="mmm">
-<a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.mmm">[docs]</a>
-<span class="k">def</span> <span class="nf">mmm</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+<div class="viewcode-block" id="mmm"><a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.mmm">[docs]</a><span class="k">def</span> <span class="nf">mmm</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
     <span class="nb">max</span> <span class="o">=</span> <span class="o">-</span><span class="mi">999999999</span>
     <span class="nb">min</span> <span class="o">=</span> <span class="mi">999999999</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -126,10 +124,7 @@
 <span class="c1">#    print(rc)</span>
     <span class="k">return</span> <span class="n">rc</span></div>
 
-
-<div class="viewcode-block" id="analyse">
-<a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.analyse">[docs]</a>
-<span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="analyse"><a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.analyse">[docs]</a><span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="n">uuts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
@@ -150,16 +145,12 @@
         <span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">m3</span><span class="p">,</span> <span class="n">m4</span> <span class="o">=</span> <span class="n">mmm</span><span class="p">(</span><span class="n">diffs</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">wrtd_delta_ns</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> n:</span><span class="si">{}</span><span class="s2"> min:</span><span class="si">{:4d}</span><span class="s2"> max:</span><span class="si">{:4d}</span><span class="s2"> mean:</span><span class="si">{:4d}</span><span class="s2"> rms:</span><span class="si">{:4d}</span><span class="s2"> usec&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">),</span> <span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">m3</span><span class="p">,</span> <span class="n">m4</span><span class="p">))</span></div>
 
-
-<div class="viewcode-block" id="get_parser">
-<a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.get_parser">[docs]</a>
-<span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.analysis.wrtd_analysis.html#user_apps.analysis.wrtd_analysis.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Analyse white rabbit logs&#39;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--wrtd_delta_ns&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;50M&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">intSIAction</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;set delay NS&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;log files&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span></div>
-
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">analyse</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
@@ -172,7 +163,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    

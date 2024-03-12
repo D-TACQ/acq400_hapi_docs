@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>user_apps.analysis.analyse_stored_buffers &mdash; acq400_hapi 814b0cc9efcc4ea9991a299c39eeb4ac1cf4588f documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css?v=c6fe5d8f" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
 
   
     <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
@@ -15,12 +15,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=d8a4e6fc"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -106,19 +106,13 @@
 
 <span class="n">FNULL</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="nextbuf">
-<a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.nextbuf">[docs]</a>
-<span class="k">def</span> <span class="nf">nextbuf</span><span class="p">(</span><span class="n">ib0</span><span class="p">):</span>
+<div class="viewcode-block" id="nextbuf"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.nextbuf">[docs]</a><span class="k">def</span> <span class="nf">nextbuf</span><span class="p">(</span><span class="n">ib0</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">ib0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">nb</span></div>
 
-
-<div class="viewcode-block" id="compare_files">
-<a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.compare_files">[docs]</a>
-<span class="k">def</span> <span class="nf">compare_files</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">):</span>
+<div class="viewcode-block" id="compare_files"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.compare_files">[docs]</a><span class="k">def</span> <span class="nf">compare_files</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">):</span>
     <span class="n">equal</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;cmp&#39;</span><span class="p">,</span> <span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;4095K&#39;</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">FNULL</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">equal</span><span class="p">:</span>
     	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cmp </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span>  <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;cmp&#39;</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">])))</span></div>
-
 
 
 <span class="c1">#command = &quot;find /data/ACQ400DATA/0/acq2106_096/ -type f | sort -n </span>
@@ -129,9 +123,7 @@
 <span class="c1">#proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=True)</span>
 
 
-<div class="viewcode-block" id="run_main">
-<a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.run_main">[docs]</a>
-<span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.analysis.analyse_stored_buffers.html#user_apps.analysis.analyse_stored_buffers.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">():</span>
     <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">ib0</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">errcount</span> <span class="o">=</span> <span class="mi">0</span>
@@ -164,7 +156,6 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()))</span>
         <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run_main</span><span class="p">()</span>
 </pre></div>
@@ -176,7 +167,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, D-Tacq.</p>
+    <p>&#169; Copyright 2024, D-Tacq.</p>
   </div>
 
    
