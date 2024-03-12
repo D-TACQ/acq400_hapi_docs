@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rtm12 &mdash; acq400_hapi 577cff0ea8a00eb38b831bc6f5235bc04be4009b documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
+
+  
+    <link rel="shortcut icon" href="_static/d-tacq_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="set_burst" href="user_apps.acq400.set_burst.html" />
+    <link rel="prev" title="mean_client" href="user_apps.acq400.mean_client.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/d-tacq_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="acq400_hapi.html">acq400_hapi</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_apps.html">user_apps</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acq400_hapi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="user_apps.html">user_apps</a></li>
+          <li class="breadcrumb-item"><a href="user_apps.acq400.html">acq400</a></li>
+      <li class="breadcrumb-item active">rtm12</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rtm12">
+<h1>rtm12<a class="headerlink" href="#rtm12" title="Permalink to this heading"></a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Usage<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rtm12</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg</span> <span class="n">TRG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">rtm12</span> <span class="n">RTM12</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">plot</span> <span class="n">PLOT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg_sync_out</span> <span class="n">TRG_SYNC_OUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trg_wait</span> <span class="n">TRG_WAIT</span><span class="p">]</span> <span class="n">uut</span>
+</pre></div>
+</div>
+<section id="positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading"></a></h2>
+<dl class="option-list">
+<dt><kbd>uut</kbd></dt>
+<dd><p class="sd-card-text">uut</p>
+</dd>
+</dl>
+</section>
+<section id="named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Permalink to this heading"></a></h2>
+<dl class="option-list">
+<dt><kbd>--trg</kbd></dt>
+<dd><p class="sd-card-text">trg start,b1,b2 soft|wrt=value</p>
+<p class="sd-card-text">Default: soft,soft,soft</p>
+</dd>
+<dt><kbd>--rtm12</kbd></dt>
+<dd><p class="sd-card-text">rtm12 b1_len, b2_len</p>
+<p class="sd-card-text">Default: 33000,99000</p>
+</dd>
+<dt><kbd>--plot</kbd></dt>
+<dd><p class="sd-card-text">plot channel results</p>
+</dd>
+<dt><kbd>--trg_sync_out</kbd></dt>
+<dd><p class="sd-card-text">Output d1 trg to HDMI</p>
+<p class="sd-card-text">Default: 1</p>
+</dd>
+<dt><kbd>--trg_wait</kbd></dt>
+<dd><p class="sd-card-text">Wait for keypress before each trigger</p>
+<p class="sd-card-text">Default: 0</p>
+</dd>
+</dl>
+</section>
+</div>
+</details><section id="module-user_apps.acq400.rtm12">
+<span id="outline"></span><h2>Outline:<a class="headerlink" href="#module-user_apps.acq400.rtm12" title="Permalink to this heading"></a></h2>
+<p>run an rtm12 shot, providing 3 triggers</p>
+<blockquote>
+<div><p>The rtm12 feature allows a shot to be run as 2 bursts of different length
+This setup requires 3 triggers:</p>
+<blockquote>
+<div><p>trigger start of capture
+trigger first burst
+trigger second burst</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Then, because a TRANSIENT capture will almost always required a data flush,</dt><dd><p>further burst triggers until the capture stops</p>
+</dd>
+</dl>
+<p>We show an example with either soft triggers or WR triggers (txi)</p>
+<p>Sequence
+S0. Disable TRG out.
+S1. SetArm
+S1.5 WaitArm
+S2. Send Start trigger
+S3. Enable TRG out
+S4. Send BURST1_TRG
+S5. Wait State RUN
+S6. If BLEN1 &gt; 1 DMA BUFFER:   poll sample count until we have enough count.</p>
+</div></blockquote>
+<p>If we only start looking at SAMPLE_COUNT after transition to ARM, then we don’t have to worry about the non-zero start.</p>
+<blockquote>
+<div><p>S7. Send BURST2_TRG
+S8. Wait State IDLE (complete.</p>
+</div></blockquote>
+<p>example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trivial example soft,soft,soft</span>
+<span class="o">/</span><span class="n">rtm12</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">trg</span><span class="o">=</span><span class="n">soft</span><span class="p">,</span><span class="n">soft</span><span class="p">,</span><span class="n">soft</span> <span class="o">--</span><span class="n">rtm12</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span><span class="mi">125000</span> <span class="n">acq1001_084</span>
+
+<span class="c1">#WR example: soft,txi,txi</span>
+<span class="o">/</span><span class="n">rtm12</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">trg</span><span class="o">=</span><span class="n">soft</span><span class="p">,</span><span class="n">txi</span><span class="p">,</span><span class="n">txi</span> <span class="o">--</span><span class="n">rtm12</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span><span class="mi">125000</span> <span class="n">acq1001_084</span>
+
+<span class="n">soft</span> <span class="n">operates</span> <span class="n">on</span> <span class="n">TRG</span><span class="o">.</span><span class="n">d1</span><span class="p">,</span> <span class="n">txi</span> <span class="n">triggers</span> <span class="n">WRTT1</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">operates</span> <span class="n">on</span> <span class="n">TRG</span><span class="o">.</span><span class="n">d1</span> <span class="n">also</span>
+
+<span class="c1"># transcript: shows the 3 triggers being fired at earliest opportunity.</span>
+
+<span class="o">./</span><span class="n">user_apps</span><span class="o">/</span><span class="n">acq400</span><span class="o">/</span><span class="n">rtm12</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">trg</span><span class="o">=</span><span class="n">soft</span><span class="p">,</span><span class="n">txi</span><span class="p">,</span><span class="n">txi</span> <span class="o">--</span><span class="n">rtm12</span><span class="o">=</span><span class="mi">20000</span><span class="p">,</span><span class="mi">500000</span> <span class="o">--</span><span class="n">plot</span><span class="o">=</span><span class="mi">1</span> <span class="n">acq2106_274</span>
+</pre></div>
+</div>
+<p>Transcript:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sam@humla:~/PROJECTS/acq400_hapi$ ./user_apps/acq400/rtm12.py --trg=soft,soft,soft --rtm12=25000,125000 --plot=1 acq2106_007
+Burst1 below minimum increasing to 1 buffer
+0 soft
+1 soft
+2 soft
+uut [&#39;acq2106_007&#39;]
+rtm12 [131072, 724288]
+trg [&#39;soft&#39;, &#39;soft&#39;, &#39;soft&#39;]
+[trigger capture]
+Sending trigger soft
+[trigger burst1]
+Sending trigger soft
+waiting for burst1
+waiting for burst1
+[trigger burst2]
+Sending trigger soft
+trigger again to force flush
+Sending trigger soft
+[wait stopped]
+Triggers script 4 uut SIG:TRG_MB:COUNT 4
+plotting
+
+sam@humla:~/PROJECTS/acq400_hapi$ SITECLIENT_TRACE=1 ./user_apps/acq400/rtm12.py --trg=soft,soft,soft --rtm12=25000,125000 --plot=1 acq2106_007
+Siteclient(acq2106_007, 4220) &gt;MODEL
+Siteclient(acq2106_007, 4220) &lt;acq2106
+Siteclient(acq2106_007, 4220) &gt;is_tiga
+Siteclient(acq2106_007, 4220) &lt;none
+Siteclient(acq2106_007, 4220) &gt;is_tiga
+Siteclient(acq2106_007, 4220) &lt;none
+Siteclient(acq2106_007, 4220) &gt;has_mgt
+Siteclient(acq2106_007, 4220) &lt;12 13
+Siteclient(acq2106_007, 4220) &gt;has_mgtdram
+Siteclient(acq2106_007, 4220) &lt;14
+Siteclient(acq2106_007, 4220) &gt;has_mgt
+Siteclient(acq2106_007, 4220) &lt;12 13
+Siteclient(acq2106_007, 4220) &gt;has_mgtdram
+Siteclient(acq2106_007, 4220) &lt;14
+Siteclient(acq2106_007, 4220) &gt;SITELIST
+Siteclient(acq2106_007, 4220) &lt;216,1=480,2=480
+Siteclient(acq2106_007, 4221) &gt;module_name
+Siteclient(acq2106_007, 4222) &gt;module_name
+Siteclient(acq2106_007, 4222) &lt;acq480fmc
+Siteclient(acq2106_007, 4221) &lt;acq480fmc
+Siteclient(acq2106_007, 4220) &gt;state
+Siteclient(acq2106_007, 4220) &lt;0 0 855360 1441792 0 647 0
+Siteclient(acq2106_007, 4220) &gt;has_mgt
+Siteclient(acq2106_007, 4220) &lt;12 13
+Siteclient(acq2106_007, 4220) &gt;bufferlen
+Siteclient(acq2106_007, 4220) &lt;4194304
+Siteclient(acq2106_007, 4220) &gt;ssb
+Siteclient(acq2106_007, 4220) &lt;32
+Burst1 below minimum increasing to 1 buffer
+Siteclient(acq2106_007, 4220) &gt;SIG:TRG_MB:RESET=1
+Siteclient(acq2106_007, 4220) &lt;
+0 soft
+Siteclient(acq2106_007, 4221) &gt;trg=1,1,1
+Siteclient(acq2106_007, 4221) &lt;
+1 soft
+Siteclient(acq2106_007, 4221) &gt;rgm=3,1,1
+Siteclient(acq2106_007, 4221) &lt;
+2 soft
+uut [&#39;acq2106_007&#39;]
+rtm12 [131072, 724288]
+trg [&#39;soft&#39;, &#39;soft&#39;, &#39;soft&#39;]
+Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=0
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4220) &gt;transient=PRE=0 POST=855360 SOFT_TRIGGER=0
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4220) &gt;rtm12=131072 724288
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;1579654
+Siteclient(acq2106_007, 4220) &gt;set_arm=1
+Siteclient(acq2106_007, 4220) &lt;
+[trigger capture]
+Sending trigger soft
+Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1
+Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG
+Siteclient(acq2106_007, 4220) &gt;soft_trigger=1
+Siteclient(acq2106_007, 4220) &lt;
+[trigger burst1]
+Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=2
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG:DX=1
+Siteclient(acq2106_007, 4220) &lt;
+Sending trigger soft
+Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1
+Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG
+Siteclient(acq2106_007, 4220) &gt;soft_trigger=1
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;0
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;0
+waiting for burst1
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;131074
+[trigger burst2]
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;131074
+Sending trigger soft
+Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1
+Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG
+Siteclient(acq2106_007, 4220) &gt;soft_trigger=1
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=0
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;855364
+trigger again to force flush
+Sending trigger soft
+Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1
+Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG
+Siteclient(acq2106_007, 4220) &gt;soft_trigger=1
+Siteclient(acq2106_007, 4220) &lt;
+Siteclient(acq2106_007, 4221) &gt;sample_count
+Siteclient(acq2106_007, 4221) &lt;855364
+[wait stopped]
+Siteclient(acq2106_007, 4220) &gt;SIG:TRG_MB:COUNT
+Siteclient(acq2106_007, 4220) &lt;SIG:TRG_MB:COUNT 4
+Triggers script 4 uut SIG:TRG_MB:COUNT 4
+plotting
+Siteclient(acq2106_007, 4220) &gt;data32
+Siteclient(acq2106_007, 4220) &lt;0
+Siteclient(acq2106_007, 4220) &gt;transient
+Siteclient(acq2106_007, 4220) &lt;PRE=0 POST=855360 OSAM=1 DEMUX=1 SOFT_TRIGGER=0
+Siteclient(acq2106_007, 4220) &gt;transient
+Siteclient(acq2106_007, 4220) &lt;PRE=0 POST=855360 OSAM=1 DEMUX=1 SOFT_TRIGGER=0
+Siteclient(acq2106_007, 4221) &gt;ch_data_size
+Siteclient(acq2106_007, 4221) &lt;1710720
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.BurstHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BurstHelper</span></span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#BurstHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.BurstHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.BurstHelper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bursts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#BurstHelper.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.BurstHelper.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TriggerHelper</span></span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.select_sig_src_trg_1">
+<span class="sig-name descname"><span class="pre">select_sig_src_trg_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.select_sig_src_trg_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.select_sig_src_trg_1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trg_def</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.trigger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.trigger" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.next_trg">
+<span class="sig-name descname"><span class="pre">next_trg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.next_trg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.next_trg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.enable_trig_out">
+<span class="sig-name descname"><span class="pre">enable_trig_out</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.enable_trig_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.enable_trig_out" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.disable_trig_out">
+<span class="sig-name descname"><span class="pre">disable_trig_out</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.disable_trig_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.disable_trig_out" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.TriggerHelper.print_totals">
+<span class="sig-name descname"><span class="pre">print_totals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#TriggerHelper.print_totals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.TriggerHelper.print_totals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.state_eq">
+<span class="sig-name descname"><span class="pre">state_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#state_eq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.state_eq" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.state_not">
+<span class="sig-name descname"><span class="pre">state_not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#state_not"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.state_not" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.run_main">
+<span class="sig-name descname"><span class="pre">run_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#run_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.run_main" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.list_of_values">
+<span class="sig-name descname"><span class="pre">list_of_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#list_of_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.list_of_values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="user_apps.acq400.rtm12.get_parser">
+<span class="sig-name descname"><span class="pre">get_parser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/user_apps/acq400/rtm12.html#get_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_apps.acq400.rtm12.get_parser" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, D-Tacq.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

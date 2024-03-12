@@ -1,0 +1,25 @@
+acq480\_4CH\_reuniter
+=====================
+
+
+
+
+.. dropdown:: Usage
+
+   .. argparse::
+      :ref: user_apps.special.acq480_4CH_reuniter.get_parser
+      :prog: acq480_4CH_reuniter.py
+      :nodescription:
+
+Outline\:
+~~~~~~~~~
+
+
+
+
+.. automodule:: user_apps.special.acq480_4CH_reuniter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+

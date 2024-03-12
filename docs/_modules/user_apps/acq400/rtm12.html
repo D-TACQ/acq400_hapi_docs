@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user_apps.acq400.rtm12 &mdash; acq400_hapi 577cff0ea8a00eb38b831bc6f5235bc04be4009b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/d-tacq_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acq400_hapi.html">acq400_hapi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_apps.html">user_apps</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">acq400_hapi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">user_apps.acq400.rtm12</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for user_apps.acq400.rtm12</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">&#39;&#39;&#39; run an rtm12 shot, providing 3 triggers</span>
+
+<span class="sd">    The rtm12 feature allows a shot to be run as 2 bursts of different length</span>
+<span class="sd">    This setup requires 3 triggers:</span>
+<span class="sd">        trigger start of capture</span>
+<span class="sd">        trigger first burst</span>
+<span class="sd">        trigger second burst</span>
+<span class="sd">    Then, because a TRANSIENT capture will almost always required a data flush,</span>
+<span class="sd">        further burst triggers until the capture stops</span>
+
+<span class="sd">    We show an example with either soft triggers or WR triggers (txi)</span>
+
+<span class="sd">    Sequence</span>
+<span class="sd">    S0. Disable TRG out.</span>
+<span class="sd">    S1. SetArm</span>
+<span class="sd">    S1.5 WaitArm</span>
+<span class="sd">    S2. Send Start trigger</span>
+<span class="sd">    S3. Enable TRG out</span>
+<span class="sd">    S4. Send BURST1_TRG</span>
+<span class="sd">    S5. Wait State RUN</span>
+<span class="sd">    S6. If BLEN1 &gt; 1 DMA BUFFER:   poll sample count until we have enough count.</span>
+<span class="sd">If we only start looking at SAMPLE_COUNT after transition to ARM, then we don&#39;t have to worry about the non-zero start.</span>
+
+<span class="sd">    S7. Send BURST2_TRG</span>
+<span class="sd">    S8. Wait State IDLE (complete.</span>
+
+<span class="sd">example::</span>
+
+<span class="sd">    # Trivial example soft,soft,soft</span>
+<span class="sd">    /rtm12.py --trg=soft,soft,soft --rtm12=25000,125000 acq1001_084</span>
+
+<span class="sd">    #WR example: soft,txi,txi</span>
+<span class="sd">    /rtm12.py --trg=soft,txi,txi --rtm12=25000,125000 acq1001_084</span>
+
+<span class="sd">    soft operates on TRG.d1, txi triggers WRTT1, so it operates on TRG.d1 also</span>
+
+<span class="sd">    # transcript: shows the 3 triggers being fired at earliest opportunity.</span>
+
+<span class="sd">    ./user_apps/acq400/rtm12.py --trg=soft,txi,txi --rtm12=20000,500000 --plot=1 acq2106_274</span>
+
+<span class="sd">    </span>
+<span class="sd">Transcript::</span>
+
+<span class="sd">    sam@humla:~/PROJECTS/acq400_hapi$ ./user_apps/acq400/rtm12.py --trg=soft,soft,soft --rtm12=25000,125000 --plot=1 acq2106_007</span>
+<span class="sd">    Burst1 below minimum increasing to 1 buffer</span>
+<span class="sd">    0 soft</span>
+<span class="sd">    1 soft</span>
+<span class="sd">    2 soft</span>
+<span class="sd">    uut [&#39;acq2106_007&#39;]</span>
+<span class="sd">    rtm12 [131072, 724288]</span>
+<span class="sd">    trg [&#39;soft&#39;, &#39;soft&#39;, &#39;soft&#39;]</span>
+<span class="sd">    [trigger capture]</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    [trigger burst1]</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    waiting for burst1</span>
+<span class="sd">    waiting for burst1</span>
+<span class="sd">    [trigger burst2]</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    trigger again to force flush</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    [wait stopped]</span>
+<span class="sd">    Triggers script 4 uut SIG:TRG_MB:COUNT 4</span>
+<span class="sd">    plotting</span>
+
+<span class="sd">    sam@humla:~/PROJECTS/acq400_hapi$ SITECLIENT_TRACE=1 ./user_apps/acq400/rtm12.py --trg=soft,soft,soft --rtm12=25000,125000 --plot=1 acq2106_007</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;MODEL</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;acq2106</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;is_tiga</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;none</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;is_tiga</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;none</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;has_mgt</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;12 13</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;has_mgtdram</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;14</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;has_mgt</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;12 13</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;has_mgtdram</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;14</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SITELIST</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;216,1=480,2=480</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;module_name</span>
+<span class="sd">    Siteclient(acq2106_007, 4222) &gt;module_name</span>
+<span class="sd">    Siteclient(acq2106_007, 4222) &lt;acq480fmc</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;acq480fmc</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;state</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;0 0 855360 1441792 0 647 0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;has_mgt</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;12 13</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;bufferlen</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;4194304</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;ssb</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;32</span>
+<span class="sd">    Burst1 below minimum increasing to 1 buffer</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:TRG_MB:RESET=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    0 soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;trg=1,1,1</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;</span>
+<span class="sd">    1 soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;rgm=3,1,1</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;</span>
+<span class="sd">    2 soft</span>
+<span class="sd">    uut [&#39;acq2106_007&#39;]</span>
+<span class="sd">    rtm12 [131072, 724288]</span>
+<span class="sd">    trg [&#39;soft&#39;, &#39;soft&#39;, &#39;soft&#39;]</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;transient=PRE=0 POST=855360 SOFT_TRIGGER=0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;rtm12=131072 724288</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;1579654</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;set_arm=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    [trigger capture]</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;soft_trigger=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    [trigger burst1]</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=2</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG:DX=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;soft_trigger=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;0</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;0</span>
+<span class="sd">    waiting for burst1</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;131074</span>
+<span class="sd">    [trigger burst2]</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;131074</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;soft_trigger=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SYNC_OUT:TRG=0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;855364</span>
+<span class="sd">    trigger again to force flush</span>
+<span class="sd">    Sending trigger soft</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:SRC:TRG:1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;SIG:SRC:TRG:1 STRIG</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;soft_trigger=1</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;sample_count</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;855364</span>
+<span class="sd">    [wait stopped]</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;SIG:TRG_MB:COUNT</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;SIG:TRG_MB:COUNT 4</span>
+<span class="sd">    Triggers script 4 uut SIG:TRG_MB:COUNT 4</span>
+<span class="sd">    plotting</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;data32</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;transient</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;PRE=0 POST=855360 OSAM=1 DEMUX=1 SOFT_TRIGGER=0</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &gt;transient</span>
+<span class="sd">    Siteclient(acq2106_007, 4220) &lt;PRE=0 POST=855360 OSAM=1 DEMUX=1 SOFT_TRIGGER=0</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &gt;ch_data_size</span>
+<span class="sd">    Siteclient(acq2106_007, 4221) &lt;1710720</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">acq400_hapi</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+
+<div class="viewcode-block" id="BurstHelper"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.BurstHelper">[docs]</a><span class="k">class</span> <span class="nc">BurstHelper</span><span class="p">():</span>    
+<div class="viewcode-block" id="BurstHelper.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.BurstHelper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">bursts</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">uut</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bursts</span> <span class="o">=</span> <span class="n">bursts</span>
+        <span class="n">bufferlen_in_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">bufferlen</span><span class="p">)</span> <span class="o">//</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">ssb</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">bursts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">bufferlen_in_samples</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Burst1 below minimum increasing to 1 buffer&quot;</span><span class="p">)</span>
+            <span class="n">bursts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">bufferlen_in_samples</span>
+        <span class="n">bursts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">bufferlen_in_samples</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_samples</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">bursts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">burst1</span> <span class="o">=</span> <span class="n">bursts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">burst2</span> <span class="o">=</span> <span class="n">bursts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="TriggerHelper"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper">[docs]</a><span class="k">class</span> <span class="nc">TriggerHelper</span><span class="p">():</span>
+<div class="viewcode-block" id="TriggerHelper.__init__"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uut</span><span class="p">,</span> <span class="n">triggers</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uut</span> <span class="o">=</span> <span class="n">uut</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">triggers</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">triggers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_wr</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_TRG_MB_RESET</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">try</span><span class="p">:</span> <span class="n">uut</span><span class="o">.</span><span class="n">cC</span><span class="o">.</span><span class="n">WR_WRTT1_RESET</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">triggers</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ii</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">trg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;1,1,1&#39;</span>
+            <span class="k">if</span> <span class="n">ii</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">rgm</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;3,1,1&#39;</span></div>
+    
+<div class="viewcode-block" id="TriggerHelper.select_sig_src_trg_1"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.select_sig_src_trg_1">[docs]</a>    <span class="k">def</span> <span class="nf">select_sig_src_trg_1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="n">first_time</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">while</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_1</span><span class="p">)</span> <span class="o">!=</span> <span class="n">source</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">first_time</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SRC_TRG_1</span> <span class="o">=</span> <span class="n">source</span>
+                <span class="n">first_time</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TriggerHelper.trigger"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.trigger">[docs]</a>    <span class="k">def</span> <span class="nf">trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trg_def</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">trg_wait</span><span class="p">:</span>
+            <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;ENTER to trigger&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sending trigger </span><span class="si">{</span><span class="n">trg_def</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">trg_def</span> <span class="o">==</span> <span class="s1">&#39;soft&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">select_sig_src_trg_1</span><span class="p">(</span><span class="s1">&#39;STRIG&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">soft_trigger</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+        <span class="k">elif</span> <span class="n">trg_def</span> <span class="o">==</span> <span class="s1">&#39;txi&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">total_wr</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">select_sig_src_trg_1</span><span class="p">(</span><span class="s1">&#39;WRTT1&#39;</span><span class="p">)</span>
+            <span class="c1"># --tx_mask=2 selects WRTT1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">wrtd_txi</span> <span class="o">=</span> <span class="s1">&#39;--tx_mask=2 1&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># eg set wrtd_txa</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TODO: hard_trigger </span><span class="si">{</span><span class="n">trg_def</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TriggerHelper.next_trg"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.next_trg">[docs]</a>    <span class="k">def</span> <span class="nf">next_trg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">triggers</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TriggerHelper.enable_trig_out"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.enable_trig_out">[docs]</a>    <span class="k">def</span> <span class="nf">enable_trig_out</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">trg_sync_out</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG</span> <span class="o">=</span> <span class="s1">&#39;TRG&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG_DX</span> <span class="o">=</span> <span class="s1">&#39;d1&#39;</span></div>
+
+<div class="viewcode-block" id="TriggerHelper.disable_trig_out"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.disable_trig_out">[docs]</a>    <span class="k">def</span> <span class="nf">disable_trig_out</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">trg_sync_out</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_SYNC_OUT_TRG</span> <span class="o">=</span> <span class="s1">&#39;d0&#39;</span></div>
+
+<div class="viewcode-block" id="TriggerHelper.print_totals"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.TriggerHelper.print_totals">[docs]</a>    <span class="k">def</span> <span class="nf">print_totals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Triggers script: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> uut: </span><span class="si">{</span><span class="n">acq400_hapi</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">SIG_TRG_MB_COUNT</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_wr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WR triggers script: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total_wr</span><span class="si">}</span><span class="s2"> uut: </span><span class="si">{</span><span class="n">acq400_hapi</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uut</span><span class="o">.</span><span class="n">cC</span><span class="o">.</span><span class="n">WR_WRTT1_COUNT</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div></div>
+
+
+
+<div class="viewcode-block" id="state_eq"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.state_eq">[docs]</a><span class="k">def</span> <span class="nf">state_eq</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">uut</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span> <span class="o">==</span> <span class="n">state</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="state_not"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.state_not">[docs]</a><span class="k">def</span> <span class="nf">state_not</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">uut</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span> <span class="o">!=</span> <span class="n">state</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">trg</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;--trg must have 3 args&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">rtm12</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;--rtm12 must have 2 args&quot;</span>
+
+    <span class="n">uut</span> <span class="o">=</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">bursts</span> <span class="o">=</span> <span class="n">BurstHelper</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">rtm12</span><span class="p">)</span>
+    <span class="n">trg</span> <span class="o">=</span> <span class="n">TriggerHelper</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">trg</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;uut </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rtm12 </span><span class="si">{</span><span class="n">bursts</span><span class="o">.</span><span class="n">bursts</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;trg </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">trg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">trg</span><span class="o">.</span><span class="n">disable_trig_out</span><span class="p">()</span> <span class="c1"># S0. Disable TRG out.</span>
+
+    <span class="k">if</span> <span class="n">state_not</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">STATE</span><span class="o">.</span><span class="n">IDLE</span><span class="p">):</span>
+        <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">set_abort</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">transient</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;PRE=0 POST=</span><span class="si">{</span><span class="n">bursts</span><span class="o">.</span><span class="n">total_samples</span><span class="si">}</span><span class="s1"> SOFT_TRIGGER=0&#39;</span>
+    <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">rtm12</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bursts</span><span class="o">.</span><span class="n">burst1</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">bursts</span><span class="o">.</span><span class="n">burst2</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">sample_count0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span>
+    <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">set_arm</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># S1. SetArm</span>
+    <span class="n">uut</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">wait_armed</span><span class="p">()</span> <span class="c1"># S1.5. Wait State ARM</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[trigger capture]&quot;</span><span class="p">)</span>  <span class="c1"># </span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">trg</span><span class="o">.</span><span class="n">next_trg</span><span class="p">())</span> <span class="c1"># S2. Send Start trigger </span>
+                                <span class="c1"># no need to wait, system is ready for Burst Trigger</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[trigger burst1]&quot;</span><span class="p">)</span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">enable_trig_out</span><span class="p">()</span>        <span class="c1"># S3. Enable TRG out</span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">trg</span><span class="o">.</span><span class="n">next_trg</span><span class="p">())</span>  <span class="c1"># S4. Send BURST1_TRG</span>
+
+    <span class="k">while</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span> <span class="o">==</span> <span class="n">sample_count0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;waiting for capture to start&quot;</span><span class="p">)</span>     <span class="c1"># S5.  Wait Run</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">bursts</span><span class="o">.</span><span class="n">burst1</span><span class="p">:</span> <span class="c1"># S6. If BLEN1 &gt; 1 DMA BUFFER:   poll sample count until we have enough data.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;waiting for burst1&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[trigger burst2]&quot;</span><span class="p">)</span>
+    <span class="n">sample_count1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">trg</span><span class="o">.</span><span class="n">next_trg</span><span class="p">())</span> <span class="c1"># S7. Send BURST2_TRG</span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">disable_trig_out</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="n">state_eq</span><span class="p">(</span><span class="n">uut</span><span class="p">,</span> <span class="n">acq400_hapi</span><span class="o">.</span><span class="n">STATE</span><span class="o">.</span><span class="n">RUNPOST</span><span class="p">):</span>
+        <span class="n">sample_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s1</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sample_count</span> <span class="o">&gt;</span> <span class="n">sample_count1</span> <span class="o">+</span> <span class="n">bursts</span><span class="o">.</span><span class="n">burst2</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trigger again to force flush&quot;</span><span class="p">)</span>
+            <span class="n">trg</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="s1">&#39;soft&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[wait stopped]&quot;</span><span class="p">)</span>
+    <span class="n">uut</span><span class="o">.</span><span class="n">statmon</span><span class="o">.</span><span class="n">wait_stopped</span><span class="p">()</span> <span class="c1"># S8. Wait State IDLE (complete.</span>
+    <span class="n">trg</span><span class="o">.</span><span class="n">print_totals</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[plotting]&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> Dual burst&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">chan</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">read_channels</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">)):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;CH </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">[</span><span class="n">chan</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+    
+<div class="viewcode-block" id="list_of_values"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.list_of_values">[docs]</a><span class="k">def</span> <span class="nf">list_of_values</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="k">else</span> <span class="n">u</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="p">]</span></div>
+        
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.acq400.rtm12.html#user_apps.acq400.rtm12.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;rtm12 demo&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--trg&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;soft,soft,soft&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_of_values</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;trg start,b1,b2 soft|wrt=value&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--rtm12&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;33000,99000&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_of_values</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;rtm12 b1_len, b2_len&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_of_values</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;plot channel results&quot;</span><span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--trg_sync_out&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Output d1 trg to HDMI&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--trg_wait&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Wait for keypress before each trigger&quot;</span><span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uut&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uut&quot;</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">parser</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run_main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, D-Tacq.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

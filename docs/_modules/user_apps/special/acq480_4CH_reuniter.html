@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user_apps.special.acq480_4CH_reuniter &mdash; acq400_hapi 577cff0ea8a00eb38b831bc6f5235bc04be4009b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom_style.css" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/d-tacq_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/d-tacq_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acq400_hapi.html">acq400_hapi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_apps.html">user_apps</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">acq400_hapi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">user_apps.special.acq480_4CH_reuniter</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for user_apps.special.acq480_4CH_reuniter</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="sd">&quot;&quot;&quot;reunites pre/post channels of 4CH acq480</span>
+
+<span class="sd">Data Format</span>
+<span class="sd">    pre/post</span>
+<span class="sd">CH1=CH1/CH3</span>
+<span class="sd">CH2=CH2/CH4</span>
+<span class="sd">CH3=CH3/CH1</span>
+<span class="sd">CH4=CH4/CH2</span>
+
+<span class="sd">Examples::</span>
+
+<span class="sd">    #to plot, fix and save from uut</span>
+<span class="sd">    ./user_apps/special/acq480_4CH_reuniter.py --plot=0 --save=corrected_data acq1001_301</span>
+<span class="sd">    #to fix from dir</span>
+<span class="sd">    ../user_apps/special/acq480_4CH_reuniter.py --src=bad_data --save=good_data acq1001_301</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">acq400_hapi</span> <span class="kn">import</span> <span class="n">factory</span><span class="p">,</span> <span class="n">pv</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<div class="viewcode-block" id="run_main"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.run_main">[docs]</a><span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span>
+
+    <span class="n">split_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">src</span><span class="p">:</span>
+        <span class="n">split_data</span> <span class="o">=</span> <span class="n">data_from_uut</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">split_data</span> <span class="o">=</span> <span class="n">data_from_file</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">post</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">split_data</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">split_data</span><span class="p">):</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="n">cyclic_offset</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">nofix</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+            <span class="k">continue</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">][:</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">offset</span><span class="p">][</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">:]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">:]</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plotting data&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">dat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">remove_es</span> <span class="ow">and</span> <span class="n">idx</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+                <span class="n">dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">pre</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">pre</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="ow">or</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;CH</span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving data to </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">data_arr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s2">_CH</span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">data_arr</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="cyclic_offset"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.cyclic_offset">[docs]</a><span class="k">def</span> <span class="nf">cyclic_offset</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="p">(</span><span class="n">max_value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="data_from_uut"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.data_from_uut">[docs]</a><span class="k">def</span> <span class="nf">data_from_uut</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reading data from </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">split_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">uut</span> <span class="o">=</span> <span class="n">factory</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="p">)</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">pre</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">TRANS_ACT_PRE</span><span class="p">))</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pv</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">TRANS_ACT_POST</span><span class="p">))</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span> <span class="k">if</span> <span class="n">uut</span><span class="o">.</span><span class="n">s0</span><span class="o">.</span><span class="n">data32</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">channels</span><span class="p">):</span>
+        <span class="n">split_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uut</span><span class="o">.</span><span class="n">read_channels</span><span class="p">(</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">split_data</span></div>
+
+<div class="viewcode-block" id="data_from_file"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.data_from_file">[docs]</a><span class="k">def</span> <span class="nf">data_from_file</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reading data from </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">src</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">split_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">channels</span><span class="p">):</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">src</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">uut</span><span class="si">}</span><span class="s2">_CH0</span><span class="si">{</span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">split_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">split_data</span></div>
+
+<div class="viewcode-block" id="list_of_values"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.list_of_values">[docs]</a><span class="k">def</span> <span class="nf">list_of_values</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="k">else</span> <span class="n">u</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="p">]</span></div>
+
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../../user_apps.special.acq480_4CH_reuniter.html#user_apps.special.acq480_4CH_reuniter.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;reunites pre/post channels of 4CH acq480&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--remove_es&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Remove es error&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--nofix&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Do not fix&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_of_values</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Plot data 0 for all or 1,2,3,4&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--save&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;dir to save resolved data &quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--src&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;dir to read data from&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--pre&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;pre samples&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--post&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;post samples&quot;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uut&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;uut hostname&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run_main</span><span class="p">(</span><span class="n">get_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, D-Tacq.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+rtm12
+=====
+
+
+
+
+.. dropdown:: Usage
+
+   .. argparse::
+      :ref: user_apps.acq400.rtm12.get_parser
+      :prog: rtm12.py
+      :nodescription:
+
+Outline\:
+~~~~~~~~~
+
+
+
+
+.. automodule:: user_apps.acq400.rtm12
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
